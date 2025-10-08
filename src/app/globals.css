@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
+/* Light Theme (Default) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+   --background: #ffffff;
+   --foreground: #171717;
+   --secondary: #f3f4f6;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+   --background: #0a0a0a;
+   --foreground: #ededed;
+   --secondary: #1f2937;
+}
+
+/* Glass Theme */
+[data-theme="glass"] {
+   --background: rgba(255, 255, 255, 0.1);
+   --foreground: #1f2937;
+   --secondary: rgba(255, 255, 255, 0.2);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+   --color-background: var(--background);
+   --color-foreground: var(--foreground);
+   --color-secondary: var(--secondary);
+   --font-sans: var(--font-geist-sans);
+   --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+   background: var(--background);
+   color: var(--foreground);
+   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glass theme specific styles */
+[data-theme="glass"] body {
+   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+   backdrop-filter: blur(10px);
 }
