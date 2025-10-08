@@ -9,9 +9,15 @@
 
 /* Dark Theme */
 [data-theme="dark"] {
-   --background: #0a0a0a;
+   --background: #000000;
+   --inner-background: #272A2C;
    --foreground: #ededed;
    --secondary: #1f2937;
+   --card-meta-text: #FFFFFF;
+   --card-date-text: #FFFFFF;
+   --card-title-text: #1366E3;
+   --card-description-text: #FFFFFF;
+   --card-bg-color: #48484899;
 }
 
 /* Glass Theme */

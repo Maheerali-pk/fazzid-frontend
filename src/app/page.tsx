@@ -3,6 +3,7 @@ import { TestCard } from "@/components/TestCard";
 
 export default function Home() {
   return (
+    <>
     <div className="min-h-screen bg-background text-foreground p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         <header className="text-center space-y-4">
@@ -49,5 +50,6 @@ export default function Home() {
         </div>
       </div>
     </div>
+    </>
   );
 }
