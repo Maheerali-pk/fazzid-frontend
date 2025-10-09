@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { GlobalContextProvider } from './GlobalContext';
 
 type Theme = 'light' | 'dark' | 'glass';
 
@@ -25,9 +26,11 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 	};
 
 	return (
-		<ThemeContext.Provider value={value}>
-			{children}
-		</ThemeContext.Provider>
+		<GlobalContextProvider>
+			<ThemeContext.Provider value={value}>
+				{children}
+			</ThemeContext.Provider>
+		</GlobalContextProvider>
 	);
 }
 

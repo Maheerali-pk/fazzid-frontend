@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { GlobalContextProvider } from "@/contexts/GlobalContext";
+import SearchSidebar from "@/components/SearchSidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider>        
-          {children}
+        className={`${geistSans.variable} p-2.5 h-full flex gap-4 ${geistMono.variable} antialiased`}>
+        <ThemeProvider>
+          <GlobalContextProvider>
+            {children}
+            <SearchSidebar />
+          </GlobalContextProvider>
         </ThemeProvider>
       </body>
     </html>
