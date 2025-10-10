@@ -67,10 +67,10 @@ export default function SearchSidebar() {
 				<div className="flex items-center justify-between mb-4">
 					<div
 						onClick={() => dispatch({ setState: { sidebarStatus: sidebarStatus === "full" ? "semi-opened" : "full" } })}
-						className={classNames("flex cursor-pointer items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full", { "text-primary": sidebarStatus === "full" })}>
+						className={classNames("flex cursor-pointer items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full hover:text-primary", { "text-primary": sidebarStatus === "full" })}>
 						{toggleSidebarIcon}
 					</div>
-					<div className="flex items-center gap-2 p-4 bg-card-bg-color rounded-full">
+					<div className="flex items-center gap-2 p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary">
 						{userIcon}
 					</div>
 				</div>
@@ -84,7 +84,7 @@ export default function SearchSidebar() {
 							</div>
 						))}
 
-						<div className="flex items-center gap-2 p-2.5 bg-card-bg-color rounded-full">
+						<div className="flex items-center gap-2 p-2.5 bg-card-bg-color rounded-full cursor-pointer">
 							{plusIcon}
 						</div>
 					</div>
@@ -109,13 +109,13 @@ export default function SearchSidebar() {
 						/>
 						<div className="absolute inset-y-0 right-0 flex items-center gap-2 mr-4">
 							<div className="flex items-center">
-								<button className="text-foreground p-2">
+								<button className="text-foreground p-2 cursor-pointer">
 									{micIcon}
 								</button>
 							</div>
 							<div className='text-foreground text-3xl mx-2 mb-2 font-extralight'>|</div>
 							<div className="flex items-center">
-								<button className="text-foreground p-2">
+								<button className="text-foreground p-2 cursor-pointer">
 									{searchIcon}
 								</button>
 							</div>
@@ -193,9 +193,9 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className="grid grid-cols-6 ">
+												<div className="flex gap-6 space-between">
 													{contentTypes.map((type, i) => (
-														<div key={type.name + i} className="flex flex-col items-center">
+														<div key={type.name + i} className="flex flex-col items-center cursor-pointer">
 															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
 																{/* Display icon based on the type */}
 																<div className="text-foreground">
@@ -217,20 +217,20 @@ export default function SearchSidebar() {
 						{/* Website Tab Content */}
 						{state.searchType === 'website' && (
 							<div className='bg-inner-background p-7.5 rounded-4xl'>
-								<div className="flex justify-between items-center mb-4">
+								<div className="flex justify-between items-center mb-4 cursor-pointer">
 									<span className="text-foreground font-medium">Countries</span>
 								</div>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-2 gap-4 cursor-pointer">
 									{[
-										{ name: 'CNN', logo: '/images/flags/us.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Al Jazeera', logo: '/images/flags/Yemen.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Fox News', logo: '/images/flags/us.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'BBC News', logo: '/images/flags/uk.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Geo News', logo: '/images/flags/Pakistan.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'CBS News', logo: '/images/flags/us.svg', rank: '(1)', visitors: '1432', articles: '2344' }
+										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Al Jazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Fox News', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'BBC News', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Geo News', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'CBS News', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
 									].map((site, index) => (
 										<div key={index} className="bg-card-bg-color p-4 rounded-4xl flex items-center gap-4">
-											<div className="w-15 h-15 rounded-full flex items-center justify-center overflow-hidden">
+											<div className="w-15 h-15 flex items-center justify-center overflow-hidden">
 												<Image src={site.logo} alt={site.name} width={61} height={61} />
 											</div>
 											<div className=''>
@@ -263,21 +263,37 @@ export default function SearchSidebar() {
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">News Channels</span>
 								</div>
-								<div className="grid grid-cols-1 gap-4">
+								<div className="grid grid-cols-2 gap-4">
 									{[
-										{ name: 'CNN International', country: 'United States', type: 'News' },
-										{ name: 'BBC World', country: 'United Kingdom', type: 'News & Documentary' },
-										{ name: 'Al Jazeera English', country: 'Qatar', type: 'News & Current Affairs' },
-										{ name: 'DW News', country: 'Germany', type: 'News & Documentary' },
-										{ name: 'France 24', country: 'France', type: 'News' }
-									].map((channel, index) => (
-										<div key={index} className="bg-card-bg-color p-4 rounded-xl flex justify-between items-center">
-											<div>
-												<div className="text-foreground font-medium">{channel.name}</div>
-												<div className="text-foreground text-sm">{channel.country}</div>
+										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344'},
+										{ name: 'Al Jazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Fox News', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'BBC News', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Geo News', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'CBS News', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
+									].map((site, index) => (
+										<div key={index} className="bg-card-bg-color p-2 rounded-4xl flex items-center gap-1">
+											<div className="w-25 h-25 rounded-full flex flex-col items-center justify-center overflow-hidden">
+												<Image src={site.logo} alt={site.name} width={61} height={61} />
+												{site.name}
 											</div>
-											<div className="bg-inner-background px-3 py-1 rounded-full text-sm text-foreground">
-												{channel.type}
+											<div className=''>
+												<div className="flex items-center gap-1">
+													<span>{trippleUpArrows}</span>
+													<span className="text-foreground text-xs">Overall Rank {site.rank}</span>
+												</div>
+												<div className=" items-center text-xs text-foreground">
+													<div className="flex items-center gap-1 ">
+														<span>{bookIcon}</span>
+														<div></div>
+														<span>{site.visitors}</span>
+													</div>
+													<div className="flex items-center gap-1">
+														<span>{cameraIcon}</span>
+														<div></div>
+														<span>{site.articles}</span>
+													</div>
+												</div>
 											</div>
 										</div>
 									))}
