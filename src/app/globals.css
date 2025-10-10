@@ -71,7 +71,7 @@
    --card-title-text: #1366e3;
    --card-description-text: #ffffff;
    --card-bg-color: #48484899;
-   --color-primary: #1366e3;
+   --color-primary: #00aaff;
 }
 
 /* Dark Theme */
@@ -85,7 +85,7 @@
    --card-title-text: #1366e3;
    --card-description-text: #ffffff;
    --card-bg-color: #48484899;
-   --color-primary: #1366e3;
+   --color-primary: #00aaff;
 }
 
 @theme inline {
@@ -101,6 +101,7 @@
    --color-card-bg-color: var(--card-bg-color);
    --font-sf: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont,
       system-ui, sans-serif;
+   --text-22px: 1.375rem;
 }
 
 html,
@@ -111,8 +112,7 @@ body {
 body {
    background: var(--background);
    color: var(--foreground);
-   font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui,
-      sans-serif;
+   font-family: "Inter";
    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -126,12 +126,39 @@ body {
    backdrop-filter: blur(10px);
 }
 
-
 /* Hide scrollbar but allow scrolling */
 .no-scrollbar::-webkit-scrollbar {
-  display: none;
+   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+   -ms-overflow-style: none; /* IE and Edge */
+   scrollbar-width: none; /* Firefox */
+}
+
+@media screen and (max-width: 1920px) {
+   html,
+   body {
+      font-size: 100%;
+   }
+}
+
+@media screen and (max-width: 1700px) {
+   html,
+   body {
+      font-size: 90%;
+   }
+}
+
+@media screen and (max-width: 1500px) {
+   html,
+   body {
+      font-size: 80%;
+   }
+}
+
+@media screen and (max-width: 1300px) {
+   html,
+   body {
+      font-size: 80%;
+   }
 }
