@@ -4,8 +4,19 @@ import React, { useState } from 'react'
 import { DiveType, SearchType, useGlobalContext } from '@/contexts/GlobalContext'
 import classNames from 'classnames'
 import Image from 'next/image'
-import { listIcon, plusIcon, spreadIcon, userIcon, micIcon, searchIcon, worldIcon, layers, images, headlines, videos, sites, toggleSidebarIcon, trippleUpArrows, bookIcon, cameraIcon } from '@/helpers/icons'
+import { listIcon, plusIcon, spreadIcon, userIcon, micIcon, searchIcon, worldIcon, layers, images, headlines, videos, sites, toggleSidebarIcon, trippleUpArrows, bookIcon, cameraIcon, backIcon } from '@/helpers/icons'
 import Tabs, { TabOption } from './Tabs'
+import { countries, IState, states } from '@/helpers/data'
+import CountryItem from './CountryItem'
+export interface ICountry {
+	name: string;
+	flag?: string;
+	count: number;
+	id: string;
+	isIcon?: boolean;
+	icon?: React.ReactNode;
+}
+
 
 export default function SearchSidebar() {
 	const [state, dispatch] = useGlobalContext()
@@ -34,14 +45,7 @@ export default function SearchSidebar() {
 	]
 
 	// Sample data for UI display
-	const states = [
-		{ name: 'All', isIcon: true, icon: worldIcon, count: 520 },
-		{ name: 'United States', flag: '/images/flags/us.svg', count: 720 },
-		{ name: 'Pakistan', flag: '/images/flags/Pakistan.svg', count: 120 },
-		{ name: 'Germany', flag: '/images/flags/Germany.svg', count: 400 },
-		{ name: 'UnitedKingdom', flag: '/images/flags/uk.svg', count: 720 },
-		{ name: 'Yemen', flag: '/images/flags/Yemen.svg', count: 720 },
-	]
+
 
 	const contentTypes = [
 		{ name: 'Pages', icon: layers, count: 5250 },
@@ -56,7 +60,8 @@ export default function SearchSidebar() {
 		// Functionality to add a country
 		console.log('Add country')
 	}
-
+	const selectedCountry = countries.find((country) => country.id === state.selectedCountryId)
+	const statesList: IState[] = selectedCountry ? states.filter((state) => state.countryId === selectedCountry.id) : []
 	return (
 		<div className={classNames("rounded-[2rem] h-full bg-inner-background flex flex-col", {
 			"min-w-[0px] w-0 overflow-hidden": sidebarStatus === "closed",
@@ -103,6 +108,8 @@ export default function SearchSidebar() {
 					{/* Search Input */}
 					<div className="relative mb-4 items-center ">
 						<input
+							value={state.searchKeyword}
+							onChange={(e) => dispatch({ setState: { searchKeyword: e.target.value } })}
 							type="text"
 							placeholder="enter your keyword here"
 							className="w-full bg-inner-background text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg"
@@ -156,29 +163,19 @@ export default function SearchSidebar() {
 
 										{countryDropdownOpen && (
 											<div className="pt-6">
-												<div className="grid grid-cols-6 ">
-													{states.map((state) => (
-														<div key={state.name} className="flex flex-col items-center">
-															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
-																{/* Handle both SVG icons and image flags */}
-																{state.isIcon ? (
-																	<div className="text-foreground">
-																		{state.icon}
-																	</div>
-																) : state.flag ? (
-																	<Image
-																		src={state.flag}
-																		alt={`${state.name} flag`}
-																		width={49}
-																		height={49}
-																	/>
-																) : (
-																	<p>no image</p>
-																)}
-															</div>
-															<span className="text-foreground text-xs pt-2.5">{state.name}</span>
-															<span className="text-foreground text-xs">{state.count}</span>
-														</div>
+												{selectedCountry && <div className="flex items-center gap-4 mb-6">
+													<div className="cursor-pointer" onClick={() => dispatch({ setState: { selectedCountryId: null } })}>
+														{backIcon}
+													</div>
+													<div className="flex gap-2">
+														<Image src={selectedCountry.flag as string} alt={selectedCountry.name} width={24} height={24}></Image>
+														<span className="text-foreground text-lg font-semibold">{selectedCountry.name}</span>
+
+													</div>
+												</div>}
+												<div className="flex flex-wrap space-between gap-4">
+													{(selectedCountry ? statesList : countries).map((country) => (
+														<CountryItem key={country.name} country={country} />
 													))}
 												</div>
 											</div>

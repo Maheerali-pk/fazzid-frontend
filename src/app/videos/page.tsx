@@ -19,7 +19,7 @@ export default function page() {
             // "gap-0": sidebarStatus === "full",
          })}
       >
-         <div className={classNames("h-full flex  overflow-auto flex-col gap-4 rounded-4xl p-2.5 bg-inner-background", {
+         <div className={classNames("h-full flex w-full overflow-auto flex-col gap-4 rounded-4xl p-2.5 bg-inner-background", {
             "hidden": sidebarStatus === "full",
             "w-full": sidebarStatus === "closed",
          })}>
