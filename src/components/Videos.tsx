@@ -81,7 +81,7 @@ export default function Videos() {
                                  href={video.youtubeUrl}
                                  target="_blank"
                                  rel="noopener noreferrer"
-                                 className="block relative p-3 w-108 h-61 rounded-t-4xl"
+                                 className="block relative p-3 h-52  rounded-t-4xl"
                               >
                                  <Image
                                     src={getYouTubeThumbnail(video.videoId)}

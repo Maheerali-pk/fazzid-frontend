@@ -46,6 +46,18 @@ export default function SearchSidebar() {
 		{ name: 'Headlines', icon: headlines, count: 421 },
 		{ name: 'Images', icon: images, count: 33 },
 		{ name: 'Videos', icon: videos, count: 431 },
+		{ name: 'Sites', icon: sites, count: 621 },
+		{ name: 'Pages', icon: layers, count: 5250 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Headlines', icon: headlines, count: 421 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Videos', icon: videos, count: 431 },
+		{ name: 'Sites', icon: sites, count: 621 },
+		{ name: 'Pages', icon: layers, count: 5250 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Headlines', icon: headlines, count: 421 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Videos', icon: videos, count: 431 },
 		{ name: 'Sites', icon: sites, count: 621 }
 	]
 
@@ -166,7 +178,7 @@ export default function SearchSidebar() {
 
 													</div>
 												</div>}
-												<div className="flex flex-wrap space-between gap-4">
+												<div className="flex overflow-scroll space-between gap-6 no-scrollbar">
 													{(selectedCountry ? statesList : countries).map((country) => (
 														<CountryItem key={country.name} country={country} />
 													))}
@@ -184,7 +196,7 @@ export default function SearchSidebar() {
 											onClick={() => setStatesDropdownOpen(!statesDropdownOpen)}
 										>
 											<span className="text-foreground">United States</span>
-											<div className='p-2 bg-card-bg-color rounded-full'>
+											<div className='p-2 bg-card-bg-color rounded-full '>
 												<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform ${statesDropdownOpen ? 'rotate-180' : ''}`}>
 													<path d="M6 9L12 15L18 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 												</svg>
@@ -193,7 +205,7 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className="flex gap-6 space-between">
+												<div className="flex gap-7 space-between overflow-scroll space-between no-scrollbar">
 													{contentTypes.map((type, i) => (
 														<div key={type.name + i} className="flex flex-col items-center cursor-pointer">
 															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
@@ -223,11 +235,11 @@ export default function SearchSidebar() {
 								<div className="grid grid-cols-2 gap-4 cursor-pointer">
 									{[
 										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Al Jazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Fox News', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'BBC News', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Geo News', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'CBS News', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
+										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Fox', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'BBC', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Geo', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'CBS', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
 									].map((site, index) => (
 										<div key={index} className="bg-card-bg-color p-4 rounded-4xl flex items-center gap-4">
 											<div className="w-15 h-15 flex items-center justify-center overflow-hidden">
@@ -266,11 +278,11 @@ export default function SearchSidebar() {
 								<div className="grid grid-cols-2 gap-4">
 									{[
 										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344'},
-										{ name: 'Al Jazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Fox News', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'BBC News', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Geo News', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'CBS News', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
+										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Fox', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'BBC', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Geo', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'CBS', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
 									].map((site, index) => (
 										<div key={index} className="bg-card-bg-color p-2 rounded-4xl flex items-center gap-1">
 											<div className="w-25 h-25 rounded-full flex flex-col items-center justify-center overflow-hidden">

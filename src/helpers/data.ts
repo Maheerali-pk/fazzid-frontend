@@ -29,7 +29,7 @@ export const countries: ICountry[] = [
       id: "1",
       flag: "/images/flags/world.svg",
    },
-   { name: "United States", flag: "/images/flags/us.svg", count: 720, id: "2" },
+   { name: "UnitedStates", flag: "/images/flags/us.svg", count: 720, id: "2" },
    {
       name: "Pakistan",
       flag: "/images/flags/Pakistan.svg",
@@ -38,7 +38,35 @@ export const countries: ICountry[] = [
    },
    { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
    { name: "UnitedKingdom", flag: "/images/flags/uk.svg", count: 720, id: "5" },
-   { name: "Yemen", flag: "/images/flags/Yemen.svg", count: 720, id: "6" },
+     { name: "UnitedStates", flag: "/images/flags/us.svg", count: 720, id: "2" },
+   {
+      name: "Pakistan",
+      flag: "/images/flags/Pakistan.svg",
+      count: 120,
+      id: "3",
+   },
+   { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
+   { name: "UnitedKingdom", flag: "/images/flags/uk.svg", count: 720, id: "5" },
+     { name: "UnitedStates", flag: "/images/flags/us.svg", count: 720, id: "2" },
+   {
+      name: "Pakistan",
+      flag: "/images/flags/Pakistan.svg",
+      count: 120,
+      id: "3",
+   },
+   { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
+   { name: "UnitedKingdom", flag: "/images/flags/uk.svg", count: 720, id: "5" },
+     { name: "UnitedStates", flag: "/images/flags/us.svg", count: 720, id: "2" },
+   {
+      name: "Pakistan",
+      flag: "/images/flags/Pakistan.svg",
+      count: 120,
+      id: "3",
+   },
+   { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
+   { name: "UnitedKingdom", flag: "/images/flags/uk.svg", count: 720, id: "5" },
+   { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
+   
    
 ];
 
