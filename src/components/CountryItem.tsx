@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ICountry } from "./SearchSidebar";
+import { ICountry } from "@/helpers/data";
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
 

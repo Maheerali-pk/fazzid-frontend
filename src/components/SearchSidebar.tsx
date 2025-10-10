@@ -28,7 +28,7 @@ import {
 	backIcon,
 } from "@/helpers/icons";
 import Tabs, { TabOption } from "./Tabs";
-import { allChannels, countries, IChannel, IState, states } from "@/helpers/data";
+import { allChannels, countries, IChannel, ICountry, IState, states } from "@/helpers/data";
 import CountryItem from "./CountryItem";
 import ThemeDropdown from "./ThemeDropdown";
 
@@ -100,6 +100,22 @@ export default function SearchSidebar() {
 			dispatch({ setState: { channelsSelected: [...channelsSelected, channel.id] } });
 		}
 	};
+	const renderCountryTabItems = () => {
+		if (selectedCountry) {
+
+			return statesList.map(state => <CountryItem
+				key={state.id + state.name}
+				country={state}
+				type="state"
+			/>)
+
+		}
+		return countries.map(country => <CountryItem
+			key={country.id + country.name}
+			country={country}
+			type="country"
+		/>)
+	}
 	return (
 		<div
 			className={classNames(
@@ -276,15 +292,7 @@ export default function SearchSidebar() {
 													</div>
 												)}
 												<div className="flex flex-wrap space-between gap-4">
-													{(selectedCountry
-														? statesList
-														: countries
-													).map((country) => (
-														<CountryItem
-															key={country.name}
-															country={country}
-														/>
-													))}
+													{renderCountryTabItems()}
 												</div>
 											</div>
 										)}
