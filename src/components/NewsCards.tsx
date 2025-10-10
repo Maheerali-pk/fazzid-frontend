@@ -8,7 +8,7 @@ import { truncateText } from "@/helpers/utils";
 
 export default function NewsCards() {
    const [state] = useGlobalContext()
-   const { itemsView, isSidebarOpen } = state
+   const { itemsView, sidebarStatus } = state
    // Define the news data array
    const newsData = [
       {
@@ -166,8 +166,8 @@ export default function NewsCards() {
    return (
       <div className="">
          <div className={classNames("grid  gap-4", {
-            "grid-cols-3": itemsView === 'grid' && !isSidebarOpen,
-            "grid-cols-2": itemsView === 'grid' && isSidebarOpen,
+            "grid-cols-3": itemsView === 'grid' && sidebarStatus === "closed",
+            "grid-cols-2": itemsView === 'grid' && sidebarStatus === "semi-opened",
             "grid-cols-1": itemsView === 'list'
          })}>
             {newsData.map((news) => (

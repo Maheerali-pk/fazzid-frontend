@@ -29,7 +29,7 @@ const getYouTubeThumbnail = (videoId: string) => {
 export default function Videos() {
    const [state] = useGlobalContext();
    const { itemsView, isSidebarOpen } = state;
-   
+
    // Define the videos data array with YouTube video IDs
    const videosData = [
       {
@@ -75,7 +75,7 @@ export default function Videos() {
          id: 4,
          source: "FOX NEWS",
          title: "Economic report shows unexpected growth in Q3",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "320K",
          postedTime: "10 hours ago",
          date: "May, 15, 2025",
@@ -88,7 +88,7 @@ export default function Videos() {
          id: 5,
          source: "CNN",
          title: "New healthcare legislation passes Senate vote",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "890K",
          postedTime: "8 hours ago",
          date: "May, 15, 2025",
@@ -101,7 +101,7 @@ export default function Videos() {
          id: 6,
          source: "CNN",
          title: "Hurricane Maria approaches east coast",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "1.2M",
          postedTime: "5 hours ago",
          date: "May, 15, 2025",
@@ -114,7 +114,7 @@ export default function Videos() {
          id: 7,
          source: "FOX NEWS",
          title: "Trump admin issues CHILLING warning amid fears of sleeper cell attack",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "1M",
          postedTime: "18 hours ago",
          date: "May, 15, 2025",
@@ -127,7 +127,7 @@ export default function Videos() {
          id: 8,
          source: "FOX NEWS",
          title: "Senate committee begins investigation into tech giants",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "450K",
          postedTime: "14 hours ago",
          date: "May, 15, 2025",
@@ -140,7 +140,7 @@ export default function Videos() {
          id: 9,
          source: "FOX NEWS",
          title: "Military exercises planned near Taiwan Strait",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "680K",
          postedTime: "7 hours ago",
          date: "May, 15, 2025",
@@ -153,7 +153,7 @@ export default function Videos() {
          id: 10,
          source: "FOX NEWS",
          title: "Global markets respond to trade agreement",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "420K",
          postedTime: "9 hours ago",
          date: "May, 15, 2025",
@@ -166,7 +166,7 @@ export default function Videos() {
          id: 11,
          source: "CNN",
          title: "Tech leaders testify before Congress",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
          views: "860K",
          postedTime: "11 hours ago",
          date: "May, 15, 2025",
@@ -190,128 +190,65 @@ export default function Videos() {
    ];
 
    return (
-    <div className="overflow-auto">
+      <div className="overflow-auto">
 
-   
-      <div className={classNames(
-        "w-full transition-all duration-300",
-        {
-          "sidebar-extended": isSidebarOpen,
-          "sidebar-collapsed": !isSidebarOpen
-        }
-      )}>
+
          <div className={classNames(
-            "flex flex-wrap pt-4 w-full transition-all duration-300 ",
+            "w-full transition-all duration-300",
             {
-              "gap-3 md:gap-4 lg:gap-4": itemsView === 'grid',
-              "flex-col space-y-4": itemsView !== 'grid'
+               "sidebar-extended": isSidebarOpen,
+               "sidebar-collapsed": !isSidebarOpen
             }
-          )}>
-            {videosData.map((video) => (
-               <div
-                  key={video.id}
-                  className={classNames(
-                    "overflow-hidden rounded-3xl transition-all duration-300", // common classes
-                    {
-                      // Grid view responsive classes
-                      "p-2.5 w-full": itemsView === 'grid',
-                      // Small screens - 2 columns regardless of sidebar
-                      "sm:w-[calc(50%-6px)]": itemsView === 'grid',
-                      // Medium screens - 2 columns regardless of sidebar
-                      "md:w-[calc(50%-8px)]": itemsView === 'grid',
-                      // Large screens - 3 columns when sidebar is open
-                      "lg:w-[calc(33.333%-8px)]": itemsView === 'grid' && isSidebarOpen,
-                      // Large screens - 4 columns when sidebar is closed
-                      "lg:w-[calc(25%-9px)]": itemsView === 'grid' && !isSidebarOpen,
-                      // Extra large screens - maintain column layout based on sidebar
-                      "xl:w-[calc(33.333%-12px)]": itemsView === 'grid' && isSidebarOpen,
-                      "xl:w-[calc(25%-12px)]": itemsView === 'grid' && !isSidebarOpen,
-                      // List view
-                      "p-0 w-full mb-4": itemsView === 'list'
-                    }
-                  )}
-                  style={{ background: itemsView === 'grid' ? "var(--card-bg-color)" : "transparent" }}
-               >
-                  {itemsView === 'grid' ? (
-                     // GRID VIEW
-                     <>
-                        {/* Video Thumbnail with Duration - Clickable */}
-                        <a 
-                           href={video.youtubeUrl} 
-                           target="_blank" 
-                           rel="noopener noreferrer"
-                           className="block relative p-3 w-108 h-61 rounded-t-4xl"
-                        >
-                           <Image
-                              src={getYouTubeThumbnail(video.videoId)}
-                              alt={video.title}
-                              fill
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                              style={{ objectFit: 'cover' }}
-                              className="rounded-t-2xl"
-                              unoptimized
-                              onError={(e) => {
-                                 const imgElement = e.currentTarget as HTMLImageElement;
-                                 const videoId = video.videoId;
-                                 imgElement.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-                              }}
-                           />
-                           {/* Duration Badge */}
-                           <div className="absolute bottom-2 right-2 bg-[#252525] bg-opacity-70 text-foreground px-1 py-0.5 text-xs rounded">
-                              {video.duration}
-                           </div>
-                           {/* Play Button Overlay */}
-                           {/* <div className="absolute  flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-20 rounded">
-                              <div className="w-16 h-16 bg-black bg-opacity-60 rounded-full flex items-center justify-center">
-                                 <div style={{ width: 0, height: 0, borderTop: '8px solid transparent', borderBottom: '8px solid transparent', borderLeft: '12px solid white', marginLeft: '2px' }}></div>
-                              </div>
-                           </div> */}
-                        </a>
-
-                        {/* Video Info */}
-                        <div className="flex items-start gap-2">
-                           <div className="flex-1">
-                              {/* Video Title - Clickable */}
-                              <a 
-                                 href={video.youtubeUrl} 
-                                 target="_blank" 
-                                 rel="noopener noreferrer"
-                                 className="block"
-                              >
-                                 <h3
-                                    className="font-medium py-2  text-foreground text-normal hover:text-blue-500 transition-colors"
-                                 >
-                                    {video.title}
-                                 </h3>
-                              </a>
-                              
-                              {/* Channel Name and Stats */}
-                              <div className="flex items-center text-xs gap-1" style={{ color: "var(--card-meta-text)" }}>
-                                 <span className="opacity-70">{video.views} views</span>
-                                 <span className="opacity-70">.</span>
-                                 <span className="opacity-70">{video.postedTime}</span>
-                              </div>
-                           </div>
-                        </div>
-                     </>
-                  ) : (
-                     // LIST VIEW
-                     <div className="flex w-full rounded-xl bg-[#252525] p-3 mx-auto max-w-full">
-                        {/* Left Side - Thumbnail */}
-                        <div className="relative w-[200px] h-[110px] mr-4 flex-shrink-0">
-                           <a 
-                              href={video.youtubeUrl} 
-                              target="_blank" 
+         )}>
+            <div className={classNames(
+               "flex flex-wrap pt-4 w-full transition-all duration-300 ",
+               {
+                  "gap-3 md:gap-4 lg:gap-4": itemsView === 'grid',
+                  "flex-col space-y-4": itemsView !== 'grid'
+               }
+            )}>
+               {videosData.map((video) => (
+                  <div
+                     key={video.id}
+                     className={classNames(
+                        "overflow-hidden rounded-3xl transition-all duration-300", // common classes
+                        {
+                           // Grid view responsive classes
+                           "p-2.5 w-full": itemsView === 'grid',
+                           // Small screens - 2 columns regardless of sidebar
+                           "sm:w-[calc(50%-6px)]": itemsView === 'grid',
+                           // Medium screens - 2 columns regardless of sidebar
+                           "md:w-[calc(50%-8px)]": itemsView === 'grid',
+                           // Large screens - 3 columns when sidebar is open
+                           "lg:w-[calc(33.333%-8px)]": itemsView === 'grid' && isSidebarOpen,
+                           // Large screens - 4 columns when sidebar is closed
+                           "lg:w-[calc(25%-9px)]": itemsView === 'grid' && !isSidebarOpen,
+                           // Extra large screens - maintain column layout based on sidebar
+                           "xl:w-[calc(33.333%-12px)]": itemsView === 'grid' && isSidebarOpen,
+                           "xl:w-[calc(25%-12px)]": itemsView === 'grid' && !isSidebarOpen,
+                           // List view
+                           "p-0 w-full mb-4": itemsView === 'list'
+                        }
+                     )}
+                     style={{ background: itemsView === 'grid' ? "var(--card-bg-color)" : "transparent" }}
+                  >
+                     {itemsView === 'grid' ? (
+                        // GRID VIEW
+                        <>
+                           {/* Video Thumbnail with Duration - Clickable */}
+                           <a
+                              href={video.youtubeUrl}
+                              target="_blank"
                               rel="noopener noreferrer"
-                              className="block relative w-full h-full"
+                              className="block relative p-3 w-108 h-61 rounded-t-4xl"
                            >
                               <Image
                                  src={getYouTubeThumbnail(video.videoId)}
                                  alt={video.title}
                                  fill
-                                 sizes="220px"
+                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                                  style={{ objectFit: 'cover' }}
-                                 className="rounded-lg"
+                                 className="rounded-t-2xl"
                                  unoptimized
                                  onError={(e) => {
                                     const imgElement = e.currentTarget as HTMLImageElement;
@@ -320,69 +257,132 @@ export default function Videos() {
                                  }}
                               />
                               {/* Duration Badge */}
-                              <div className="absolute bottom-1 right-1 bg-[#252525] bg-opacity-70 text-foreground px-1 py-0.5 text-xs rounded">
+                              <div className="absolute bottom-2 right-2 bg-[#252525] bg-opacity-70 text-foreground px-1 py-0.5 text-xs rounded">
                                  {video.duration}
                               </div>
+                              {/* Play Button Overlay */}
+                              {/* <div className="absolute  flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-20 rounded">
+                              <div className="w-16 h-16 bg-black bg-opacity-60 rounded-full flex items-center justify-center">
+                                 <div style={{ width: 0, height: 0, borderTop: '8px solid transparent', borderBottom: '8px solid transparent', borderLeft: '12px solid white', marginLeft: '2px' }}></div>
+                              </div>
+                           </div> */}
                            </a>
-                        </div>
 
-                        {/* Right Side - Content */}
-                        <div className="flex flex-col flex-1 justify-between">
-                           {/* Top Section - Title */}
-                           <div className="flex justify-between">
-                            <div>
-                                
-                              <a 
-                                 href={video.youtubeUrl} 
-                                 target="_blank" 
-                                 rel="noopener noreferrer"
-                              >
-                                 <h3 className="font-medium text-foreground text-xl">
-                                    {video.title}
-                                 </h3>
+                           {/* Video Info */}
+                           <div className="flex items-start gap-2">
+                              <div className="flex-1">
+                                 {/* Video Title - Clickable */}
+                                 <a
+                                    href={video.youtubeUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                 >
+                                    <h3
+                                       className="font-medium py-2  text-foreground text-normal hover:text-blue-500 transition-colors"
+                                    >
+                                       {video.title}
+                                    </h3>
+                                 </a>
 
-                              </a>
-                            </div>
-                              <div className="text-sm">
-                                 {video.date}
+                                 {/* Channel Name and Stats */}
+                                 <div className="flex items-center text-xs gap-1" style={{ color: "var(--card-meta-text)" }}>
+                                    <span className="opacity-70">{video.views} views</span>
+                                    <span className="opacity-70">.</span>
+                                    <span className="opacity-70">{video.postedTime}</span>
+                                 </div>
+                              </div>
                            </div>
+                        </>
+                     ) : (
+                        // LIST VIEW
+                        <div className="flex w-full rounded-xl bg-card-bg-color p-3 mx-auto max-w-full">
+                           {/* Left Side - Thumbnail */}
+                           <div className="relative w-[200px] h-[110px] mr-4 flex-shrink-0">
+                              <a
+                                 href={video.youtubeUrl}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className="block relative w-full h-full"
+                              >
+                                 <Image
+                                    src={getYouTubeThumbnail(video.videoId)}
+                                    alt={video.title}
+                                    fill
+                                    sizes="220px"
+                                    style={{ objectFit: 'cover' }}
+                                    className="rounded-lg"
+                                    unoptimized
+                                    onError={(e) => {
+                                       const imgElement = e.currentTarget as HTMLImageElement;
+                                       const videoId = video.videoId;
+                                       imgElement.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+                                    }}
+                                 />
+                                 {/* Duration Badge */}
+                                 <div className="absolute bottom-1 right-1 bg-[#252525] bg-opacity-70 text-foreground px-1 py-0.5 text-xs rounded">
+                                    {video.duration}
+                                 </div>
+                              </a>
+                           </div>
+
+                           {/* Right Side - Content */}
+                           <div className="flex flex-col flex-1 justify-between">
+                              {/* Top Section - Title */}
+                              <div className="flex justify-between">
+                                 <div>
+
+                                    <a
+                                       href={video.youtubeUrl}
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                    >
+                                       <h3 className="font-medium text-foreground text-xl">
+                                          {video.title}
+                                       </h3>
+
+                                    </a>
+                                 </div>
+                                 <div className="text-sm">
+                                    {video.date}
+                                 </div>
                               </div>
                               <p className="text-gray-300 text-sm">
                                  {video.description}
                               </p>
-                           
-                           {/* Bottom Section - Channel + Stats */}
-                           <div className="flex items-center">
+
+                              {/* Bottom Section - Channel + Stats */}
                               <div className="flex items-center">
-                                 {/* <div className="flex items-center mr-3 bg-red-600 px-2 py-0.5 rounded">
+                                 <div className="flex items-center">
+                                    {/* <div className="flex items-center mr-3 bg-red-600 px-2 py-0.5 rounded">
                                     <span className="text-foreground text-xs">{video.source}</span>
                                     
                                  </div> */}
-                                 <div className="flex items-center text-xs text-gray-300">
-                                    <span>{video.views} views</span>
-                                    <span className="mx-1">•</span>
-                                    <span>{video.postedTime}</span>
+                                    <div className="flex items-center text-xs text-gray-300">
+                                       <span>{video.views} views</span>
+                                       <span className="mx-1">•</span>
+                                       <span>{video.postedTime}</span>
+                                    </div>
                                  </div>
+                                 <div className="ml-auto text-gray-300 text-xs">
+                                    {/* {video.date} */}
+                                 </div>
+
                               </div>
-                              <div className="ml-auto text-gray-300 text-xs">
-                                 {/* {video.date} */}
-                              </div>
-                              
-                           </div>
-                     <div className="mt-2">
-                            <div className="inline items-center px-2 pb-1 rounded-full border-1 border-foreground">
+                              <div className="mt-2">
+                                 <div className="inline items-center px-2 pb-1 rounded-full border-1 border-foreground">
                                     <span className="text-foreground text-xs">{video.source}</span>
-                                    
+
                                  </div>
-                        </div>  
+                              </div>
+                           </div>
+
                         </div>
-                     
-                     </div>
-                  )}
-               </div>
-            ))}
+                     )}
+                  </div>
+               ))}
+            </div>
          </div>
       </div>
-       </div>
    );
 }

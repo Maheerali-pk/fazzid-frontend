@@ -8,14 +8,14 @@ import classNames from 'classnames'
 
 export default function Header() {
   const [state, dispatch] = useGlobalContext()
-  const { itemsView, isSidebarOpen } = state
+  const { itemsView, sidebarStatus } = state
 
   const handleViewChange = (view: 'grid' | 'list') => {
     dispatch({ setState: { itemsView: view } })
   }
 
   const toggleSidebar = () => {
-    dispatch({ setState: { isSidebarOpen: !isSidebarOpen } })
+    dispatch({ setState: { sidebarStatus: sidebarStatus === "closed" ? "semi-opened" : "closed" } })
   }
 
   return (
@@ -41,7 +41,7 @@ export default function Header() {
             </button>
             <button
               onClick={toggleSidebar}
-              className={classNames("transition-opacity cursor-pointer hover:text-primary", { "text-primary": !isSidebarOpen })}
+              className={classNames("transition-opacity cursor-pointer hover:text-primary", { "text-primary": sidebarStatus === "closed" })}
             >
               {toggleSidebarIcon}
             </button>
