@@ -6,6 +6,7 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
 import { truncateText } from "@/helpers/utils";
 import { allNewsItems } from "@/helpers/data";
+import { webIcon } from "@/helpers/icons";
 
 export default function NewsCards() {
    const [state] = useGlobalContext()
@@ -47,18 +48,12 @@ export default function NewsCards() {
                            className="text-sm flex items-center font-sf gap-1 font-normal"
                            style={{ color: "var(--card-meta-text)" }}
                         >
-                           <span>
-                              <Image
-                                 className="w-3 h-3"
-                                 src="/webIcon.svg"
-                                 width={0}
-                                 height={0}
-                                 alt="web"
-                              />
+                           <span className="text-card-meta-text">
+                              {webIcon}
                            </span>{" "}
                            {news.source + " > "} {news.categories.join(" > ")}
                         </div>
-                        <div className="text-white opacity-70 text-xs font-sf">
+                        <div className="text-card-date-text opacity-70 text-xs font-sf">
                            {news.date}
                         </div>
                      </div>

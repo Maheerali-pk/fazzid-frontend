@@ -66,10 +66,10 @@
    --inner-background: #272a2c;
    --foreground: #ededed;
    --secondary: #1f2937;
-   --card-meta-text: #ffffff;
-   --card-date-text: #ffffff;
+   --card-meta-text: #727676;
+   --card-date-text: #727676;
    --card-title-text: #1366e3;
-   --card-description-text: #ffffff;
+   --card-description-text: #black;
    --card-bg-color: #48484899;
    --color-primary: #00aaff;
 }
@@ -85,6 +85,18 @@
    --card-title-text: #1366e3;
    --card-description-text: #ffffff;
    --card-bg-color: #48484899;
+   --color-primary: #00aaff;
+}
+[data-theme="light"] {
+   --background: #ffffff;
+   --inner-background: #f5f5f5;
+   --foreground: black;
+   --secondary: #f5f5f5;
+   --card-meta-text: #727676;
+   --card-date-text: #727676;
+   --card-title-text: #000000;
+   --card-description-text: #000000;
+   --card-bg-color: #dceaff99;
    --color-primary: #00aaff;
 }
 

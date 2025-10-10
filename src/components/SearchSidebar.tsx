@@ -8,6 +8,7 @@ import { listIcon, plusIcon, spreadIcon, userIcon, micIcon, searchIcon, worldIco
 import Tabs, { TabOption } from './Tabs'
 import { countries, IState, states } from '@/helpers/data'
 import CountryItem from './CountryItem'
+import ThemeDropdown from './ThemeDropdown'
 
 
 
@@ -70,9 +71,7 @@ export default function SearchSidebar() {
 						className={classNames("flex cursor-pointer items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full hover:text-primary", { "text-primary": sidebarStatus === "full" })}>
 						{toggleSidebarIcon}
 					</div>
-					<div className="flex items-center gap-2 p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary">
-						{userIcon}
-					</div>
+					<ThemeDropdown />
 				</div>
 
 				<div className='bg-card-bg-color p-4 rounded-4xl mb-4'>
@@ -149,7 +148,7 @@ export default function SearchSidebar() {
 											<span className="text-foreground">Countries</span>
 											<div className='p-2 bg-card-bg-color rounded-full'>
 												<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform ${countryDropdownOpen ? 'rotate-180' : ''}`}>
-													<path d="M6 9L12 15L18 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+													<path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 												</svg>
 											</div>
 										</div>
@@ -186,7 +185,7 @@ export default function SearchSidebar() {
 											<span className="text-foreground">United States</span>
 											<div className='p-2 bg-card-bg-color rounded-full'>
 												<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={`transition-transform ${statesDropdownOpen ? 'rotate-180' : ''}`}>
-													<path d="M6 9L12 15L18 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+													<path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 												</svg>
 											</div>
 										</div>
@@ -265,7 +264,7 @@ export default function SearchSidebar() {
 								</div>
 								<div className="grid grid-cols-2 gap-4">
 									{[
-										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344'},
+										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
 										{ name: 'Al Jazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
 										{ name: 'Fox News', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
 										{ name: 'BBC News', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
