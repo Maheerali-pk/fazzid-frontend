@@ -62,13 +62,25 @@ export default function SearchSidebar() {
 	// Sample data for UI display
 
 	const contentTypes = [
-		{ name: "Pages", icon: layers, count: 5250 },
-		{ name: "Images", icon: images, count: 33 },
-		{ name: "Headlines", icon: headlines, count: 421 },
-		{ name: "Images", icon: images, count: 33 },
-		{ name: "Videos", icon: videos, count: 431 },
-		{ name: "Sites", icon: sites, count: 621 },
-	];
+		{ name: 'Pages', icon: layers, count: 5250 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Headlines', icon: headlines, count: 421 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Videos', icon: videos, count: 431 },
+		{ name: 'Sites', icon: sites, count: 621 },
+		{ name: 'Pages', icon: layers, count: 5250 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Headlines', icon: headlines, count: 421 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Videos', icon: videos, count: 431 },
+		{ name: 'Sites', icon: sites, count: 621 },
+		{ name: 'Pages', icon: layers, count: 5250 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Headlines', icon: headlines, count: 421 },
+		{ name: 'Images', icon: images, count: 33 },
+		{ name: 'Videos', icon: videos, count: 431 },
+		{ name: 'Sites', icon: sites, count: 621 }
+	]
 
 	const handleAddCountry = () => {
 		// Functionality to add a country
@@ -314,7 +326,7 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className="flex gap-6 space-between">
+												<div className="flex gap-7 space-between overflow-scroll space-between no-scrollbar">
 													{contentTypes.map((type, i) => (
 														<div
 															key={type.name + i}
@@ -352,48 +364,12 @@ export default function SearchSidebar() {
 								</div>
 								<div className="grid grid-cols-2 gap-4 cursor-pointer">
 									{[
-										{
-											name: "CNN",
-											logo: "/images/websites/cnn.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "Al Jazeera",
-											logo: "/images/websites/aljazera.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "Fox News",
-											logo: "/images/websites/foxnews.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "BBC News",
-											logo: "/images/websites/bbc.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "Geo News",
-											logo: "/images/websites/geo.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "CBS News",
-											logo: "/images/websites/cbs.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
+										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Fox', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'BBC', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'Geo', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
+										{ name: 'CBS', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
 									].map((site, index) => (
 										<div
 											key={index}
