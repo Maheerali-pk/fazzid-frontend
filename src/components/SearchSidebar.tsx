@@ -63,10 +63,10 @@ export default function SearchSidebar() {
 	const selectedCountry = countries.find((country) => country.id === state.selectedCountryId)
 	const statesList: IState[] = selectedCountry ? states.filter((state) => state.countryId === selectedCountry.id) : []
 	return (
-		<div className={classNames("rounded-[2rem] h-full bg-inner-background flex flex-col", {
+		<div className={classNames("rounded-[2rem] h-full bg-inner-background transition-all duration-300 ease-in flex flex-col", {
 			"min-w-[0px] w-0 overflow-hidden": sidebarStatus === "closed",
 			"w-[600px] min-w-[600px]": sidebarStatus === "semi-opened",
-			"w-screen": sidebarStatus === "full"
+			"w-screen float-end": sidebarStatus === "full"
 		})}>
 
 			<div className="px-4 py-2.5 flex flex-col h-full overflow-auto">

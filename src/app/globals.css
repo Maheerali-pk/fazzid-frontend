@@ -103,7 +103,9 @@
       system-ui, sans-serif;
    --text-22px: 1.375rem;
 }
-
+* {
+   box-sizing: border-box !important;
+}
 html,
 body {
    height: 100vh;
