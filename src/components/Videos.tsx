@@ -54,22 +54,23 @@ export default function Videos() {
                </div>
             ) : (
                <div className={classNames(
-                  "grid grid-cols-3 w-full pt-4 gap-4 transition-all duration-300 ",
+                  "grid w-full pt-4 gap-4 transition-all duration-300 ",
                   {
-                     " grid-cols-4": itemsView === 'grid' && sidebarStatus === "closed",
-                     "flex-col space-y-4": itemsView !== 'grid'
+                     "grid-cols-4": itemsView === 'grid' && sidebarStatus === "closed",
+                     "grid-cols-3": itemsView === 'grid' && sidebarStatus === "semi-opened",
+                     "grid-cols-1 space-y-4": itemsView === "list"
                   }
                )}>
                   {filteredVideos.map((video) => (
                      <div
                         key={video.id}
                         className={classNames(
-                           "overflow-hidden rounded-3xl transition-all duration-300 w-full", // common classes
+                           "overflow-hidden flex flex-col rounded-3xl transition-all duration-300 w-full", // common classes
                            {
                               // Grid view responsive classes
                               "p-2.5 w-full": itemsView === 'grid',
-                              "p-0 w-full mb-4": itemsView === 'list'
-                           }
+                              "p-0 w-full mb-4 flex-col": itemsView === 'list'
+                           }!
                         )}
                         style={{ background: itemsView === 'grid' ? "var(--card-bg-color)" : "transparent" }}
                      >
@@ -137,7 +138,7 @@ export default function Videos() {
                            </>
                         ) : (
                            // LIST VIEW
-                           <div className="flex w-full rounded-xl bg-card-bg-color p-3 mx-auto max-w-full">
+                           <div className="flex w-full  rounded-xl bg-card-bg-color p-3 mx-auto max-w-full">
                               {/* Left Side - Thumbnail */}
                               <div className="relative w-[200px] h-[110px] mr-4 flex-shrink-0">
                                  <a
@@ -188,7 +189,7 @@ export default function Videos() {
                                        {video.date}
                                     </div>
                                  </div>
-                                 <p className="text-gray-300 text-sm">
+                                 <p className="text-card-description-text text-sm">
                                     {video.description}
                                  </p>
 
@@ -199,7 +200,7 @@ export default function Videos() {
                                     <span className="text-foreground text-xs">{video.source}</span>
                                     
                                  </div> */}
-                                       <div className="flex items-center text-xs text-gray-300">
+                                       <div className="flex items-center text-xs text-card-date-text">
                                           <span>{video.views} views</span>
                                           <span className="mx-1">•</span>
                                           <span>{video.postedTime}</span>

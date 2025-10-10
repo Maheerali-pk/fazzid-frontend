@@ -19,9 +19,9 @@ export default function page() {
             // "gap-0": sidebarStatus === "full",
          })}
       >
-         <div className={classNames("h-full flex w-full overflow-auto flex-col gap-4 rounded-4xl p-2.5 bg-inner-background", {
-            "hidden": sidebarStatus === "full",
-            "w-full": sidebarStatus === "closed",
+         <div className={classNames("h-full flex  overflow-auto flex-col gap-4 rounded-4xl  bg-inner-background transition-all duration-300 ease-in", {
+            "w-0 overflow-hidden p-0": sidebarStatus === "full",
+            "w-full p-2.5": sidebarStatus === "closed" || sidebarStatus === "semi-opened",
          })}>
             <Header />
             <div className="w-full max-w-[2500px] overflow-auto">
