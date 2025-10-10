@@ -8,14 +8,7 @@ import { listIcon, plusIcon, spreadIcon, userIcon, micIcon, searchIcon, worldIco
 import Tabs, { TabOption } from './Tabs'
 import { countries, IState, states } from '@/helpers/data'
 import CountryItem from './CountryItem'
-export interface ICountry {
-	name: string;
-	flag?: string;
-	count: number;
-	id: string;
-	isIcon?: boolean;
-	icon?: React.ReactNode;
-}
+
 
 
 export default function SearchSidebar() {

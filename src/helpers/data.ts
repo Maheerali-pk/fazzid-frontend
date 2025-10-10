@@ -1,4 +1,3 @@
-import { ICountry } from "@/components/SearchSidebar";
 import { worldIcon } from "./icons";
 import { INewsItem } from "@/contexts/GlobalContext";
 export interface IState {
@@ -9,6 +8,14 @@ export interface IState {
    isIcon?: boolean;
    icon?: React.ReactNode;
    countryId: string;
+}
+export interface ICountry {
+   name: string;
+   flag?: string;
+   count: number;
+   id: string;
+   isIcon?: boolean;
+   icon?: React.ReactNode;
 }
 export const countries: ICountry[] = [
    {
