@@ -1,21 +1,36 @@
 'use client'
 
 import React, { useState } from 'react'
-import { useGlobalContext } from '@/contexts/GlobalContext'
+import { DiveType, SearchType, useGlobalContext } from '@/contexts/GlobalContext'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { listIcon, plusIcon, spreadIcon, userIcon, micIcon, searchIcon, worldIcon, layers, images, headlines, videos, sites, toggleSidebarIcon, trippleUpArrows, bookIcon, cameraIcon } from '@/helpers/icons'
+import Tabs, { TabOption } from './Tabs'
 
 export default function SearchSidebar() {
-	const [state] = useGlobalContext()
-	const { isSidebarOpen } = state
+	const [state, dispatch] = useGlobalContext()
+	const { isSidebarOpen, searchType } = state
 	const [activeTab, setActiveTab] = useState('Categories')
 	const [selectedCountries, setSelectedCountries] = useState(['India', 'Pakistan'])
 	const [countryDropdownOpen, setCountryDropdownOpen] = useState(true)
 	const [statesDropdownOpen, setStatesDropdownOpen] = useState(true)
 
-	// Tabs
-	const tabs = ['Categories', 'Website', 'Channel', 'Keywords']
+
+	// Main Tabs options
+	const tabOptions: TabOption<SearchType>[] = [
+		{ value: 'categories', label: 'Categories' },
+		{ value: 'website', label: 'Website' },
+		{ value: 'channel', label: 'Channel' },
+		{ value: 'keywords', label: 'Keywords' }
+	]
+
+	// Dive Deeper tabs (small size example)
+
+
+	const diveModeOptions: TabOption<DiveType>[] = [
+		{ value: 'dive-deeper', label: 'Dive Deeper' },
+		{ value: 'diving-deeper', label: 'Delving Deeper' }
+	]
 
 	// Sample data for UI display
 	const states = [
@@ -39,16 +54,6 @@ export default function SearchSidebar() {
 	const handleAddCountry = () => {
 		// Functionality to add a country
 		console.log('Add country')
-	}
-
-	const handleDiveDeeper = () => {
-		// Dive deeper functionality
-		console.log('Dive deeper')
-	}
-
-	const handleDelvingDeeper = () => {
-		// Delving deeper functionality
-		console.log('Delving deeper')
 	}
 
 	return (
@@ -82,23 +87,14 @@ export default function SearchSidebar() {
 							</div>
 						</div>
 
-						{/* Dive Deeper / Delving Deeper */}
-						<div className="flex mb-4">
-							<div className="rounded-full flex overflow-hidden p-1  bg-[#0D99FF33]">
-								<button
-									onClick={handleDiveDeeper}
-									className="bg-[#0D99FF] text-foreground font-medium text-sm rounded-full px-5 py-4"
-								>
-									Dive Deeper
-								</button>
-								<button
-									onClick={handleDelvingDeeper}
-									className="bg-transparent text-foreground px-3 py-3 font-medium text-sm"
-								>
-									Delving Deeper
-								</button>
-							</div>
-						</div>
+						{/* Dive Deeper / Delving Deeper - Small Tabs Example */}
+						<Tabs
+							options={diveModeOptions}
+							activeTab={state.diveType}
+							onTabChange={(value) => dispatch({ setState: { diveType: value as DiveType } })}
+							size="large"
+							className="mb-4"
+						/>
 
 						{/* Search Input */}
 						<div className="relative mb-4 items-center ">
@@ -126,25 +122,18 @@ export default function SearchSidebar() {
 
 					<div className='bg-card-bg-color p-4 rounded-4xl mb-4'>
 						{/* Tabs */}
-						<div className="flex gap-2 mb-4 overflow-x-auto">
-							<div className='py-2 bg-[#0D99FF33] rounded-full px-2.5'>
-								{tabs.map((tab) => (
-									<button
-										key={tab}
-										onClick={() => setActiveTab(tab)}
-										className={`px-4 py-2 rounded-full whitespace-nowrap text-sm ${activeTab === tab ? 'bg-[#0D99FF] text-foreground font-medium' : 'bg-transparent text-foreground'
-											}`}
-									>
-										{tab}
-									</button>
-								))}
-							</div>
-						</div>
+						<Tabs
+							options={tabOptions}
+							activeTab={state.searchType}
+							onTabChange={(value) => dispatch({ setState: { searchType: value as SearchType } })}
+							size="small"
+							className="mb-4"
+						/>
 
 						{/* Tab Content */}
 						<div className="flex flex-col">
 							{/* Categories Tab Content */}
-							{activeTab === 'Categories' && (
+							{state.searchType === 'categories' && (
 								<>
 									{/* Countries Section */}
 									<div className='bg-inner-background p-7.5 rounded-4xl'>
@@ -232,7 +221,7 @@ export default function SearchSidebar() {
 							)}
 
 							{/* Website Tab Content */}
-							{activeTab === 'Website' && (
+							{state.searchType === 'website' && (
 								<div className='bg-inner-background p-7.5 rounded-4xl'>
 									<div className="flex justify-between items-center mb-4">
 										<span className="text-foreground font-medium">Countries</span>
@@ -275,7 +264,7 @@ export default function SearchSidebar() {
 							)}
 
 							{/* Channel Tab Content */}
-							{activeTab === 'Channel' && (
+							{state.searchType === 'channel' && (
 								<div className='bg-inner-background p-7.5 rounded-4xl'>
 									<div className="flex justify-between items-center mb-4">
 										<span className="text-foreground font-medium">News Channels</span>
@@ -303,7 +292,7 @@ export default function SearchSidebar() {
 							)}
 
 							{/* Keywords Tab Content */}
-							{activeTab === 'Keywords' && (
+							{state.searchType === 'keywords' && (
 								<div className='bg-inner-background p-7.5 rounded-4xl'>
 									<div className="flex justify-between items-center mb-4">
 										<span className="text-foreground font-medium">Trending Keywords</span>

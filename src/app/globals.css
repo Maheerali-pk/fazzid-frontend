@@ -89,7 +89,7 @@
 }
 
 @theme inline {
-   --color-primary: #1366e3;
+   --color-primary: #0d99ff;
    --color-background: var(--background);
    --color-inner-background: var(--inner-background);
    --color-foreground: var(--foreground);
@@ -124,6 +124,37 @@ body {
 [data-theme="glass"] body {
    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
    backdrop-filter: blur(10px);
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+   width: 12px;
+   height: 12px;
+}
+
+::-webkit-scrollbar-track {
+   background: #1a1a1a;
+   border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+   background: #48484899;
+   border-radius: 10px;
+   border: 2px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: #5a5a5a;
+}
+
+::-webkit-scrollbar-thumb:active {
+   background: #6a6a6a;
+}
+
+/* Firefox */
+* {
+   scrollbar-width: thin;
+   scrollbar-color: #48484899 #1a1a1a;
 }
 
 /* Hide scrollbar but allow scrolling */

@@ -185,7 +185,7 @@ export default function NewsCards() {
                      "mb-2": itemsView === 'list'
                   })}>
                      <div
-                        className="opacity-70 text-sm flex items-center font-sf gap-1 font-normal"
+                        className="text-sm flex items-center font-sf gap-1 font-normal"
                         style={{ color: "var(--card-meta-text)" }}
                      >
                         <span>

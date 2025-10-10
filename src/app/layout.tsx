@@ -33,11 +33,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={` p-2.5 h-full flex gap-4 ${inter.className} antialiased`}>
+        className={`h-full overflow-auto ${inter.className} antialiased`}>
         <ThemeProvider>
           <GlobalContextProvider>
             {children}
-            <SearchSidebar />
+
           </GlobalContextProvider>
         </ThemeProvider>
       </body>
