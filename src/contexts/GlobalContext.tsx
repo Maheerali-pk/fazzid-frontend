@@ -19,6 +19,7 @@ interface IGlobalState {
   searchType: SearchType;
   selectedCountryId?: string | null;
   searchKeyword: string;
+  channelsSelected: string[];
 }
 
 const initialState: IGlobalState = {
@@ -29,7 +30,9 @@ const initialState: IGlobalState = {
   searchKeyword: "",
 
   diveType: "dive-deeper",
-  searchType: "categories"
+  searchType: "categories",
+  channelsSelected: []
+
 }
 
 function setState(

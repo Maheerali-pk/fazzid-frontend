@@ -10,8 +10,6 @@ export interface IState {
    countryId: string;
 }
 
-
-
 export interface ICountry {
    name: string;
    flag?: string;
@@ -20,6 +18,30 @@ export interface ICountry {
    isIcon?: boolean;
    icon?: React.ReactNode;
 }
+
+export interface IVideoItem {
+   id: number;
+   source: string;
+   title: string;
+   description: string;
+   views: string;
+   postedTime: string;
+   date: string;
+   duration: string;
+   videoId: string;
+   youtubeUrl: string;
+   channelLogoUrl: string;
+}
+
+export interface IChannel {
+   id: string;
+   name: string;
+   logo: string;
+   rank: string;
+   visitors: string;
+   articles: string;
+}
+
 export const countries: ICountry[] = [
    {
       name: "All",
@@ -39,23 +61,8 @@ export const countries: ICountry[] = [
    { name: "Germany", flag: "/images/flags/Germany.svg", count: 400, id: "4" },
    { name: "UnitedKingdom", flag: "/images/flags/uk.svg", count: 720, id: "5" },
    { name: "Yemen", flag: "/images/flags/Yemen.svg", count: 720, id: "6" },
-   
 ];
 
-
-export interface IVideoItem {
-   id: number;
-   source: string;
-   title: string;
-   description: string;
-   views: string;
-   postedTime: string;
-   date: string;
-   duration: string;
-   videoId: string;
-   youtubeUrl: string;
-   channelLogoUrl: string;
-}
 export const allVideoItems: IVideoItem[] = [
    {
       id: 1,
@@ -210,6 +217,57 @@ export const allVideoItems: IVideoItem[] = [
       videoId: "9bZkp7q19f0",
       youtubeUrl: "https://www.youtube.com/watch?v=9bZkp7q19f0",
       channelLogoUrl: "/images/flags/us.svg",
+   },
+];
+
+export const allChannels: IChannel[] = [
+   {
+      id: "1",
+      name: "CNN",
+      logo: "/images/websites/cnn.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
+   },
+   {
+      id: "2",
+      name: "Al Jazeera",
+      logo: "/images/websites/aljazera.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
+   },
+   {
+      id: "3",
+      name: "Fox News",
+      logo: "/images/websites/foxnews.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
+   },
+   {
+      id: "4",
+      name: "BBC News",
+      logo: "/images/websites/bbc.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
+   },
+   {
+      id: "5",
+      name: "Geo News",
+      logo: "/images/websites/geo.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
+   },
+   {
+      id: "6",
+      name: "CBS News",
+      logo: "/images/websites/cbs.svg",
+      rank: "(1)",
+      visitors: "1432",
+      articles: "2344",
    },
 ];
 
