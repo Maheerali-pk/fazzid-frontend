@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ICountry } from "@/helpers/data";
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
+import { getFlagUrl } from "@/helpers/utils";
 
 interface CountryItemProps {
 	country: ICountry;
@@ -15,9 +16,11 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 		if (type === "state") return;
 		dispatch({ setState: { selectedCountryId: country.id } })
 	}
+	
+	// Use the flag URL from the country object (generated from flagsapi.com)
+	const flagSrc = country.flag;
+	
 	return (
-
-
 		<div key={country.name} className={classNames("flex flex-col items-center cursor-pointer")} onClick={handleOnClick}>
 			<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
 				{/* Handle both SVG icons and image flags */}
@@ -25,12 +28,13 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 					<div className="text-foreground">
 						{country.icon}
 					</div>
-				) : country.flag ? (
+				) : flagSrc ? (
 					<Image
-						src={country.flag}
+						src={flagSrc}
 						alt={`${country.name} flag`}
 						width={49}
 						height={49}
+						unoptimized // Add this for external images
 					/>
 				) : (
 					<p>no image</p>
