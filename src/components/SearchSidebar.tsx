@@ -35,10 +35,10 @@ import { getFlagUrl } from "@/helpers/utils";
 
 // Flag API information for display
 const flagApiInfo = {
-  countriesCount: countryData.length,
-  format: "https://flagsapi.com/:country_code/:style/:size.png",
-  styles: ["flat", "shiny", "square"],
-  sizes: [16, 24, 32, 48, 64]
+	countriesCount: countryData.length,
+	format: "https://flagsapi.com/:country_code/:style/:size.png",
+	styles: ["flat", "shiny", "square"],
+	sizes: [16, 24, 32, 48, 64]
 };
 
 export default function SearchSidebar() {
@@ -101,7 +101,7 @@ export default function SearchSidebar() {
 	const statesList: IState[] = selectedCountry
 		? states.filter((state) => state.countryId === selectedCountry.id)
 		: [];
-		
+
 	// Example showing how we're now using the Flags API for all 50 countries
 	const flagApiInfo = {
 		format: 'https://flagsapi.com/:country_code/:style/:size.png',
@@ -144,7 +144,7 @@ export default function SearchSidebar() {
 				}
 			)}
 		>
-			<div className="px-4 py-2.5 flex flex-col h-full overflow-auto">
+			<div className="px-4 py-2.5 flex flex-col h-full overflow-auto no-scrollbar">
 				{/* Top Action Icons */}
 				<div className="flex items-center justify-between mb-4">
 					<div
@@ -308,7 +308,7 @@ export default function SearchSidebar() {
 														</div>
 													</div>
 												)}
-												<div className={classNames("flex overflow-scroll no-scrollbar space-between gap-5", {"flex-wrap": sidebarStatus === "full"})}>
+												<div className={classNames("flex overflow-scroll no-scrollbar space-between gap-5", { "flex-wrap": sidebarStatus === "full" })}>
 													{renderCountryTabItems()}
 												</div>
 											</div>
@@ -351,7 +351,7 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className={classNames("flex gap-7 space-between overflow-scroll space-between no-scrollbar", {"flex-wrap": sidebarStatus === "full"})}>
+												<div className={classNames("flex gap-7 space-between overflow-scroll space-between no-scrollbar", { "flex-wrap": sidebarStatus === "full" })}>
 													{contentTypes.map((type, i) => (
 														<div
 															key={type.name + i}
@@ -387,7 +387,7 @@ export default function SearchSidebar() {
 										Countries
 									</span>
 								</div>
-								<div className={classNames("grid grid-cols-2 gap-4 cursor-pointer", {"grid-cols-4": sidebarStatus === "full"})}>
+								<div className={classNames("grid grid-cols-2 gap-4 cursor-pointer", { "grid-cols-4": sidebarStatus === "full" })}>
 									{[
 										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
 										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
@@ -442,7 +442,7 @@ export default function SearchSidebar() {
 										News Channels
 									</span>
 								</div>
-								<div className={classNames("grid grid-cols-2 gap-4", {"grid-cols-4": sidebarStatus === "full"})}>
+								<div className={classNames("grid grid-cols-2 gap-4", { "grid-cols-4": sidebarStatus === "full" })}>
 									{allChannels.map((channel, index) => (
 										<div
 											key={index}

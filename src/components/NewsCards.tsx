@@ -32,8 +32,8 @@ export default function NewsCards() {
             })}>
                {filteredNewsItems.map((news) => (
                   <div
-                     key={news.id}
-                     className={classNames(`rounded-4xl overflow-hidden p-4 h-full`, {
+                     key={news.id + news.title}
+                     className={classNames(`rounded-4xl overflow-hidden p-4 h-full w-full`, {
                         "p-4": itemsView === 'grid',
                         "p-2": itemsView === 'list'
                      })}
