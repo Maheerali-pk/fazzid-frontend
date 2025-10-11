@@ -28,9 +28,18 @@ import {
 	backIcon,
 } from "@/helpers/icons";
 import Tabs, { TabOption } from "./Tabs";
-import { allChannels, countries, IChannel, ICountry, IState, states } from "@/helpers/data";
+import { allChannels, countries, countryData, IChannel, ICountry, IState, states } from "@/helpers/data";
 import CountryItem from "./CountryItem";
 import ThemeDropdown from "./ThemeDropdown";
+import { getFlagUrl } from "@/helpers/utils";
+
+// Flag API information for display
+const flagApiInfo = {
+  countriesCount: countryData.length,
+  format: "https://flagsapi.com/:country_code/:style/:size.png",
+  styles: ["flat", "shiny", "square"],
+  sizes: [16, 24, 32, 48, 64]
+};
 
 export default function SearchSidebar() {
 	const [state, dispatch] = useGlobalContext();
@@ -92,6 +101,14 @@ export default function SearchSidebar() {
 	const statesList: IState[] = selectedCountry
 		? states.filter((state) => state.countryId === selectedCountry.id)
 		: [];
+		
+	// Example showing how we're now using the Flags API for all 50 countries
+	const flagApiInfo = {
+		format: 'https://flagsapi.com/:country_code/:style/:size.png',
+		countriesCount: countryData.length,
+		styles: ['flat', 'shiny', 'square'],
+		sizes: [16, 24, 32, 48, 64, 128]
+	};
 	const handleChannelSelection = (channel: IChannel) => {
 		const existingChannel = channelsSelected.find(channelId => channelId === channel.id);
 		if (existingChannel) {
@@ -151,7 +168,7 @@ export default function SearchSidebar() {
 
 				<div className="bg-card-bg-color p-4 rounded-4xl mb-4">
 					{/* Countries Pills */}
-					<div className="flex items-center gap-2 rounded-full p-2 mb-4 bg-inner-background">
+					<div className="flex  items-center gap-2 rounded-full p-2 mb-4 bg-inner-background">
 						{selectedCountries.map((country) => (
 							<div
 								key={country}
@@ -291,7 +308,7 @@ export default function SearchSidebar() {
 														</div>
 													</div>
 												)}
-												<div className="flex flex-wrap space-between gap-4">
+												<div className={classNames("flex overflow-scroll no-scrollbar space-between gap-5", {"flex-wrap": sidebarStatus === "full"})}>
 													{renderCountryTabItems()}
 												</div>
 											</div>
@@ -334,7 +351,7 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className="flex gap-7 space-between overflow-scroll space-between no-scrollbar">
+												<div className={classNames("flex gap-7 space-between overflow-scroll space-between no-scrollbar", {"flex-wrap": sidebarStatus === "full"})}>
 													{contentTypes.map((type, i) => (
 														<div
 															key={type.name + i}
