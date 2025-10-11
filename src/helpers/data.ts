@@ -47,56 +47,56 @@ export interface IChannel {
 
 // Country data with ISO codes and names for 50 countries
 export const countryData: { code: string; name: string }[] = [
-   { code: 'US', name: 'US' },
-   { code: 'GB', name: 'UK' },
-   { code: 'DE', name: 'Germany' },
-   { code: 'FR', name: 'France' },
-   { code: 'IT', name: 'Italy' },
-   { code: 'ES', name: 'Spain' },
-   { code: 'CA', name: 'Canada' },
-   { code: 'AU', name: 'Australia' },
-   { code: 'JP', name: 'Japan' },
-   { code: 'KR', name: 'Korea' },
-   { code: 'CN', name: 'China' },
-   { code: 'IN', name: 'India' },
-   { code: 'BR', name: 'Brazil' },
-   { code: 'MX', name: 'Mexico' },
-   { code: 'RU', name: 'Russia' },
-   { code: 'ZA', name: 'SA' },
-   { code: 'EG', name: 'Egypt' },
-   { code: 'NG', name: 'Nigeria' },
-   { code: 'AR', name: 'Argentina' },
-   { code: 'CO', name: 'Colombia' },
-   { code: 'PT', name: 'Portugal' },
-   { code: 'NL', name: 'Netherlands' },
-   { code: 'BE', name: 'Belgium' },
-   { code: 'SE', name: 'Sweden' },
-   { code: 'NO', name: 'Norway' },
-   { code: 'DK', name: 'Denmark' },
-   { code: 'FI', name: 'Finland' },
-   { code: 'PL', name: 'Poland' },
-   { code: 'AT', name: 'Austria' },
-   { code: 'CH', name: 'Switzerland' },
-   { code: 'GR', name: 'Greece' },
-   { code: 'TR', name: 'Turkey' },
-   { code: 'IL', name: 'Israel' },
-   { code: 'SA', name: 'SA' },
-   { code: 'AE', name: 'UAE' },
-   { code: 'TH', name: 'Thailand' },
-   { code: 'VN', name: 'Vietnam' },
-   { code: 'MY', name: 'Malaysia' },
-   { code: 'SG', name: 'Singapore' },
-   { code: 'ID', name: 'Indonesia' },
-   { code: 'PH', name: 'Philippines' },
-   { code: 'NZ', name: 'New Zealand' },
-   { code: 'IE', name: 'Ireland' },
-   { code: 'UA', name: 'Ukraine' },
-   { code: 'CZ', name: 'Czech' },
-   { code: 'RO', name: 'Romania' },
-   { code: 'HU', name: 'Hungary' },
-   { code: 'CL', name: 'Chile' },
-   { code: 'PE', name: 'Peru' },
-   { code: 'PK', name: 'Pakistan' },
+   { code: "US", name: "US" },
+   { code: "GB", name: "UK" },
+   { code: "DE", name: "Germany" },
+   { code: "FR", name: "France" },
+   { code: "IT", name: "Italy" },
+   { code: "ES", name: "Spain" },
+   { code: "CA", name: "Canada" },
+   { code: "AU", name: "Australia" },
+   { code: "JP", name: "Japan" },
+   { code: "KR", name: "Korea" },
+   { code: "CN", name: "China" },
+   { code: "IN", name: "India" },
+   { code: "BR", name: "Brazil" },
+   { code: "MX", name: "Mexico" },
+   { code: "RU", name: "Russia" },
+   { code: "ZA", name: "SA" },
+   { code: "EG", name: "Egypt" },
+   { code: "NG", name: "Nigeria" },
+   { code: "AR", name: "Argentina" },
+   { code: "CO", name: "Colombia" },
+   { code: "PT", name: "Portugal" },
+   { code: "NL", name: "Netherlands" },
+   { code: "BE", name: "Belgium" },
+   { code: "SE", name: "Sweden" },
+   { code: "NO", name: "Norway" },
+   { code: "DK", name: "Denmark" },
+   { code: "FI", name: "Finland" },
+   { code: "PL", name: "Poland" },
+   { code: "AT", name: "Austria" },
+   { code: "CH", name: "Switzerland" },
+   { code: "GR", name: "Greece" },
+   { code: "TR", name: "Turkey" },
+   { code: "IL", name: "Israel" },
+   { code: "SA", name: "SA" },
+   { code: "AE", name: "UAE" },
+   { code: "TH", name: "Thailand" },
+   { code: "VN", name: "Vietnam" },
+   { code: "MY", name: "Malaysia" },
+   { code: "SG", name: "Singapore" },
+   { code: "ID", name: "Indonesia" },
+   { code: "PH", name: "Philippines" },
+   { code: "NZ", name: "New Zealand" },
+   { code: "IE", name: "Ireland" },
+   { code: "UA", name: "Ukraine" },
+   { code: "CZ", name: "Czech" },
+   { code: "RO", name: "Romania" },
+   { code: "HU", name: "Hungary" },
+   { code: "CL", name: "Chile" },
+   { code: "PE", name: "Peru" },
+   { code: "PK", name: "Pakistan" },
 ];
 
 // Generate random count between min and max
@@ -116,15 +116,14 @@ export const countries: ICountry[] = [
    },
    ...countryData.map((country, index) => ({
       name: country.name,
-      flag: getFlagUrl(country.code, 'flat', 64),
+      flag: getFlagUrl(country.code, "flat", 64),
       count: getRandomCount(),
       id: (index + 1).toString(),
       countryCode: country.code,
-   }))
+   })),
 ];
 
 export const allVideoItems: IVideoItem[] = [
-   
    {
       id: 6,
       source: "CNN",
@@ -139,9 +138,7 @@ export const allVideoItems: IVideoItem[] = [
       youtubeUrl: "https://www.youtube.com/watch?v=y6120QOlsfU",
       channelLogoUrl: "/images/flags/us.svg",
    },
-   
-   
- 
+
    {
       id: 10,
       source: "FOX NEWS",
@@ -1136,7 +1133,6 @@ export const allVideoItems: IVideoItem[] = [
       youtubeUrl: "https://www.youtube.com/watch?v=1w7OgIMMRc4",
       channelLogoUrl: "/images/flags/us.svg",
    },
-   
 ];
 
 export const allChannels: IChannel[] = [
@@ -1194,12 +1190,12 @@ export const allChannels: IChannel[] = [
 const createSequentialIds = (items: any[]): any[] => {
    return items.map((item, index) => ({
       ...item,
-      id: index + 1
+      id: index + 1,
    }));
 };
 
 // Original news items array
-const originalNewsItems: INewsItem[] = [
+export const allNewsItems: INewsItem[] = [
    {
       id: 1,
       source: "www.techcrunch.com",
@@ -1700,7 +1696,7 @@ const originalNewsItems: INewsItem[] = [
          "First commercial fusion reactor achieves sustained net energy production, delivering clean power to regional electrical grid in historic engineering milestone.",
       imageUrl: "https://picsum.photos/seed/fusion50/400/300",
    },
-    {
+   {
       id: 1,
       source: "www.techcrunch.com",
       categories: ["technology", "ai"],
@@ -2200,7 +2196,7 @@ const originalNewsItems: INewsItem[] = [
          "First commercial fusion reactor achieves sustained net energy production, delivering clean power to regional electrical grid in historic engineering milestone.",
       imageUrl: "https://picsum.photos/seed/fusion50/400/300",
    },
-    {
+   {
       id: 1,
       source: "www.techcrunch.com",
       categories: ["technology", "ai"],
@@ -2700,7 +2696,7 @@ const originalNewsItems: INewsItem[] = [
          "First commercial fusion reactor achieves sustained net energy production, delivering clean power to regional electrical grid in historic engineering milestone.",
       imageUrl: "https://picsum.photos/seed/fusion50/400/300",
    },
-    {
+   {
       id: 1,
       source: "www.techcrunch.com",
       categories: ["technology", "ai"],
@@ -3204,61 +3200,61 @@ const originalNewsItems: INewsItem[] = [
 
 // US states data with abbreviations
 export const usStatesData = [
-   { name: 'Alabama', code: 'AL' },
-   { name: 'Alaska', code: 'AK' },
-   { name: 'Arizona', code: 'AZ' },
-   { name: 'Arkansas', code: 'AR' },
-   { name: 'California', code: 'CA' },
-   { name: 'Colorado', code: 'CO' },
-   { name: 'Connecticut', code: 'CT' },
-   { name: 'Delaware', code: 'DE' },
-   { name: 'Florida', code: 'FL' },
-   { name: 'Georgia', code: 'GA' },
-   { name: 'Hawaii', code: 'HI' },
-   { name: 'Idaho', code: 'ID' },
-   { name: 'Illinois', code: 'IL' },
-   { name: 'Indiana', code: 'IN' },
-   { name: 'Iowa', code: 'IA' },
-   { name: 'Kansas', code: 'KS' },
-   { name: 'Kentucky', code: 'KY' },
-   { name: 'Louisiana', code: 'LA' },
-   { name: 'Maine', code: 'ME' },
-   { name: 'Maryland', code: 'MD' },
-   { name: 'Massachusetts', code: 'MA' },
-   { name: 'Michigan', code: 'MI' },
-   { name: 'Minnesota', code: 'MN' },
-   { name: 'Mississippi', code: 'MS' },
-   { name: 'Missouri', code: 'MO' },
-   { name: 'Montana', code: 'MT' },
-   { name: 'Nebraska', code: 'NE' },
-   { name: 'Nevada', code: 'NV' },
-   { name: 'New Hampshire', code: 'NH' },
-   { name: 'New Jersey', code: 'NJ' },
-   { name: 'New Mexico', code: 'NM' },
-   { name: 'New York', code: 'NY' },
-   { name: 'North Carolina', code: 'NC' },
-   { name: 'North Dakota', code: 'ND' },
-   { name: 'Ohio', code: 'OH' },
-   { name: 'Oklahoma', code: 'OK' },
-   { name: 'Oregon', code: 'OR' },
-   { name: 'Pennsylvania', code: 'PA' },
-   { name: 'Rhode Island', code: 'RI' },
-   { name: 'South Carolina', code: 'SC' },
-   { name: 'South Dakota', code: 'SD' },
-   { name: 'Tennessee', code: 'TN' },
-   { name: 'Texas', code: 'TX' },
-   { name: 'Utah', code: 'UT' },
-   { name: 'Vermont', code: 'VT' },
-   { name: 'Virginia', code: 'VA' },
-   { name: 'Washington', code: 'WA' },
-   { name: 'West Virginia', code: 'WV' },
-   { name: 'Wisconsin', code: 'WI' },
-   { name: 'Wyoming', code: 'WY' }
+   { name: "Alabama", code: "AL" },
+   { name: "Alaska", code: "AK" },
+   { name: "Arizona", code: "AZ" },
+   { name: "Arkansas", code: "AR" },
+   { name: "California", code: "CA" },
+   { name: "Colorado", code: "CO" },
+   { name: "Connecticut", code: "CT" },
+   { name: "Delaware", code: "DE" },
+   { name: "Florida", code: "FL" },
+   { name: "Georgia", code: "GA" },
+   { name: "Hawaii", code: "HI" },
+   { name: "Idaho", code: "ID" },
+   { name: "Illinois", code: "IL" },
+   { name: "Indiana", code: "IN" },
+   { name: "Iowa", code: "IA" },
+   { name: "Kansas", code: "KS" },
+   { name: "Kentucky", code: "KY" },
+   { name: "Louisiana", code: "LA" },
+   { name: "Maine", code: "ME" },
+   { name: "Maryland", code: "MD" },
+   { name: "Massachusetts", code: "MA" },
+   { name: "Michigan", code: "MI" },
+   { name: "Minnesota", code: "MN" },
+   { name: "Mississippi", code: "MS" },
+   { name: "Missouri", code: "MO" },
+   { name: "Montana", code: "MT" },
+   { name: "Nebraska", code: "NE" },
+   { name: "Nevada", code: "NV" },
+   { name: "New Hampshire", code: "NH" },
+   { name: "New Jersey", code: "NJ" },
+   { name: "New Mexico", code: "NM" },
+   { name: "New York", code: "NY" },
+   { name: "North Carolina", code: "NC" },
+   { name: "North Dakota", code: "ND" },
+   { name: "Ohio", code: "OH" },
+   { name: "Oklahoma", code: "OK" },
+   { name: "Oregon", code: "OR" },
+   { name: "Pennsylvania", code: "PA" },
+   { name: "Rhode Island", code: "RI" },
+   { name: "South Carolina", code: "SC" },
+   { name: "South Dakota", code: "SD" },
+   { name: "Tennessee", code: "TN" },
+   { name: "Texas", code: "TX" },
+   { name: "Utah", code: "UT" },
+   { name: "Vermont", code: "VT" },
+   { name: "Virginia", code: "VA" },
+   { name: "Washington", code: "WA" },
+   { name: "West Virginia", code: "WV" },
+   { name: "Wisconsin", code: "WI" },
+   { name: "Wyoming", code: "WY" },
 ];
 
 // Find the US country ID from our countries array
-const usCountry = countries.find(country => country.countryCode === 'US');
-const usCountryId = usCountry ? usCountry.id : '1';
+const usCountry = countries.find((country) => country.countryCode === "US");
+const usCountryId = usCountry ? usCountry.id : "1";
 
 // Generate states array dynamically
 export const states: IState[] = usStatesData.map((state, index) => ({
