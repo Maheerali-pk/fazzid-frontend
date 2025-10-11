@@ -387,7 +387,7 @@ export default function SearchSidebar() {
 										Countries
 									</span>
 								</div>
-								<div className="grid grid-cols-2 gap-4 cursor-pointer">
+								<div className={classNames("grid grid-cols-2 gap-4 cursor-pointer", {"grid-cols-4": sidebarStatus === "full"})}>
 									{[
 										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
 										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
@@ -442,7 +442,7 @@ export default function SearchSidebar() {
 										News Channels
 									</span>
 								</div>
-								<div className="grid grid-cols-2 gap-4">
+								<div className={classNames("grid grid-cols-2 gap-4", {"grid-cols-4": sidebarStatus === "full"})}>
 									{allChannels.map((channel, index) => (
 										<div
 											key={index}
@@ -452,14 +452,14 @@ export default function SearchSidebar() {
 												handleChannelSelection(channel)
 											}
 										>
-											<div className="w-25 h-25 rounded-full flex flex-col items-center justify-center overflow-hidden">
-												<Image
+											<div className="w-25 h-25 flex flex-col items-center justify-center overflow-hidden">
+												<Image className="p-2 bg-inner-background rounded-2xl mb-1"
 													src={channel.logo}
 													alt={channel.name}
 													width={61}
 													height={61}
 												/>
-												{channel.name}
+												<span className="text-foreground font-bold">{channel.name}</span>
 											</div>
 											<div className="">
 												<div className="flex items-center gap-1">
