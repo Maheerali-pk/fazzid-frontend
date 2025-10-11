@@ -99,7 +99,7 @@ export default function Videos() {
                                     }}
                                  />
                                  {/* Duration Badge */}
-                                 <div className="absolute bottom-2 right-2 bg-[#252525] bg-opacity-70 text-foreground px-1 py-0.5 text-xs rounded">
+                                 <div className="absolute bottom-2 right-2 bg-[#252525] bg-opacity-70 text-white px-1 py-0.5 text-xs rounded">
                                     {video.duration}
                                  </div>
                                  {/* Play Button Overlay */}
