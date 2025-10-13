@@ -16,6 +16,8 @@ export interface TabsProps<T = string> {
 	onTabChange: (value: T) => void
 	size?: TabSize
 	className?: string
+	selectedTabClassName?: string
+	tabClassName?: string
 }
 
 export default function Tabs<T = string>({
@@ -23,12 +25,14 @@ export default function Tabs<T = string>({
 	activeTab,
 	onTabChange,
 	size = 'large',
-	className = ''
+	className = '',
+	selectedTabClassName = '',
+	tabClassName = ''
 }: TabsProps<T>) {
 	return (
-		<div className={classNames("flex overflow-x-auto", className)}>
+		<div className={classNames("flex overflow-x-auto")}>
 			<div className={classNames(
-				"bg-[#0D99FF33] rounded-full flex",
+				"bg-[#0D99FF33] rounded-full flex", className,
 				{
 
 					"p-1": size === 'large',
@@ -50,9 +54,9 @@ export default function Tabs<T = string>({
 								// Large size styles
 
 								// Active state
-								"bg-primary text-tabs-selected-foreground font-medium": activeTab === option.value,
+								[`bg-primary text-tabs-selected-foreground font-medium ${selectedTabClassName}`]: activeTab === option.value,
 
-								"bg-transparent text-tabs-unselected-foreground": activeTab !== option.value
+								[`bg-transparent text-tabs-unselected-foreground ${tabClassName}`]: activeTab !== option.value
 							}
 						)}
 					>

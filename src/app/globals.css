@@ -92,6 +92,9 @@
    --tabs-unselected-foreground: #ffffff;
    --main-tabs-bg-color: #48484899;
    --main-card-bg-color: #48484899;
+   --purple-light: #574264;
+   --purple-main: #c758ff;
+   --purple-input-bg-color: #3b3345;
 }
 [data-theme="light"] {
    --background: #ffffff;
@@ -110,9 +113,17 @@
    --tabs-unselected-foreground: #727676;
    --main-tabs-bg-color: #0d99ff33;
    --main-card-bg-color: white;
+
+   --purple-light: #dfd2fe;
+   --purple-main: #c758ffee;
+   --purple-input-bg-color: white;
 }
 
 @theme inline {
+   --color-purple-light: var(--purple-light);
+   --color-purple-main: var(--purple-main);
+   --color-purple-input-bg-color: var(--purple-input-bg-color);
+
    --color-main-tabs-bg-color: var(--main-tabs-bg-color);
    --color-tabs-selected-foreground: var(--tabs-selected-foreground);
    --color-tabs-unselected-foreground: var(--tabs-unselected-foreground);
@@ -136,6 +147,11 @@
 * {
    box-sizing: border-box !important;
 }
+
+input {
+   outline: none;
+}
+
 html,
 body {
    height: 100vh;

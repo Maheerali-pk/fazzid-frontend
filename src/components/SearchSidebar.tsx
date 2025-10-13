@@ -185,6 +185,9 @@ export default function SearchSidebar() {
 
 					{/* Dive Deeper / Delving Deeper - Small Tabs Example */}
 					<Tabs
+						className={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
+						selectedTabClassName={classNames("", { "bg-purple-main": state.diveType === "diving-deeper" })}
+						tabClassName={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
 						options={diveModeOptions}
 						activeTab={state.diveType}
 						onTabChange={(value) =>
@@ -204,7 +207,13 @@ export default function SearchSidebar() {
 							}
 							type="text"
 							placeholder="enter your keyword here"
-							className="w-full bg-card-bg-color-dark text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg"
+							className={classNames("w-full bg-card-bg-color-dark text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg",
+
+								{
+									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main": state.diveType === "diving-deeper",
+
+								}
+							)}
 						/>
 						<div className="absolute inset-y-0 right-0 flex items-center gap-2 mr-4">
 							<div className="flex items-center">
