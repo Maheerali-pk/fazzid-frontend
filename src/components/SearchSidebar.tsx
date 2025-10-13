@@ -157,7 +157,7 @@ export default function SearchSidebar() {
 							})
 						}
 						className={classNames(
-							"flex cursor-pointer items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full hover:text-primary",
+							"flex cursor-pointer text-icons items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full hover:text-primary",
 							{ "text-primary": sidebarStatus === "full" }
 						)}
 					>
@@ -166,19 +166,19 @@ export default function SearchSidebar() {
 					<ThemeDropdown />
 				</div>
 
-				<div className="bg-card-bg-color p-4 rounded-4xl mb-4">
+				<div className="bg-card-bg-color flex flex-col gap-4 p-4 rounded-4xl mb-4">
 					{/* Countries Pills */}
-					<div className="flex  items-center gap-2 rounded-full p-2 mb-4 bg-inner-background">
+					<div className={classNames("flex  items-center gap-2 rounded-full p-2 bg-card-bg-color-dark")}>
 						{selectedCountries.map((country) => (
 							<div
 								key={country}
-								className="text-foreground px-4 py-2.5 rounded-full bg-card-bg-color font-bold text-sm"
+								className="text-foreground px-4 py-2.5 rounded-full bg-main-tabs-bg-color font-bold text-sm"
 							>
 								{country}
 							</div>
 						))}
 
-						<div className="flex items-center gap-2 p-2.5 bg-card-bg-color rounded-full cursor-pointer">
+						<div className="flex items-center gap-2 p-2.5 bg-main-tabs-bg-color rounded-full cursor-pointer">
 							{plusIcon}
 						</div>
 					</div>
@@ -191,11 +191,10 @@ export default function SearchSidebar() {
 							dispatch({ setState: { diveType: value as DiveType } })
 						}
 						size="large"
-						className="mb-4"
 					/>
 
 					{/* Search Input */}
-					<div className="relative mb-4 items-center ">
+					<div className="relative mb-4 items-center bg-card-bg-color-dark rounded-4xl ">
 						<input
 							value={state.searchKeyword}
 							onChange={(e) =>
@@ -205,7 +204,7 @@ export default function SearchSidebar() {
 							}
 							type="text"
 							placeholder="enter your keyword here"
-							className="w-full bg-inner-background text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg"
+							className="w-full bg-card-bg-color-dark text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg"
 						/>
 						<div className="absolute inset-y-0 right-0 flex items-center gap-2 mr-4">
 							<div className="flex items-center">
@@ -243,10 +242,10 @@ export default function SearchSidebar() {
 						{state.searchType === "categories" && (
 							<>
 								{/* Countries Section */}
-								<div className="bg-inner-background p-7.5 rounded-4xl">
+								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
 									<div className="">
 										<div
-											className="flex justify-between items-center bg-inner-background rounded-md cursor-pointer"
+											className="flex justify-between items-center  rounded-md cursor-pointer"
 											onClick={() =>
 												setCountryDropdownOpen(!countryDropdownOpen)
 											}
@@ -254,10 +253,10 @@ export default function SearchSidebar() {
 											<span className="text-foreground">
 												Countries
 											</span>
-											<div className="p-2 bg-card-bg-color rounded-full">
+											<div className="p-1 bg-card-bg-color rounded-full">
 												<svg
-													width="20"
-													height="20"
+													width="16"
+													height="16"
 													viewBox="0 0 24 24"
 													fill="none"
 													xmlns="http://www.w3.org/2000/svg"
@@ -317,10 +316,10 @@ export default function SearchSidebar() {
 								</div>
 
 								{/* United States Section */}
-								<div className="bg-inner-background p-7.5 rounded-4xl mt-5">
+								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl mt-5">
 									<div className="">
 										<div
-											className="flex justify-between items-center bg-inner-background rounded-md cursor-pointer"
+											className="flex justify-between items-center  rounded-md cursor-pointer"
 											onClick={() =>
 												setStatesDropdownOpen(!statesDropdownOpen)
 											}
@@ -328,10 +327,10 @@ export default function SearchSidebar() {
 											<span className="text-foreground">
 												United States
 											</span>
-											<div className="p-2 bg-card-bg-color rounded-full">
+											<div className="p-1 bg-card-bg-color rounded-full">
 												<svg
-													width="20"
-													height="20"
+													width="16"
+													height="16"
 													viewBox="0 0 24 24"
 													fill="none"
 													xmlns="http://www.w3.org/2000/svg"
@@ -381,7 +380,7 @@ export default function SearchSidebar() {
 
 						{/* Website Tab Content */}
 						{state.searchType === "website" && (
-							<div className="bg-inner-background p-7.5 rounded-4xl">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
 								<div className="flex justify-between items-center mb-4 cursor-pointer">
 									<span className="text-foreground font-medium">
 										Countries
@@ -436,7 +435,7 @@ export default function SearchSidebar() {
 
 						{/* Channel Tab Content */}
 						{state.searchType === "channel" && (
-							<div className="bg-inner-background p-7.5 rounded-4xl ">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl ">
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">
 										News Channels
@@ -489,7 +488,7 @@ export default function SearchSidebar() {
 
 						{/* Keywords Tab Content */}
 						{state.searchType === "keywords" && (
-							<div className="bg-inner-background p-7.5 rounded-4xl">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">
 										Trending Keywords

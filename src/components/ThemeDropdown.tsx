@@ -32,7 +32,7 @@ export default function ThemeDropdown() {
 		<div className="relative" ref={dropdownRef}>
 			<div
 				onClick={() => setIsOpen(!isOpen)}
-				className="flex items-center gap-2 p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary transition-colors"
+				className="flex items-center gap-2 text-icons p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary transition-colors"
 			>
 				{/* Theme Icon */}
 				{theme === 'light' ? (

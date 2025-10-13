@@ -30,6 +30,7 @@ export default function Tabs<T = string>({
 			<div className={classNames(
 				"bg-[#0D99FF33] rounded-full flex",
 				{
+
 					"p-1": size === 'large',
 					"p-2.5": size === 'small',
 					"gap-3": size === 'large',
@@ -45,12 +46,13 @@ export default function Tabs<T = string>({
 							{
 								// Small size styles
 								"px-3 py-2 text-sm font-semibold": size === 'large',
-								"p-2.5  text-sm font-medium": size === 'small',
+								"p-2.5  text-sm font-bold": size === 'small',
 								// Large size styles
 
 								// Active state
-								"bg-primary text-foreground font-medium": activeTab === option.value,
-								"bg-transparent text-foreground": activeTab !== option.value
+								"bg-primary text-tabs-selected-foreground font-medium": activeTab === option.value,
+
+								"bg-transparent text-tabs-unselected-foreground": activeTab !== option.value
 							}
 						)}
 					>

@@ -15,6 +15,7 @@ export default function NewsCards() {
       return news.title.toLowerCase().includes(state.searchKeyword.toLowerCase()) || news.description.toLowerCase().includes(state.searchKeyword.toLowerCase()) || news.categories.some((category) => category.toLowerCase().includes(state.searchKeyword.toLowerCase())) || news.source.toLowerCase().includes(state.searchKeyword.toLowerCase())
    })
 
+
    return (
       <div className="min-w-full">
          {filteredNewsItems.length === 0 ? (
@@ -33,11 +34,11 @@ export default function NewsCards() {
                {filteredNewsItems.map((news) => (
                   <div
                      key={news.id + news.title}
-                     className={classNames(`rounded-4xl overflow-hidden p-4 h-full w-full`, {
+                     className={classNames(`rounded-4xl overflow-hidden p-4 h-full w-full bg-card-bg-color`, {
+
                         "p-4": itemsView === 'grid',
                         "p-2": itemsView === 'list'
                      })}
-                     style={{ background: "var(--card-bg-color)" }}
                   >
                      {/* Card Header */}
                      <div className={classNames("flex justify-between items-center font-sf", {
