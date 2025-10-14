@@ -28,19 +28,29 @@ import {
 	backIcon,
 } from "@/helpers/icons";
 import Tabs, { TabOption } from "./Tabs";
-import { allChannels, countries, countryData, IChannel, ICountry, IState, states } from "@/helpers/data";
+import {
+	allChannels,
+	countries,
+	countryData,
+	IChannel,
+	ICountry,
+	IState,
+	states,
+} from "@/helpers/data";
 import CountryItem from "./CountryItem";
 import ThemeDropdown from "./ThemeDropdown";
 import { getFlagUrl } from "@/helpers/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 import PageTabs from "./PageTabs";
+import SwiperWrapper from "./SwipableWrapper";
+import { SwiperSlide } from "swiper/react";
 
 // Flag API information for display
 const flagApiInfo = {
 	countriesCount: countryData.length,
 	format: "https://flagsapi.com/:country_code/:style/:size.png",
 	styles: ["flat", "shiny", "square"],
-	sizes: [16, 24, 32, 48, 64]
+	sizes: [16, 24, 32, 48, 64],
 };
 
 export default function SearchSidebar() {
@@ -73,25 +83,25 @@ export default function SearchSidebar() {
 	// Sample data for UI display
 
 	const contentTypes = [
-		{ name: 'Pages', icon: layers, count: 5250 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Headlines', icon: headlines, count: 421 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Videos', icon: videos, count: 431 },
-		{ name: 'Sites', icon: sites, count: 621 },
-		{ name: 'Pages', icon: layers, count: 5250 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Headlines', icon: headlines, count: 421 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Videos', icon: videos, count: 431 },
-		{ name: 'Sites', icon: sites, count: 621 },
-		{ name: 'Pages', icon: layers, count: 5250 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Headlines', icon: headlines, count: 421 },
-		{ name: 'Images', icon: images, count: 33 },
-		{ name: 'Videos', icon: videos, count: 431 },
-		{ name: 'Sites', icon: sites, count: 621 }
-	]
+		{ name: "Pages", icon: layers, count: 5250 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Headlines", icon: headlines, count: 421 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Videos", icon: videos, count: 431 },
+		{ name: "Sites", icon: sites, count: 621 },
+		{ name: "Pages", icon: layers, count: 5250 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Headlines", icon: headlines, count: 421 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Videos", icon: videos, count: 431 },
+		{ name: "Sites", icon: sites, count: 621 },
+		{ name: "Pages", icon: layers, count: 5250 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Headlines", icon: headlines, count: 421 },
+		{ name: "Images", icon: images, count: 33 },
+		{ name: "Videos", icon: videos, count: 431 },
+		{ name: "Sites", icon: sites, count: 621 },
+	];
 	const { theme } = useTheme();
 
 	const handleAddCountry = () => {
@@ -107,35 +117,53 @@ export default function SearchSidebar() {
 
 	// Example showing how we're now using the Flags API for all 50 countries
 	const flagApiInfo = {
-		format: 'https://flagsapi.com/:country_code/:style/:size.png',
+		format: "https://flagsapi.com/:country_code/:style/:size.png",
 		countriesCount: countryData.length,
-		styles: ['flat', 'shiny', 'square'],
-		sizes: [16, 24, 32, 48, 64, 128]
+		styles: ["flat", "shiny", "square"],
+		sizes: [16, 24, 32, 48, 64, 128],
 	};
 	const handleChannelSelection = (channel: IChannel) => {
-		const existingChannel = channelsSelected.find(channelId => channelId === channel.id);
+		const existingChannel = channelsSelected.find(
+			(channelId) => channelId === channel.id
+		);
 		if (existingChannel) {
-			dispatch({ setState: { channelsSelected: channelsSelected.filter((channelId) => channelId !== channel.id) } });
+			dispatch({
+				setState: {
+					channelsSelected: channelsSelected.filter(
+						(channelId) => channelId !== channel.id
+					),
+				},
+			});
 		} else {
-			dispatch({ setState: { channelsSelected: [...channelsSelected, channel.id] } });
+			dispatch({
+				setState: { channelsSelected: [...channelsSelected, channel.id] },
+			});
 		}
 	};
 	const renderCountryTabItems = () => {
 		if (selectedCountry) {
-
-			return statesList.map(state => <CountryItem
-				key={state.id + state.name}
-				country={state}
-				type="state"
-			/>)
-
+			return statesList.map((state) => (
+				<SwiperSlide className="!w-fit">
+					{" "}
+					<CountryItem
+						key={state.id + state.name}
+						country={state}
+						type="state"
+					/>
+				</SwiperSlide>
+			));
 		}
-		return countries.map(country => <CountryItem
-			key={country.id + country.name}
-			country={country}
-			type="country"
-		/>)
-	}
+		return countries.map((country) => (
+			<SwiperSlide className="!w-fit">
+				{" "}
+				<CountryItem
+					key={country.id + country.name}
+					country={country}
+					type="country"
+				/>
+			</SwiperSlide>
+		));
+	};
 	return (
 		<div
 			className={classNames(
@@ -169,12 +197,25 @@ export default function SearchSidebar() {
 				</div>
 
 				<div className="bg-card-bg-color flex flex-col gap-4 p-4 rounded-4xl mb-4 bg-glass2">
-					<PageTabs items={state.allPages} selectedId={state.selectedPageId} onSelect={(id) => dispatch({ setState: { selectedPageId: id } })} onAddNew={() => { }}></PageTabs>
+					<PageTabs
+						items={state.allPages}
+						selectedId={state.selectedPageId}
+						onSelect={(id) =>
+							dispatch({ setState: { selectedPageId: id } })
+						}
+						onAddNew={() => { }}
+					></PageTabs>
 
 					<Tabs
-						className={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
-						selectedTabClassName={classNames("", { "bg-purple-main": state.diveType === "diving-deeper" })}
-						tabClassName={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
+						className={classNames("", {
+							"bg-purple-light": state.diveType === "diving-deeper",
+						})}
+						selectedTabClassName={classNames("", {
+							"bg-purple-main": state.diveType === "diving-deeper",
+						})}
+						tabClassName={classNames("", {
+							"bg-purple-light": state.diveType === "diving-deeper",
+						})}
 						options={diveModeOptions}
 						activeTab={state.diveType}
 						applyGlass={false}
@@ -194,12 +235,15 @@ export default function SearchSidebar() {
 							}
 							type="text"
 							placeholder="enter your keyword here"
-							className={classNames("w-full text-foreground bg-normal-input-bg-color p-6  rounded-4xl placeholder:text-foreground text-lg",
+							className={classNames(
+								"w-full text-foreground bg-normal-input-bg-color p-6  rounded-4xl placeholder:text-foreground text-lg",
 
 								{
-									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main": state.diveType === "diving-deeper",
-									"border-primary border bg-primary/10 text-primary placeholder:text-primary": state.diveType === "dive-deeper" && theme === "glass",
-
+									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main":
+										state.diveType === "diving-deeper",
+									"border-primary border bg-primary/10 text-primary placeholder:text-primary":
+										state.diveType === "dive-deeper" &&
+										theme === "glass",
 								}
 							)}
 						/>
@@ -300,8 +344,15 @@ export default function SearchSidebar() {
 														</div>
 													</div>
 												)}
-												<div className={classNames("flex overflow-scroll no-scrollbar space-between gap-5", { "flex-wrap": sidebarStatus === "full" })}>
-													{renderCountryTabItems()}
+												<div
+													className={classNames(
+														"flex overflow-scroll no-scrollbar  ",
+														{}
+													)}
+												>
+													<SwiperWrapper gap={14}>
+														{renderCountryTabItems()}
+													</SwiperWrapper>
 												</div>
 											</div>
 										)}
@@ -343,26 +394,38 @@ export default function SearchSidebar() {
 
 										{statesDropdownOpen && (
 											<div className="pt-6">
-												<div className={classNames("flex gap-7 space-between overflow-scroll space-between no-scrollbar", { "flex-wrap": sidebarStatus === "full" })}>
-													{contentTypes.map((type, i) => (
-														<div
-															key={type.name + i}
-															className="flex flex-col items-center cursor-pointer"
-														>
-															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] bg-glass2 flex items-center justify-center overflow-hidden py-4 px-3.5">
-																{/* Display icon based on the type */}
-																<div className="text-foreground">
-																	{type.icon || <p>no icon</p>}
+												<div
+													className={classNames(
+														"flex gap-7 space-between overflow-scroll space-between no-scrollbar",
+														{
+															"flex-wrap":
+																sidebarStatus === "full",
+														}
+													)}
+												>
+													<SwiperWrapper gap={14} >
+														{contentTypes.map((type, i) => (
+															<SwiperSlide className="!w-fit">
+																<div
+																	key={type.name + i}
+																	className="flex flex-col items-center cursor-pointer"
+																>
+																	<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] bg-glass2 flex items-center justify-center overflow-hidden py-4 px-3.5">
+																		{/* Display icon based on the type */}
+																		<div className="text-foreground">
+																			{type.icon || <p>no icon</p>}
+																		</div>
+																	</div>
+																	<span className="text-foreground text-xs pt-2.5">
+																		{type.name}
+																	</span>
+																	<span className="text-foreground text-xs">
+																		{type.count}
+																	</span>
 																</div>
-															</div>
-															<span className="text-foreground text-xs pt-2.5">
-																{type.name}
-															</span>
-															<span className="text-foreground text-xs">
-																{type.count}
-															</span>
-														</div>
-													))}
+															</SwiperSlide>
+														))}
+													</SwiperWrapper>
 												</div>
 											</div>
 										)}
@@ -378,18 +441,62 @@ export default function SearchSidebar() {
 										Countries
 									</span>
 								</div>
-								<div className={classNames("grid grid-cols-2 gap-4 cursor-pointer", { "grid-cols-4": sidebarStatus === "full" })}>
+								<div
+									className={classNames(
+										"grid grid-cols-2 gap-4 cursor-pointer",
+										{ "grid-cols-4": sidebarStatus === "full" }
+									)}
+								>
 									{[
-										{ name: 'CNN', logo: '/images/websites/cnn.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'AlJazeera', logo: '/images/websites/aljazera.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Fox', logo: '/images/websites/foxnews.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'BBC', logo: '/images/websites/bbc.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'Geo', logo: '/images/websites/geo.svg', rank: '(1)', visitors: '1432', articles: '2344' },
-										{ name: 'CBS', logo: '/images/websites/cbs.svg', rank: '(1)', visitors: '1432', articles: '2344' }
+										{
+											name: "CNN",
+											logo: "/images/websites/cnn.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+										{
+											name: "AlJazeera",
+											logo: "/images/websites/aljazera.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+										{
+											name: "Fox",
+											logo: "/images/websites/foxnews.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+										{
+											name: "BBC",
+											logo: "/images/websites/bbc.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+										{
+											name: "Geo",
+											logo: "/images/websites/geo.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+										{
+											name: "CBS",
+											logo: "/images/websites/cbs.svg",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
 									].map((site, index) => (
 										<div
 											key={index}
-											className={classNames("bg-card-bg-color p-4 rounded-4xl flex items-center gap-4 bg-glass3 ", { "!bg-black/20": theme === "glass" })}
+											className={classNames(
+												"bg-card-bg-color p-4 rounded-4xl flex items-center gap-4 bg-glass3 ",
+												{ "!bg-black/20": theme === "glass" }
+											)}
 										>
 											<div className="w-15 h-15 flex items-center justify-center overflow-hidden">
 												<Image
@@ -433,24 +540,31 @@ export default function SearchSidebar() {
 										News Channels
 									</span>
 								</div>
-								<div className={classNames("grid grid-cols-2 gap-4", { "grid-cols-4": sidebarStatus === "full" })}>
+								<div
+									className={classNames("grid grid-cols-2 gap-4", {
+										"grid-cols-4": sidebarStatus === "full",
+									})}
+								>
 									{allChannels.map((channel, index) => (
 										<div
 											key={index}
-											className={classNames("bg-card-bg-color p-2 rounded-4xl flex items-center gap-1 cursor-pointer  bg-glass3", { "!bg-black/20": theme === "glass" })}
-
-											onClick={() =>
-												handleChannelSelection(channel)
-											}
+											className={classNames(
+												"bg-card-bg-color p-2 rounded-4xl flex items-center gap-1 cursor-pointer  bg-glass3",
+												{ "!bg-black/20": theme === "glass" }
+											)}
+											onClick={() => handleChannelSelection(channel)}
 										>
 											<div className="w-25 h-25 flex flex-col items-center justify-center overflow-hidden">
-												<Image className="p-2 bg-inner-background rounded-2xl mb-1"
+												<Image
+													className="p-2 bg-inner-background rounded-2xl mb-1"
 													src={channel.logo}
 													alt={channel.name}
 													width={61}
 													height={61}
 												/>
-												<span className="text-foreground font-bold">{channel.name}</span>
+												<span className="text-foreground font-bold">
+													{channel.name}
+												</span>
 											</div>
 											<div className="">
 												<div className="flex items-center gap-1">
