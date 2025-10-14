@@ -494,7 +494,7 @@ export default function SearchSidebar() {
 										<div
 											key={index}
 											className={classNames(
-												"bg-card-bg-color p-4 rounded-4xl flex items-center gap-4 bg-glass3 ",
+												"bg-card-bg-color p-4 rounded-4xl flex items-center gap-3.5 bg-glass3 ",
 												{ "!bg-black/20": theme === "glass" }
 											)}
 										>
@@ -509,7 +509,7 @@ export default function SearchSidebar() {
 											<div className="">
 												<div className="flex items-center gap-1">
 													<span>{trippleUpArrows}</span>
-													<span className="text-foreground text-xs">
+													<span className="text-foreground text-[10px]">
 														Overall Rank {site.rank}
 													</span>
 												</div>
@@ -517,12 +517,12 @@ export default function SearchSidebar() {
 													<div className="flex items-center gap-1 ">
 														<span>{bookIcon}</span>
 														<div></div>
-														<span>{site.visitors}</span>
+														<span className="text-[10px]">{site.visitors}</span>
 													</div>
 													<div className="flex items-center gap-1">
 														<span>{cameraIcon}</span>
 														<div></div>
-														<span>{site.articles}</span>
+														<span className="text-[10px]">{site.articles}</span>
 													</div>
 												</div>
 											</div>
@@ -549,20 +549,20 @@ export default function SearchSidebar() {
 										<div
 											key={index}
 											className={classNames(
-												"bg-card-bg-color p-2 rounded-4xl flex items-center gap-1 cursor-pointer  bg-glass3",
+												"bg-card-bg-color p-2.5 rounded-4xl flex items-center gap-3.5 cursor-pointer  bg-glass3",
 												{ "!bg-black/20": theme === "glass" }
 											)}
 											onClick={() => handleChannelSelection(channel)}
 										>
-											<div className="w-25 h-25 flex flex-col items-center justify-center overflow-hidden">
+											<div className="flex flex-col items-center justify-center overflow-hidden">
 												<Image
 													className="p-2 bg-inner-background rounded-2xl mb-1"
 													src={channel.logo}
 													alt={channel.name}
-													width={61}
-													height={61}
+													width={49}
+													height={49}
 												/>
-												<span className="text-foreground font-bold">
+												<span className="text-foreground font-bold text-[10px]">
 													{channel.name}
 												</span>
 											</div>
