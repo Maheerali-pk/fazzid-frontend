@@ -1,3 +1,4 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import { plusIcon } from "@/helpers/icons";
 import classNames from "classnames";
 import { FunctionComponent } from "react";
@@ -19,6 +20,7 @@ const PageTabs: FunctionComponent<PageTabsProps> = ({
 	onSelect,
 	onAddNew,
 }) => {
+	const { theme } = useTheme();
 	return (
 		<div
 			className={classNames(
@@ -29,10 +31,10 @@ const PageTabs: FunctionComponent<PageTabsProps> = ({
 				<div
 					key={item.id}
 					className={classNames(
-						"text-foreground px-4 py-2.5 rounded-full  font-bold text-sm ",
+						"text-foreground px-4 py-2.5 rounded-full  font-bold text-sm",
 						{
 							"bg-main-tabs-bg-color ": selectedId === item.id,
-							"bg-glass": selectedId === item.id
+							"bg-glass-inner !bg-black/30": selectedId === item.id
 						}
 					)}
 					onClick={() => onSelect(item.id)}
@@ -43,7 +45,7 @@ const PageTabs: FunctionComponent<PageTabsProps> = ({
 
 			<div
 				onClick={onAddNew}
-				className="flex items-center gap-2 p-2.5 bg-main-tabs-bg-color rounded-full cursor-pointer"
+				className={classNames("flex items-center gap-2 p-2.5 bg-main-tabs-bg-color rounded-full cursor-pointer bg-glass", {})}
 			>
 				{plusIcon}
 			</div>

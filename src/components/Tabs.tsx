@@ -18,6 +18,7 @@ export interface TabsProps<T = string> {
 	className?: string
 	selectedTabClassName?: string
 	tabClassName?: string
+	applyGlass?: boolean;
 }
 
 export default function Tabs<T = string>({
@@ -27,12 +28,15 @@ export default function Tabs<T = string>({
 	size = 'large',
 	className = '',
 	selectedTabClassName = '',
-	tabClassName = ''
+	tabClassName = '',
+	applyGlass = true,
+
 }: TabsProps<T>) {
 	return (
 		<div className={classNames("flex overflow-x-auto")}>
 			<div className={classNames(
 				"bg-[#0D99FF33] rounded-full flex", className,
+				{ "bg-glass": applyGlass },
 				{
 
 					"p-1": size === 'large',
@@ -50,13 +54,15 @@ export default function Tabs<T = string>({
 							{
 								// Small size styles
 								"px-3 py-2 text-sm font-semibold": size === 'large',
+
 								"p-2.5  text-sm font-bold": size === 'small',
 								// Large size styles
 
 								// Active state
 								[`bg-primary text-tabs-selected-foreground font-medium ${selectedTabClassName}`]: activeTab === option.value,
 
-								[`bg-transparent text-tabs-unselected-foreground ${tabClassName}`]: activeTab !== option.value
+								[`bg-transparent text-tabs-unselected-foreground ${tabClassName}`]: activeTab !== option.value,
+								[`bg-glass-inner !bg-black/30`]: applyGlass && activeTab === option.value,
 							}
 						)}
 					>
@@ -64,7 +70,7 @@ export default function Tabs<T = string>({
 					</button>
 				))}
 			</div>
-		</div>
+		</div >
 	)
 }
 

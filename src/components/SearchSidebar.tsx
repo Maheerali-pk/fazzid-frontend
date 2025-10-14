@@ -177,6 +177,7 @@ export default function SearchSidebar() {
 						tabClassName={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
 						options={diveModeOptions}
 						activeTab={state.diveType}
+						applyGlass={false}
 						onTabChange={(value) =>
 							dispatch({ setState: { diveType: value as DiveType } })
 						}
@@ -220,7 +221,7 @@ export default function SearchSidebar() {
 					</div>
 				</div>
 
-				<div className="bg-card-bg-color p-4 rounded-4xl mb-4">
+				<div className="bg-card-bg-color bg-glass2 p-4 rounded-4xl mb-4">
 					<Tabs
 						options={tabOptions}
 						activeTab={state.searchType}
@@ -234,7 +235,7 @@ export default function SearchSidebar() {
 					<div className="flex flex-col">
 						{state.searchType === "categories" && (
 							<>
-								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
+								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
 									<div className="">
 										<div
 											className="flex justify-between items-center  rounded-md cursor-pointer"
@@ -308,7 +309,7 @@ export default function SearchSidebar() {
 								</div>
 
 								{/* United States Section */}
-								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl mt-5">
+								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl mt-5 bg-glass3">
 									<div className="">
 										<div
 											className="flex justify-between items-center  rounded-md cursor-pointer"
@@ -348,7 +349,7 @@ export default function SearchSidebar() {
 															key={type.name + i}
 															className="flex flex-col items-center cursor-pointer"
 														>
-															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
+															<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] bg-glass2 flex items-center justify-center overflow-hidden py-4 px-3.5">
 																{/* Display icon based on the type */}
 																<div className="text-foreground">
 																	{type.icon || <p>no icon</p>}
@@ -371,7 +372,7 @@ export default function SearchSidebar() {
 						)}
 
 						{state.searchType === "website" && (
-							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
 								<div className="flex justify-between items-center mb-4 cursor-pointer">
 									<span className="text-foreground font-medium">
 										Countries
@@ -388,7 +389,7 @@ export default function SearchSidebar() {
 									].map((site, index) => (
 										<div
 											key={index}
-											className="bg-card-bg-color p-4 rounded-4xl flex items-center gap-4"
+											className={classNames("bg-card-bg-color p-4 rounded-4xl flex items-center gap-4 bg-glass3 ", { "!bg-black/20": theme === "glass" })}
 										>
 											<div className="w-15 h-15 flex items-center justify-center overflow-hidden">
 												<Image
@@ -426,7 +427,7 @@ export default function SearchSidebar() {
 
 						{/* Channel Tab Content */}
 						{state.searchType === "channel" && (
-							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl ">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">
 										News Channels
@@ -436,7 +437,7 @@ export default function SearchSidebar() {
 									{allChannels.map((channel, index) => (
 										<div
 											key={index}
-											className="bg-card-bg-color p-2 rounded-4xl flex items-center gap-1 cursor-pointer"
+											className={classNames("bg-card-bg-color p-2 rounded-4xl flex items-center gap-1 cursor-pointer  bg-glass3", { "!bg-black/20": theme === "glass" })}
 
 											onClick={() =>
 												handleChannelSelection(channel)
@@ -479,7 +480,7 @@ export default function SearchSidebar() {
 
 						{/* Keywords Tab Content */}
 						{state.searchType === "keywords" && (
-							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">
 										Trending Keywords

@@ -16,13 +16,13 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 		if (type === "state") return;
 		dispatch({ setState: { selectedCountryId: country.id } })
 	}
-	
+
 	// Use the flag URL from the country object (generated from flagsapi.com)
 	const flagSrc = country.flag;
-	
+
 	return (
-		<div key={country.name} className={classNames("flex flex-col items-center cursor-pointer")} onClick={handleOnClick}>
-			<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5">
+		<div key={country.name} className={classNames("flex flex-col items-center cursor-pointer ",)} onClick={handleOnClick}>
+			<div className="w-16 h-16 rounded-3xl bg-[#0D99FF33] flex items-center justify-center overflow-hidden py-4 px-3.5 bg-glass2" >
 				{/* Handle both SVG icons and image flags */}
 				{country.isIcon ? (
 					<div className="text-foreground">

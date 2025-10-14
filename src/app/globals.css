@@ -180,14 +180,10 @@
 
 [data-theme="glass"] .bg-glass-inner {
    position: relative;
+   border-radius: 100px;
+   background: transparent;
 
-   /* Glassy dark background */
-   background: rgba(0, 0, 0, 0.3); /* #0000004D */
-   backdrop-filter: blur(60px);
-   -webkit-backdrop-filter: blur(60px);
-   border: 1px solid rgba(255, 255, 255, 0.12);
-
-   /* Contain blending within element */
+   /* keep blends contained */
    isolation: isolate;
 }
 
@@ -199,13 +195,13 @@
    border-radius: inherit;
    pointer-events: none;
 
-   /* Overlay group from Figma */
+   /* overlay group (all except last one) */
    box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5),
       inset -1px -1px 0.5px -1px rgba(255, 255, 255, 0.9),
       inset 1px 1px 0.5px -1px rgba(255, 255, 255, 0.9),
-      inset -1px -1px 0px -0.5px rgba(38, 38, 38, 0.55);
+      inset -1px -1px 0 -0.5px rgba(38, 38, 38, 0.55);
 
-   mix-blend-mode: overlay; /* simulate Figma “Overlay” */
+   mix-blend-mode: overlay;
    opacity: 0.9;
 }
 
@@ -217,11 +213,11 @@
    border-radius: inherit;
    pointer-events: none;
 
-   /* Subtle lighter edge */
+   /* final one from your list */
    box-shadow: inset 1px 1px 0px -0.5px rgba(51, 51, 51, 0.9);
 
-   mix-blend-mode: screen; /* simulate “Plus Lighter” */
-   opacity: 0.7;
+   mix-blend-mode: screen; /* simulate Plus Lighter */
+   opacity: 0.8;
 }
 
 /* Glass 2 */
@@ -307,6 +303,57 @@
    mix-blend-mode: screen; /* best stand-in for Plus Lighter */
    opacity: 0.8;
 }
+
+[data-theme="glass"] .bg-glass3 {
+   position: relative;
+
+   /* Frosted glass base */
+   background: rgba(255, 255, 255, 0.08);
+   backdrop-filter: blur(60px);
+   -webkit-backdrop-filter: blur(60px);
+
+   /* Subtle glass edge */
+   border: 1px solid rgba(255, 255, 255, 0.18);
+
+   /* Light outer seat for realism */
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+
+   isolation: isolate; /* keep blends internal */
+}
+
+/* --- Overlay shadows group --- */
+[data-theme="glass"] .bg-glass3::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* From your Figma overlay set */
+   box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5),
+      inset -1px -1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset 1px 1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset -1px -1px 0px -0.5px rgba(38, 38, 38, 0.55);
+
+   mix-blend-mode: overlay; /* simulate Figma “Overlay” */
+   opacity: 0.95;
+}
+
+/* --- Plus Lighter shadow group --- */
+[data-theme="glass"] .bg-glass3::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* Figma Plus Lighter shadow */
+   box-shadow: inset 1px 1px 0px -0.5px rgba(51, 51, 51, 0.9);
+
+   mix-blend-mode: screen; /* simulate Figma “Plus Lighter” */
+   opacity: 0.8;
+}
+
 input {
    outline: none;
 }
