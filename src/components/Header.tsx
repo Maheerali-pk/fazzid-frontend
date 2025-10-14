@@ -26,7 +26,7 @@ export default function Header() {
           <Image className='w-23 h-14' src="/images/fazit_logo.png" alt="Logo" width={100} height={100} />
         </div>
         <div className=''>
-          <div className='flex py-4 px-9 rounded-4xl gap-x-3 bg-card-bg-color' >
+          <div className='flex py-4 px-9 rounded-4xl gap-x-3 bg-card-bg-color bg-glass2' >
             <button
               onClick={() => handleViewChange('list')}
               className={classNames("transition-opacity cursor-pointer hover:text-primary", { "text-primary": itemsView === "list" })}

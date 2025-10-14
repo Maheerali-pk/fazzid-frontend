@@ -32,6 +32,8 @@ import { allChannels, countries, countryData, IChannel, ICountry, IState, states
 import CountryItem from "./CountryItem";
 import ThemeDropdown from "./ThemeDropdown";
 import { getFlagUrl } from "@/helpers/utils";
+import { useTheme } from "@/contexts/ThemeContext";
+import PageTabs from "./PageTabs";
 
 // Flag API information for display
 const flagApiInfo = {
@@ -90,6 +92,7 @@ export default function SearchSidebar() {
 		{ name: 'Videos', icon: videos, count: 431 },
 		{ name: 'Sites', icon: sites, count: 621 }
 	]
+	const { theme } = useTheme();
 
 	const handleAddCountry = () => {
 		// Functionality to add a country
@@ -136,7 +139,7 @@ export default function SearchSidebar() {
 	return (
 		<div
 			className={classNames(
-				"rounded-[2rem] h-full bg-inner-background transition-all duration-300 ease-in flex flex-col",
+				"rounded-[2rem] h-full overflow-hidden transition-all duration-300 ease-in flex flex-col bg-glass  bg-inner-background",
 				{
 					"min-w-[0px] w-0 overflow-hidden": sidebarStatus === "closed",
 					"w-[600px] min-w-[600px]": sidebarStatus === "semi-opened",
@@ -145,7 +148,6 @@ export default function SearchSidebar() {
 			)}
 		>
 			<div className="px-4 py-2.5 flex flex-col h-full overflow-auto no-scrollbar">
-				{/* Top Action Icons */}
 				<div className="flex items-center justify-between mb-4">
 					<div
 						onClick={() =>
@@ -157,7 +159,7 @@ export default function SearchSidebar() {
 							})
 						}
 						className={classNames(
-							"flex cursor-pointer text-icons items-center gap-2 py-4 px-8 bg-card-bg-color rounded-full hover:text-primary",
+							"flex cursor-pointer text-icons items-center gap-2 py-4 px-8 bg-card-bg-color bg-glass2 rounded-full hover:text-primary ",
 							{ "text-primary": sidebarStatus === "full" }
 						)}
 					>
@@ -166,24 +168,9 @@ export default function SearchSidebar() {
 					<ThemeDropdown />
 				</div>
 
-				<div className="bg-card-bg-color flex flex-col gap-4 p-4 rounded-4xl mb-4">
-					{/* Countries Pills */}
-					<div className={classNames("flex  items-center gap-2 rounded-full p-2 bg-card-bg-color-dark")}>
-						{selectedCountries.map((country) => (
-							<div
-								key={country}
-								className="text-foreground px-4 py-2.5 rounded-full bg-main-tabs-bg-color font-bold text-sm"
-							>
-								{country}
-							</div>
-						))}
+				<div className="bg-card-bg-color flex flex-col gap-4 p-4 rounded-4xl mb-4 bg-glass2">
+					<PageTabs items={state.allPages} selectedId={state.selectedPageId} onSelect={(id) => dispatch({ setState: { selectedPageId: id } })} onAddNew={() => { }}></PageTabs>
 
-						<div className="flex items-center gap-2 p-2.5 bg-main-tabs-bg-color rounded-full cursor-pointer">
-							{plusIcon}
-						</div>
-					</div>
-
-					{/* Dive Deeper / Delving Deeper - Small Tabs Example */}
 					<Tabs
 						className={classNames("", { "bg-purple-light": state.diveType === "diving-deeper" })}
 						selectedTabClassName={classNames("", { "bg-purple-main": state.diveType === "diving-deeper" })}
@@ -196,8 +183,7 @@ export default function SearchSidebar() {
 						size="large"
 					/>
 
-					{/* Search Input */}
-					<div className="relative mb-4 items-center bg-card-bg-color-dark rounded-4xl ">
+					<div className="relative mb-4 items-center  rounded-4xl bg-glass2  ">
 						<input
 							value={state.searchKeyword}
 							onChange={(e) =>
@@ -207,10 +193,11 @@ export default function SearchSidebar() {
 							}
 							type="text"
 							placeholder="enter your keyword here"
-							className={classNames("w-full bg-card-bg-color-dark text-foreground p-6 rounded-4xl placeholder:text-foreground text-lg",
+							className={classNames("w-full text-foreground bg-normal-input-bg-color p-6  rounded-4xl placeholder:text-foreground text-lg",
 
 								{
 									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main": state.diveType === "diving-deeper",
+									"border-primary border bg-primary/10 text-primary placeholder:text-primary": state.diveType === "dive-deeper" && theme === "glass",
 
 								}
 							)}
@@ -234,7 +221,6 @@ export default function SearchSidebar() {
 				</div>
 
 				<div className="bg-card-bg-color p-4 rounded-4xl mb-4">
-					{/* Tabs */}
 					<Tabs
 						options={tabOptions}
 						activeTab={state.searchType}
@@ -245,12 +231,9 @@ export default function SearchSidebar() {
 						className="mb-4"
 					/>
 
-					{/* Tab Content */}
 					<div className="flex flex-col">
-						{/* Categories Tab Content */}
 						{state.searchType === "categories" && (
 							<>
-								{/* Countries Section */}
 								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
 									<div className="">
 										<div
@@ -387,7 +370,6 @@ export default function SearchSidebar() {
 							</>
 						)}
 
-						{/* Website Tab Content */}
 						{state.searchType === "website" && (
 							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl">
 								<div className="flex justify-between items-center mb-4 cursor-pointer">

@@ -23,7 +23,7 @@ export default function ThemeDropdown() {
 		}
 	}, [])
 
-	const handleThemeChange = (newTheme: 'light' | 'dark') => {
+	const handleThemeChange = (newTheme: 'light' | 'dark' | 'glass') => {
 		setTheme(newTheme)
 		setIsOpen(false)
 	}
@@ -32,7 +32,7 @@ export default function ThemeDropdown() {
 		<div className="relative" ref={dropdownRef}>
 			<div
 				onClick={() => setIsOpen(!isOpen)}
-				className="flex items-center gap-2 text-icons p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary transition-colors"
+				className="flex bg-glass2 items-center gap-2 text-icons p-4 bg-card-bg-color rounded-full cursor-pointer hover:text-primary transition-colors"
 			>
 				{/* Theme Icon */}
 				{theme === 'light' ? (
@@ -40,9 +40,14 @@ export default function ThemeDropdown() {
 						<path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 						<path d="M12 1V3M12 21V23M4.22 4.22L5.64 5.64M18.36 18.36L19.78 19.78M1 12H3M21 12H23M4.22 19.78L5.64 18.36M18.36 5.64L19.78 4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 					</svg>
-				) : (
+				) : theme === 'dark' ? (
 					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+					</svg>
+				) : (
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 2L13.09 8.26L19 7L14.74 12.26L21 13.09L15.74 19L14.91 12.74L9 14L13.26 8.74L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+						<path d="M12 22L10.91 15.74L5 17L9.26 11.74L3 10.91L8.26 5L9.09 11.26L15 10L10.74 15.26L12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 					</svg>
 				)}
 			</div>
@@ -74,6 +79,19 @@ export default function ThemeDropdown() {
 							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 						</svg>
 						<span className="text-foreground font-medium">Dark</span>
+					</div>
+					<div
+						onClick={() => handleThemeChange('glass')}
+						className={classNames(
+							"flex items-center gap-3 px-4 py-3 cursor-pointer hover:bg-inner-background transition-colors",
+							{ "bg-inner-background": theme === 'glass' }
+						)}
+					>
+						<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 2L13.09 8.26L19 7L14.74 12.26L21 13.09L15.74 19L14.91 12.74L9 14L13.26 8.74L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+							<path d="M12 22L10.91 15.74L5 17L9.26 11.74L3 10.91L8.26 5L9.09 11.26L15 10L10.74 15.26L12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+						</svg>
+						<span className="text-foreground font-medium">Glass</span>
 					</div>
 				</div>
 			)}

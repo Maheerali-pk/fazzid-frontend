@@ -1,4 +1,5 @@
 "use client"
+import { PageTabItem } from "@/components/PageTabs";
 import { createCustomContext } from "@/helpers/CreateCustomContext"
 import react from "react"
 export type DiveType = "dive-deeper" | "diving-deeper";
@@ -20,12 +21,16 @@ interface IGlobalState {
   selectedCountryId?: string | null;
   searchKeyword: string;
   channelsSelected: string[];
+  selectedPageId: string;
+  allPages: PageTabItem[]
 }
 
 const initialState: IGlobalState = {
   itemsView: "grid",
+  allPages: [{ id: "0", name: "Pakistan" }, { id: "1", name: "India" }],
   sidebarStatus: "closed",
   selectedCountryId: null,
+  selectedPageId: "0",
   // sidebarStatus: "semi-opened",
   searchKeyword: "",
 

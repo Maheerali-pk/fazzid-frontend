@@ -16,7 +16,7 @@ export default function page() {
             "gap-4": sidebarStatus === "semi-opened",
          })}
       >
-         <div className={classNames("h-full flex  overflow-auto flex-col gap-4 rounded-4xl bg-inner-background transition-all duration-300 ease-in", {
+         <div className={classNames("h-full flex bg-glass overflow-auto flex-col gap-4 rounded-4xl bg-inner-background transition-all duration-300 ease-in", {
             "w-0 overflow-hidden p-0": sidebarStatus === "full",
             "w-full p-2.5": sidebarStatus === "closed" || sidebarStatus === "semi-opened",
 

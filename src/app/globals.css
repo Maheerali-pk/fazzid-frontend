@@ -95,7 +95,32 @@
    --purple-light: #574264;
    --purple-main: #c758ff;
    --purple-input-bg-color: #3b3345;
+   --normal-input-bg-color: #272a2c;
 }
+[data-theme="glass"] {
+   --background: #000000;
+   --inner-background: #272a2c;
+   --foreground: #ededed;
+   --secondary: #1f2937;
+   --card-meta-text: #ffffff;
+   --card-date-text: #ffffff;
+   --card-title-text: white;
+   --card-description-text: #ffffff;
+   --card-bg-color: #48484899;
+   --icons-color: #ffffff;
+   --color-primary: #00aaff;
+   --card-bg-color-dark: #272a2c;
+   --tabs-selected-foreground: #ffffff;
+   --tabs-unselected-foreground: #ffffff;
+   --main-tabs-bg-color: #48484899;
+   --main-card-bg-color: #48484899;
+   --purple-light: #574264;
+   --purple-main: #c758ff;
+   --purple-input-bg-color: #3b3345;
+
+   --normal-input-bg-color: #272a2c;
+}
+
 [data-theme="light"] {
    --background: #ffffff;
    --inner-background: #0093dd0f;
@@ -117,6 +142,8 @@
    --purple-light: #dfd2fe;
    --purple-main: #c758ffee;
    --purple-input-bg-color: white;
+
+   --normal-input-bg-color: white;
 }
 
 @theme inline {
@@ -124,6 +151,7 @@
    --color-purple-main: var(--purple-main);
    --color-purple-input-bg-color: var(--purple-input-bg-color);
 
+   --color-normal-input-bg-color: var(--normal-input-bg-color);
    --color-main-tabs-bg-color: var(--main-tabs-bg-color);
    --color-tabs-selected-foreground: var(--tabs-selected-foreground);
    --color-tabs-unselected-foreground: var(--tabs-unselected-foreground);
@@ -148,6 +176,137 @@
    box-sizing: border-box !important;
 }
 
+/* Glass Inner */
+
+[data-theme="glass"] .bg-glass-inner {
+   position: relative;
+
+   /* Glassy dark background */
+   background: rgba(0, 0, 0, 0.3); /* #0000004D */
+   backdrop-filter: blur(60px);
+   -webkit-backdrop-filter: blur(60px);
+   border: 1px solid rgba(255, 255, 255, 0.12);
+
+   /* Contain blending within element */
+   isolation: isolate;
+}
+
+/* --- Overlay shadows --- */
+[data-theme="glass"] .bg-glass-inner::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* Overlay group from Figma */
+   box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5),
+      inset -1px -1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset 1px 1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset -1px -1px 0px -0.5px rgba(38, 38, 38, 0.55);
+
+   mix-blend-mode: overlay; /* simulate Figma “Overlay” */
+   opacity: 0.9;
+}
+
+/* --- Plus Lighter shadow --- */
+[data-theme="glass"] .bg-glass-inner::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* Subtle lighter edge */
+   box-shadow: inset 1px 1px 0px -0.5px rgba(51, 51, 51, 0.9);
+
+   mix-blend-mode: screen; /* simulate “Plus Lighter” */
+   opacity: 0.7;
+}
+
+/* Glass 2 */
+[data-theme="glass"] .bg-glass2 {
+   position: relative;
+
+   /* Glass background */
+   background: rgba(255, 255, 255, 0);
+   backdrop-filter: blur(60px);
+   -webkit-backdrop-filter: blur(60px);
+
+   /* Keep blend effects local */
+   isolation: isolate;
+}
+
+/* --- Overlay group --- */
+[data-theme="glass"] .bg-glass2::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* Figma Overlay shadows */
+   box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5),
+      inset -1px -1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset 1px 1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset -1px -1px 0px -0.5px rgba(38, 38, 38, 0.55);
+
+   mix-blend-mode: overlay; /* simulate Figma “Overlay” */
+   opacity: 0.5;
+}
+
+/* --- Plus Lighter group --- */
+[data-theme="glass"] .bg-glass2::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   /* Figma Plus Lighter shadow */
+   box-shadow: inset 1px 1px 0px -0.5px rgba(51, 51, 51, 0.9);
+
+   mix-blend-mode: screen; /* best match for “Plus Lighter” */
+   opacity: 0.8;
+}
+
+/* Glass 1 */
+[data-theme="glass"] .bg-glass {
+   position: relative;
+
+   background-color: rgba(255, 255, 255, 0.08) !important;
+   backdrop-filter: blur(60px);
+   -webkit-backdrop-filter: blur(60px);
+   isolation: isolate;
+}
+
+[data-theme="glass"] .bg-glass::before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+
+   box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5),
+      inset -1px -1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset 1px 1px 0.5px -1px rgba(255, 255, 255, 0.9),
+      inset -1px -1px 0 -0.5px rgba(38, 38, 38, 0.55);
+
+   mix-blend-mode: overlay; /* maps Figma Overlay */
+   opacity: 0.5; /* dial strength */
+}
+
+/* ::after — your Plus Lighter group */
+[data-theme="glass"] .bg-glass::after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: inherit;
+   pointer-events: none;
+   box-shadow: inset 1px 1px 0px -0.5px rgba(51, 51, 51, 0.9);
+   mix-blend-mode: screen; /* best stand-in for Plus Lighter */
+   opacity: 0.8;
+}
 input {
    outline: none;
 }
@@ -170,8 +329,8 @@ body {
 
 /* Glass theme specific styles */
 [data-theme="glass"] body {
-   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-   backdrop-filter: blur(10px);
+   background: url("/images/backgrounds/glass-bg-1.jpg") no-repeat center center;
+   background-size: cover;
 }
 
 /* Custom Scrollbar */
