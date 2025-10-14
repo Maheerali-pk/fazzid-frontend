@@ -65,7 +65,7 @@ export default function Videos() {
                      <div
                         key={video.id}
                         className={classNames(
-                           "overflow-hidden flex flex-col rounded-3xl transition-all duration-300 w-full", // common classes
+                           "overflow-hidden flex flex-col rounded-3xl transition-all duration-300 w-full bg-glass", // common classes
                            {
                               // Grid view responsive classes
                               "p-2.5 w-full": itemsView === 'grid',
