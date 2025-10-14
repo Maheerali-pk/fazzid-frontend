@@ -2,6 +2,7 @@
 
 import React from 'react'
 import classNames from 'classnames'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export interface TabOption<T = string> {
 	value: T
@@ -32,6 +33,7 @@ export default function Tabs<T = string>({
 	applyGlass = true,
 
 }: TabsProps<T>) {
+	const { theme } = useTheme();
 	return (
 		<div className={classNames("flex overflow-x-auto")}>
 			<div className={classNames(
@@ -62,7 +64,7 @@ export default function Tabs<T = string>({
 								[`bg-primary text-tabs-selected-foreground font-medium ${selectedTabClassName}`]: activeTab === option.value,
 
 								[`bg-transparent text-tabs-unselected-foreground ${tabClassName}`]: activeTab !== option.value,
-								[`bg-glass-inner !bg-black/30`]: applyGlass && activeTab === option.value,
+								[`bg-glass-inner !bg-black/30`]: applyGlass && activeTab === option.value && theme === 'glass',
 							}
 						)}
 					>

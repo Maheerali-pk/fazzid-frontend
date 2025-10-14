@@ -34,7 +34,7 @@ const PageTabs: FunctionComponent<PageTabsProps> = ({
 						"text-foreground px-4 py-2.5 rounded-full  font-bold text-sm",
 						{
 							"bg-main-tabs-bg-color ": selectedId === item.id,
-							"bg-glass-inner !bg-black/30": selectedId === item.id
+							"bg-glass-inner !bg-black/30": selectedId === item.id && theme === 'glass'
 						}
 					)}
 					onClick={() => onSelect(item.id)}

@@ -1,8 +1,9 @@
 import { FunctionComponent } from "react";
-import { FreeMode } from "swiper/modules";
+import { FreeMode, Navigation } from "swiper/modules";
 import { Swiper } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
 interface SwiperWrapperProps {
 
 	children: React.ReactNode;
@@ -16,8 +17,8 @@ const SwiperWrapper: FunctionComponent<SwiperWrapperProps> = ({ children, classN
 		spaceBetween={gap}
 		freeMode={true}
 		watchOverflow={true}
-
-		modules={[FreeMode]}
+		// navigation={true}
+		modules={[FreeMode, Navigation]}
 		className={`mySwiper  ${className}`}
 	>
 		{children}

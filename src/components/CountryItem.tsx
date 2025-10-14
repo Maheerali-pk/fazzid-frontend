@@ -17,7 +17,7 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 		dispatch({ setState: { selectedCountryId: country.id } })
 	}
 
-	
+
 	// Try to get local country icon from our public folder
 	const localIconPath = getCountryIconPath(country.name);
 	// Fallback to the API flag URL if local icon isn't available
@@ -34,6 +34,7 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 					</div>
 				) : localIconPath ? (
 					<Image
+						className="select-none"
 						src={localIconPath}
 						alt={`${country.name} flag`}
 						width={49}
@@ -47,6 +48,7 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 					/>
 				) : flagSrc ? (
 					<Image
+						className="select-none"
 						src={flagSrc}
 						alt={`${country.name} flag`}
 						width={49}
@@ -57,8 +59,8 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 					<p>no image</p>
 				)}
 			</div>
-			<span className="text-foreground text-xs pt-2.5">{country.name}</span>
-			<span className="text-foreground text-xs">{country.count}</span>
+			<span className="text-foreground text-xs pt-2.5 select-none">{country.name.slice(0, 15)}</span>
+			<span className="text-foreground text-xs select-none">{country.count}</span>
 		</div>
 	);
 }

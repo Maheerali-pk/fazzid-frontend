@@ -405,7 +405,7 @@ export default function SearchSidebar() {
 												>
 													<SwiperWrapper gap={14} >
 														{contentTypes.map((type, i) => (
-															<SwiperSlide className="!w-fit">
+															<SwiperSlide className="!w-fit select-none">
 																<div
 																	key={type.name + i}
 																	className="flex flex-col items-center cursor-pointer"
