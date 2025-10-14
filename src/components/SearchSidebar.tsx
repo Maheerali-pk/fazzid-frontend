@@ -31,7 +31,7 @@ import Tabs, { TabOption } from "./Tabs";
 import { allChannels, countries, countryData, IChannel, ICountry, IState, states } from "@/helpers/data";
 import CountryItem from "./CountryItem";
 import ThemeDropdown from "./ThemeDropdown";
-import { getFlagUrl } from "@/helpers/utils";
+import { getFlagUrl, getCountryIconPath } from "@/helpers/utils";
 import { useTheme } from "@/contexts/ThemeContext";
 import PageTabs from "./PageTabs";
 
