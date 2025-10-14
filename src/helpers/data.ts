@@ -45,10 +45,10 @@ export interface IChannel {
    articles: string;
 }
 
-// Country data with ISO codes and names for 50 countries
+// Country data with ISO codes and names for the countries matching our icon files
 export const countryData: { code: string; name: string }[] = [
-   { code: "US", name: "US" },
-   { code: "GB", name: "UK" },
+   { code: "US", name: "United States" },
+   { code: "GB", name: "United Kingdom" },
    { code: "DE", name: "Germany" },
    { code: "FR", name: "France" },
    { code: "IT", name: "Italy" },
@@ -56,13 +56,13 @@ export const countryData: { code: string; name: string }[] = [
    { code: "CA", name: "Canada" },
    { code: "AU", name: "Australia" },
    { code: "JP", name: "Japan" },
-   { code: "KR", name: "Korea" },
+   { code: "KR", name: "South Korea" },
    { code: "CN", name: "China" },
    { code: "IN", name: "India" },
    { code: "BR", name: "Brazil" },
    { code: "MX", name: "Mexico" },
    { code: "RU", name: "Russia" },
-   { code: "ZA", name: "SA" },
+   { code: "ZA", name: "South Africa" },
    { code: "EG", name: "Egypt" },
    { code: "NG", name: "Nigeria" },
    { code: "AR", name: "Argentina" },
@@ -71,32 +71,32 @@ export const countryData: { code: string; name: string }[] = [
    { code: "NL", name: "Netherlands" },
    { code: "BE", name: "Belgium" },
    { code: "SE", name: "Sweden" },
-   { code: "NO", name: "Norway" },
-   { code: "DK", name: "Denmark" },
-   { code: "FI", name: "Finland" },
-   { code: "PL", name: "Poland" },
-   { code: "AT", name: "Austria" },
    { code: "CH", name: "Switzerland" },
    { code: "GR", name: "Greece" },
    { code: "TR", name: "Turkey" },
-   { code: "IL", name: "Israel" },
-   { code: "SA", name: "SA" },
+   { code: "SA", name: "Saudi Arabia" },
    { code: "AE", name: "UAE" },
    { code: "TH", name: "Thailand" },
    { code: "VN", name: "Vietnam" },
    { code: "MY", name: "Malaysia" },
-   { code: "SG", name: "Singapore" },
    { code: "ID", name: "Indonesia" },
    { code: "PH", name: "Philippines" },
-   { code: "NZ", name: "New Zealand" },
-   { code: "IE", name: "Ireland" },
    { code: "UA", name: "Ukraine" },
-   { code: "CZ", name: "Czech" },
+   { code: "CZ", name: "Czech Republic (Czechia)" },
    { code: "RO", name: "Romania" },
    { code: "HU", name: "Hungary" },
    { code: "CL", name: "Chile" },
    { code: "PE", name: "Peru" },
    { code: "PK", name: "Pakistan" },
+   { code: "DZ", name: "Algeria" },
+   { code: "AO", name: "Angola" },
+   { code: "BD", name: "Bangladesh" },
+   { code: "BY", name: "Belarus" },
+   { code: "BJ", name: "Benin" },
+   { code: "BO", name: "Bolivia" },
+   { code: "BF", name: "Burkina Faso" },
+   { code: "BI", name: "Burundi" },
+   { code: "KH", name: "Cambodia" },
 ];
 
 // Generate random count between min and max
@@ -104,7 +104,7 @@ const getRandomCount = (min: number = 100, max: number = 1000): number => {
    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// Generate the countries array with the world icon first, then all countries from the API
+// Generate the countries array with the world icon first, then all countries from our local icons
 export const countries: ICountry[] = [
    {
       name: "All",
@@ -116,7 +116,8 @@ export const countries: ICountry[] = [
    },
    ...countryData.map((country, index) => ({
       name: country.name,
-      flag: getFlagUrl(country.code, "flat", 64),
+      // Keep the API flag URL as a fallback, but we'll primarily use our local icons
+      flag: getFlagUrl(country.code),
       count: getRandomCount(),
       id: (index + 1).toString(),
       countryCode: country.code,
@@ -1752,16 +1753,113 @@ export const usStatesData = [
    { name: "Wyoming", code: "WY" },
 ];
 
-// Find the US country ID from our countries array
+// Define Canada provinces/territories data
+export const canadaStatesData = [
+   { name: "Alberta", code: "Alberta" },
+   { name: "British Columbia", code: "British Columbia" },
+   { name: "Manitoba", code: "Manitoba" },
+   { name: "New Brunswick", code: "New Brunswick" },
+   { name: "Newfoundland and Labrador", code: "Newfoundland and Labrador" },
+   { name: "Nova Scotia", code: "Nova Scotia" },
+   { name: "Ontario", code: "Ontario" },
+   { name: "Prince Edward Island", code: "Prince Edward Island" },
+   { name: "Quebec", code: "Quebec" },
+   { name: "Saskatchewan", code: "Saskatchewan" },
+   { name: "Northwest Territories", code: "Northwest Territories" },
+   { name: "Nunavut", code: "Nunavut" },
+   { name: "Yukon", code: "Yukon" }
+];
+
+// Define Indian states data
+export const indiaStatesData = [
+   { name: "Andhra Pradesh", code: "Andhra Pradesh" },
+   { name: "Arunachal Pradesh", code: "Arunachal Pradesh" },
+   { name: "Assam", code: "Assam" },
+   { name: "Bihar", code: "Bihar" },
+   { name: "Chhattisgarh", code: "Chhattisgarh" },
+   { name: "Goa", code: "Goa" },
+   { name: "Gujarat", code: "Gujarat" },
+   { name: "Haryana", code: "Haryana" },
+   { name: "Himachal Pradesh", code: "Himachal Pradesh" },
+   { name: "Jharkhand", code: "Jharkhand" },
+   { name: "Karnataka", code: "Karnataka" },
+   { name: "Kerala", code: "Kerala" },
+   { name: "Madhya Pradesh", code: "Madhya Pradesh" },
+   { name: "Maharashtra", code: "Maharashtra" },
+   { name: "Manipur", code: "Manipur" },
+   { name: "Meghalaya", code: "Meghalaya" },
+   { name: "Mizoram", code: "Mizoram" },
+   { name: "Nagaland", code: "Nagaland" },
+   { name: "Odisha", code: "Odisha" },
+   { name: "Punjab", code: "Punjab" },
+   { name: "Rajasthan", code: "Rajasthan" }
+   // The following states have missing image files and have been temporarily removed:
+   // { name: "Sikkim", code: "Sikkim" },
+   // { name: "Tamil Nadu", code: "Tamil Nadu" },
+   // { name: "Telangana", code: "Telangana" },
+   // { name: "Tripura", code: "Tripura" },
+   // { name: "Uttar Pradesh", code: "Uttar Pradesh" },
+   // { name: "Uttarakhand", code: "Uttarakhand" },
+   // { name: "West Bengal", code: "West Bengal" }
+];
+
+// Define Pakistan states/provinces data
+export const pakistanStatesData = [
+   { name: "Balochistan", code: "Balochistan" },
+   { name: "Gilgit-Baltistan", code: "GilGit" },
+   { name: "Khyber Pakhtunkhwa", code: "KPK" },
+   { name: "Punjab", code: "Punjab" },
+   { name: "Sindh", code: "Sindh" }
+];
+
+// Find country IDs from our countries array
 const usCountry = countries.find((country) => country.countryCode === "US");
 const usCountryId = usCountry ? usCountry.id : "1";
 
-// Generate states array dynamically
-export const states: IState[] = usStatesData.map((state, index) => ({
-   name: state.name,
-   count: getRandomCount(50, 500),
-   // Use the state flag utility function
-   flag: getStateFlagUrl(state.code),
-   id: (index + 1).toString(),
-   countryId: usCountryId,
-}));
+const canadaCountry = countries.find((country) => country.countryCode === "CA");
+const canadaCountryId = canadaCountry ? canadaCountry.id : "7";
+
+const indiaCountry = countries.find((country) => country.countryCode === "IN");
+const indiaCountryId = indiaCountry ? indiaCountry.id : "11";
+
+const pakistanCountry = countries.find((country) => country.countryCode === "PK");
+const pakistanCountryId = pakistanCountry ? pakistanCountry.id : "40";
+
+// Generate states array dynamically for all countries with states
+export const states: IState[] = [
+   // US States
+   ...usStatesData.map((state, index) => ({
+      name: state.name,
+      count: getRandomCount(50, 500),
+      flag: getStateFlagUrl(state.name, "US"), // Pass state name instead of code for US states
+      id: (index + 1).toString(),
+      countryId: usCountryId,
+   })),
+   
+   // Canada Provinces/Territories
+   ...canadaStatesData.map((state, index) => ({
+      name: state.name,
+      count: getRandomCount(30, 300),
+      flag: getStateFlagUrl(state.code, "CA"),
+      id: (index + usStatesData.length + 1).toString(),
+      countryId: canadaCountryId,
+   })),
+   
+   // India States
+   ...indiaStatesData.map((state, index) => ({
+      name: state.name,
+      count: getRandomCount(50, 600),
+      flag: getStateFlagUrl(state.code, "IN"),
+      id: (index + usStatesData.length + canadaStatesData.length + 1).toString(),
+      countryId: indiaCountryId,
+   })),
+   
+   // Pakistan Provinces
+   ...pakistanStatesData.map((state, index) => ({
+      name: state.name,
+      count: getRandomCount(30, 250),
+      flag: getStateFlagUrl(state.code, "PK"),
+      id: (index + usStatesData.length + canadaStatesData.length + indiaStatesData.length + 1).toString(),
+      countryId: pakistanCountryId,
+   }))
+];

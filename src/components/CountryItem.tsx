@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ICountry } from "@/helpers/data";
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
-import { getFlagUrl } from "@/helpers/utils";
+import { getFlagUrl, getCountryIconPath } from "@/helpers/utils";
 
 interface CountryItemProps {
 	country: ICountry;
@@ -17,7 +17,11 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 		dispatch({ setState: { selectedCountryId: country.id } })
 	}
 
-	// Use the flag URL from the country object (generated from flagsapi.com)
+	
+	// Try to get local country icon from our public folder
+	const localIconPath = getCountryIconPath(country.name);
+	// Fallback to the API flag URL if local icon isn't available
+
 	const flagSrc = country.flag;
 
 	return (
@@ -28,6 +32,19 @@ const CountryItem: React.FC<CountryItemProps> = ({ country, type = "country" }) 
 					<div className="text-foreground">
 						{country.icon}
 					</div>
+				) : localIconPath ? (
+					<Image
+						src={localIconPath}
+						alt={`${country.name} flag`}
+						width={49}
+						height={49}
+						onError={(e) => {
+							// Fallback to the API flag if local image fails to load
+							if (flagSrc) {
+								(e.target as HTMLImageElement).src = flagSrc;
+							}
+						}}
+					/>
 				) : flagSrc ? (
 					<Image
 						src={flagSrc}
