@@ -444,7 +444,7 @@ export default function SearchSidebar() {
 						)}
 
 						{state.searchType === "website" && (
-							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass2">
 								<div className="flex justify-between items-center mb-4 cursor-pointer">
 									<span className="text-foreground font-medium">
 										Countries
@@ -540,7 +540,7 @@ export default function SearchSidebar() {
 
 						{/* Channel Tab Content */}
 						{state.searchType === "channel" && (
-							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass3">
+							<div className="bg-card-bg-color-dark p-7.5 rounded-4xl bg-glass2">
 								<div className="flex justify-between items-center mb-4">
 									<span className="text-foreground font-medium">
 										News Channels
