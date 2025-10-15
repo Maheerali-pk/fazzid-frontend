@@ -6,6 +6,7 @@ import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
 import { allNewsItems, allVideoItems } from "@/helpers/data";
 import { useTheme } from "@/contexts/ThemeContext";
+import { truncateText } from "@/helpers/utils";
 
 // Interface for video data
 interface VideoData {
@@ -27,6 +28,7 @@ const getYouTubeThumbnail = (videoId: string) => {
    // Use the high quality thumbnail with a fallback to the default one
    return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 };
+
 
 export default function Videos() {
    const [state] = useGlobalContext();
@@ -193,7 +195,7 @@ export default function Videos() {
                                     </div>
                                  </div>
                                  <p className="text-card-description-text text-sm">
-                                    {video.description}
+                                    {truncateText(video.description, 300)}
                                  </p>
 
                                  {/* Bottom Section - Channel + Stats */}

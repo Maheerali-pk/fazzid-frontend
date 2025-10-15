@@ -25,17 +25,24 @@ interface IGlobalState {
   allPages: PageTabItem[]
 }
 
+// Helper function to safely get localStorage value
+const getInitialSidebarStatus = (): "closed" | "semi-opened" | "full" => {
+  if (typeof window !== "undefined") {
+    return (localStorage.getItem("sidebarStatus") as "closed" | "semi-opened" | "full") || "closed";
+  }
+  return "closed";
+};
+
 const initialState: IGlobalState = {
   itemsView: "grid",
   allPages: [{ id: "0", name: "Pakistan" }, { id: "1", name: "India" }],
-  sidebarStatus: localStorage?.getItem("sidebarStatus") as "closed" | "semi-opened" | "full" || "closed",
+  sidebarStatus: getInitialSidebarStatus(),
   selectedCountryId: null,
   selectedPageId: "0",
   searchKeyword: "",
   diveType: "dive-deeper",
   searchType: "categories",
   channelsSelected: []
-
 }
 
 function setState(
@@ -58,7 +65,10 @@ const { Context, Provider, useContextHook } = createCustomContext<
   functions,
   customHook: (state) => {
     useEffect(() => {
-      localStorage.setItem("sidebarStatus", state.sidebarStatus);
+      // Only access localStorage in browser environment
+      if (typeof window !== "undefined") {
+        localStorage.setItem("sidebarStatus", state.sidebarStatus);
+      }
     }, [state.sidebarStatus]);
   }
 })

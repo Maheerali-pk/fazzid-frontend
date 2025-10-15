@@ -1770,8 +1770,9 @@ export const canadaStatesData = [
    { name: "Yukon", code: "Yukon" },
 ];
 
-// Define Indian states data
+// Define Indian states and union territories data
 export const indiaStatesData = [
+   // States (28)
    { name: "Andhra Pradesh", code: "Andhra Pradesh" },
    { name: "Arunachal Pradesh", code: "Arunachal Pradesh" },
    { name: "Assam", code: "Assam" },
@@ -1793,14 +1794,28 @@ export const indiaStatesData = [
    { name: "Odisha", code: "Odisha" },
    { name: "Punjab", code: "Punjab" },
    { name: "Rajasthan", code: "Rajasthan" },
-   // The following states have missing image files and have been temporarily removed:
-   // { name: "Sikkim", code: "Sikkim" },
-   // { name: "Tamil Nadu", code: "Tamil Nadu" },
-   // { name: "Telangana", code: "Telangana" },
-   // { name: "Tripura", code: "Tripura" },
-   // { name: "Uttar Pradesh", code: "Uttar Pradesh" },
-   // { name: "Uttarakhand", code: "Uttarakhand" },
-   // { name: "West Bengal", code: "West Bengal" }
+   { name: "Sikkim", code: "Sikkim" },
+   { name: "Tamil Nadu", code: "Tamil Nadu" },
+   { name: "Telangana", code: "Telangana" },
+   { name: "Tripura", code: "Tripura" },
+   { name: "Uttar Pradesh", code: "Uttar Pradesh" },
+   { name: "Uttarakhand", code: "Uttarakhand" },
+
+   // Union Territories (8)
+   { name: "Andaman and Nicobar Islands", code: "Andaman and Nicobar Islands" },
+   { name: "Chandigarh", code: "Chandigarh" },
+   {
+      name: "Dadra and Nagar Haveli and Daman and Diu",
+      code: "Dadra and Nagar Haveli and Daman and Diu",
+   },
+   {
+      name: "Delhi (National Capital Territory)",
+      code: "Delhi (National Capital Territory)",
+   },
+   { name: "Jammu and Kashmir", code: "Jammu and Kashmir" },
+   { name: "Ladakh", code: "Ladakh" },
+   { name: "Lakshadweep", code: "Lakshadweep" },
+   { name: "Puducherry", code: "Puducherry" },
 ];
 
 // Define Pakistan states/provinces data

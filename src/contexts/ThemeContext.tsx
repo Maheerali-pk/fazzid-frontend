@@ -12,16 +12,30 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Helper function to safely get initial theme from localStorage
+const getInitialTheme = (): Theme => {
+	if (typeof window !== "undefined") {
+		return (localStorage.getItem('theme') as Theme) || 'dark';
+	}
+	return 'dark';
+};
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-	const [theme, setTheme] = useState<Theme>(localStorage.getItem('theme') as Theme || 'dark');
+	const [theme, setTheme] = useState<Theme>(getInitialTheme());
+
 	useEffect(() => {
-		setTheme((localStorage.getItem('theme') as Theme) || 'light');
-	}, [])
+		// Only access localStorage in browser environment
+		if (typeof window !== "undefined") {
+			setTheme((localStorage.getItem('theme') as Theme) || 'dark');
+		}
+	}, []);
 
 	useEffect(() => {
 		// Apply theme to document
-		document.documentElement.setAttribute('data-theme', theme);
-		localStorage.setItem('theme', theme);
+		if (typeof window !== "undefined") {
+			document.documentElement.setAttribute('data-theme', theme);
+			localStorage.setItem('theme', theme);
+		}
 	}, [theme]);
 
 	const value = {

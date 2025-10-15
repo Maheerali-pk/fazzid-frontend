@@ -1,4 +1,4 @@
-States (28):
+States (27):
 
 Andhra Pradesh ✔️
 Arunachal Pradesh ✔️
@@ -20,22 +20,21 @@ Mizoram ✔️
 Nagaland ✔️
 Odisha ✔️
 Punjab ✔️
-Rajasthan
-Sikkim
-Tamil Nadu
-Telangana
-Tripura
-Uttar Pradesh
-Uttarakhand
-West Bengal
+Rajasthan ✔️
+Sikkim ✔️
+Tamil Nadu ✔️
+Telangana ✔️
+Tripura ✔️
+Uttar Pradesh ✔️
+Uttarakhand ✔️
 
 Union Territories (8):
 
-Andaman and Nicobar Islands
-Chandigarh
-Dadra and Nagar Haveli and Daman and Diu
-Delhi (National Capital Territory)
-Jammu and Kashmir
-Ladakh
-Lakshadweep
-Puducherry
+Andaman and Nicobar Islands ✔️
+Chandigarh ✔️
+Dadra and Nagar Haveli and Daman and Diu ✔️
+Delhi (National Capital Territory) ✔️
+Jammu and Kashmir ✔️
+Ladakh ✔️
+Lakshadweep ✔️
+Puducherry ✔️
