@@ -252,6 +252,9 @@ export default function SearchSidebar() {
 									"border-primary border bg-primary/10 text-primary placeholder:text-primary":
 										state.diveType === "dive-deeper" &&
 										theme === "glass",
+									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main ":
+										state.diveType === "diving-deeper" &&
+										theme === "glass",
 								}
 							)}
 						/>
