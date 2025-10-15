@@ -1,10 +1,11 @@
-import { FunctionComponent, useState, useRef } from "react";
+import { FunctionComponent, useState, useRef, useEffect } from "react";
 import { FreeMode, Navigation } from "swiper/modules";
 import { Swiper, SwiperClass } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import SwiperNavButtons from "./SwiperNavButtons";
+import { useGlobalContext } from "@/contexts/GlobalContext";
 interface SwiperWrapperProps {
 
 	children: React.ReactNode;
@@ -17,6 +18,7 @@ const SwiperWrapper: FunctionComponent<SwiperWrapperProps> = ({ children, classN
 	const [forceUpdate, setForceUpdate] = useState(0);
 	const [isSwipeActive, setIsSwipeActive] = useState(false);
 	const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
+	const [state, dispatch] = useGlobalContext();
 
 	const handleSwiperInit = (swiperInstance: SwiperClass) => {
 		setSwiper(swiperInstance);
@@ -26,6 +28,10 @@ const SwiperWrapper: FunctionComponent<SwiperWrapperProps> = ({ children, classN
 		// Force re-render to update button visibility
 		setForceUpdate(prev => prev + 1);
 	};
+	useEffect(() => {
+		setForceUpdate(prev => prev + 1);
+
+	}, [state.sidebarStatus])
 
 	const handleTouchStart = (e: React.TouchEvent) => {
 		const touch = e.touches[0];

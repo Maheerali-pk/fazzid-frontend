@@ -297,7 +297,7 @@ export default function SearchSidebar() {
 											<span className="text-foreground">
 												Countries
 											</span>
-											<div className="p-1 bg-card-bg-color rounded-full">
+											<div className={classNames("p-1 bg-card-bg-color rounded-full", { "bg-glass": theme === "glass" })}>
 												<svg
 													width="16"
 													height="16"
@@ -380,7 +380,7 @@ export default function SearchSidebar() {
 											<span className="text-foreground">
 												United States
 											</span>
-											<div className="p-1 bg-card-bg-color rounded-full">
+											<div className="p-1 bg-card-bg-color rounded-full bg-glass">
 												<svg
 													width="16"
 													height="16"
