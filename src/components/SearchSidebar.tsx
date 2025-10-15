@@ -260,8 +260,7 @@ export default function SearchSidebar() {
 									{micIcon}
 								</button>
 							</div>
-							<div className="text-foreground text-3xl mx-2 mb-2 font-extralight">
-								|
+							<div className="bg-foreground w-[1px] h-5 -translate-x-full ">
 							</div>
 							<div className="flex items-center">
 								<button className="text-foreground p-2 cursor-pointer">
