@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import SearchSidebar from "@/components/SearchSidebar";
 import classNames from "classnames";
 import { useGlobalContext } from "@/contexts/GlobalContext";
+import Videos from "@/components/Videos";
 
 export default function page() {
    const [state] = useGlobalContext()
@@ -23,7 +24,12 @@ export default function page() {
          })}>
             <Header />
             <div className="overflow-auto no-scrollbar">
-               <NewsCards />
+               {
+                  state.searchType === "channel" ? <Videos /> : (
+                     <NewsCards />
+                  )
+
+               }
             </div>
          </div>
          <SearchSidebar />

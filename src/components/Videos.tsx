@@ -138,7 +138,9 @@ export default function Videos() {
                            </>
                         ) : (
                            // LIST VIEW
-                           <div className="flex w-full  rounded-xl bg-card-bg-color p-3 mx-auto max-w-full">
+                           <div className={classNames("flex w-full  rounded-xl bg-card-bg-color  p-3 mx-auto max-w-full", {
+                              "bg-transparent": itemsView === "list"
+                           })}>
                               {/* Left Side - Thumbnail */}
                               <div className="relative w-[200px] h-[110px] mr-4 flex-shrink-0">
                                  <a
