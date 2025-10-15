@@ -1,7 +1,7 @@
 "use client"
 import { PageTabItem } from "@/components/PageTabs";
 import { createCustomContext } from "@/helpers/CreateCustomContext"
-import react from "react"
+import react, { useEffect } from "react"
 export type DiveType = "dive-deeper" | "diving-deeper";
 export type SearchType = "categories" | "website" | "channel" | "keywords";
 export interface INewsItem {
@@ -22,18 +22,17 @@ interface IGlobalState {
   searchKeyword: string;
   channelsSelected: string[];
   selectedPageId: string;
+
   allPages: PageTabItem[]
 }
 
 const initialState: IGlobalState = {
   itemsView: "grid",
   allPages: [{ id: "0", name: "Pakistan" }, { id: "1", name: "India" }],
-  sidebarStatus: "closed",
+  sidebarStatus: localStorage.getItem("sidebarStatus") as "closed" | "semi-opened" | "full" || "closed",
   selectedCountryId: null,
   selectedPageId: "0",
-  // sidebarStatus: "semi-opened",
   searchKeyword: "",
-
   diveType: "dive-deeper",
   searchType: "categories",
   channelsSelected: []
@@ -58,6 +57,11 @@ const { Context, Provider, useContextHook } = createCustomContext<
 >({
   initialState,
   functions,
+  customHook: (state) => {
+    useEffect(() => {
+      localStorage.setItem("sidebarStatus", state.sidebarStatus);
+    }, [state.sidebarStatus]);
+  }
 })
 
 export const GlobalContextProvider = Provider

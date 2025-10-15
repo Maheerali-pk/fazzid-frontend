@@ -11,6 +11,7 @@ type CreateDispatchType<ActionsType> = React.Dispatch<Partial<ActionsType>>;
 interface Props<StateType, FunctionsObjectType> {
    initialState: StateType;
    functions: FunctionsObjectType;
+   customHook?: (state: StateType) => void
 }
 
 //To create the 'Action Types' from 'FunctionsType'
@@ -47,6 +48,8 @@ function buildReducer<StateType, FunctionsObjectType extends GeneralFucntionsObj
 export function createCustomContext<StateType extends Object, FunctionsObjectType extends GeneralFucntionsObjectType>({
    initialState,
    functions,
+   customHook
+
 }: Props<StateType, FunctionsObjectType>) {
    //Create actions type using typeof functions object
    type ActionsType = CreateActionsType<FunctionsObjectType>;
@@ -64,6 +67,7 @@ export function createCustomContext<StateType extends Object, FunctionsObjectTyp
    //Create the wrapper function which provied that context
    const Provider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       const [state, dispatch] = useReducer(reducer, initialState);
+      customHook && customHook(state);
       return <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>;
    };
 
