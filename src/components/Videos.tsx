@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useGlobalContext } from "@/contexts/GlobalContext";
 import classNames from "classnames";
 import { allNewsItems, allVideoItems } from "@/helpers/data";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // Interface for video data
 interface VideoData {
@@ -30,7 +31,7 @@ const getYouTubeThumbnail = (videoId: string) => {
 export default function Videos() {
    const [state] = useGlobalContext();
    const { itemsView, sidebarStatus } = state;
-
+   const { theme } = useTheme();
    // Define the videos data array with YouTube video IDs
 
    const filteredVideos = allVideoItems.filter((video) => {
@@ -139,7 +140,7 @@ export default function Videos() {
                         ) : (
                            // LIST VIEW
                            <div className={classNames("flex w-full  rounded-xl bg-card-bg-color  p-3 mx-auto max-w-full", {
-                              "bg-transparent": itemsView === "list"
+                              "bg-transparent": itemsView === "list" && theme === "glass"
                            })}>
                               {/* Left Side - Thumbnail */}
                               <div className="relative w-[200px] h-[110px] mr-4 flex-shrink-0">

@@ -130,7 +130,7 @@ export const allVideoItems: IVideoItem[] = [
       source: "CNN",
       title: "Hurricane Maria approaches east coast",
       description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         "Meteorologists are tracking Hurricane Maria as it strengthens to a Category 4 storm and approaches the eastern seaboard. The National Weather Service has issued evacuation orders for coastal communities from Florida to North Carolina. Emergency response teams are mobilizing resources, including mobile hospitals and emergency shelters. Residents are urged to prepare emergency kits and follow evacuation protocols. The storm is expected to bring sustained winds of 140 mph and storm surges up to 15 feet in some areas. Power companies are preparing for widespread outages and have positioned repair crews strategically across the region.",
       views: "1.2M",
       postedTime: "5 hours ago",
       date: "May, 15, 2025",
@@ -145,7 +145,7 @@ export const allVideoItems: IVideoItem[] = [
       source: "FOX NEWS",
       title: "Global markets respond to trade agreement",
       description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         "Stock markets worldwide are experiencing significant volatility following the announcement of a major international trade agreement between the United States, European Union, and Pacific nations. The Dow Jones Industrial Average surged 450 points in early trading, while European markets showed mixed results. The agreement addresses digital trade, environmental standards, and supply chain resilience. Analysts predict this could lead to increased investment in clean energy technologies and semiconductor manufacturing. However, some sectors, particularly traditional manufacturing, are expressing concerns about increased competition. The deal is expected to create over 2 million jobs globally and reduce trade barriers by an estimated 15%.",
       views: "420K",
       postedTime: "9 hours ago",
       date: "May, 15, 2025",
@@ -159,7 +159,7 @@ export const allVideoItems: IVideoItem[] = [
       source: "CNN",
       title: "Tech leaders testify before Congress",
       description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         "CEOs from major technology companies including Google, Meta, Apple, and Microsoft appeared before a congressional committee to address concerns about artificial intelligence regulation, data privacy, and market competition. The hearing focused on proposed legislation that would require tech companies to be more transparent about their AI algorithms and data collection practices. Lawmakers grilled executives about their companies' role in spreading misinformation and their plans to protect user privacy. The tech leaders outlined their voluntary commitments to AI safety and proposed industry standards for responsible AI development. The hearing lasted over six hours and covered topics ranging from social media's impact on mental health to the potential economic disruption caused by AI automation.",
       views: "860K",
       postedTime: "11 hours ago",
       date: "May, 15, 2025",
@@ -173,7 +173,7 @@ export const allVideoItems: IVideoItem[] = [
       source: "BBC",
       title: "Climate summit produces historic carbon agreement",
       description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         "World leaders from 195 countries have reached an unprecedented agreement to accelerate carbon reduction targets and establish a global carbon trading system. The historic deal commits nations to achieve net-zero emissions by 2045, five years earlier than previously agreed. The agreement includes a $100 billion annual fund to help developing nations transition to renewable energy and adapt to climate change. Major provisions include mandatory carbon pricing for all industries, increased investment in carbon capture technology, and strict penalties for countries that fail to meet their targets. Environmental groups are calling this the most significant climate agreement since the Paris Accord, while some critics argue the timeline is too ambitious and could harm economic growth.",
       views: "1.3M",
       postedTime: "20 hours ago",
       date: "May, 14, 2025",
@@ -187,7 +187,7 @@ export const allVideoItems: IVideoItem[] = [
       source: "BBC",
       title: "Advances in quantum computing could revolutionize medicine",
       description:
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+         "Scientists at leading research institutions have made a breakthrough in quantum computing that could transform drug discovery and personalized medicine. The new quantum algorithm can simulate molecular interactions at an unprecedented scale, allowing researchers to test millions of potential drug combinations in minutes rather than years. This technology has already identified promising treatments for Alzheimer's disease and certain types of cancer. The quantum computer can model complex protein folding patterns that were previously impossible to calculate, leading to more effective and targeted medications. Pharmaceutical companies are investing billions in quantum computing research, with the first quantum-designed drugs expected to enter clinical trials within two years. This advancement could reduce drug development costs by up to 70% and accelerate the timeline for bringing new treatments to market.",
       views: "645K",
       postedTime: "1 day ago",
       date: "May, 14, 2025",
@@ -1204,7 +1204,7 @@ export const allNewsItems: INewsItem[] = [
       date: "Oct, 8, 2025",
       title: "AI Breakthrough: New Model Achieves Human-Level Understanding",
       description:
-         "Researchers have unveiled a groundbreaking AI system that demonstrates unprecedented comprehension abilities.",
+         "Researchers at leading AI laboratories have unveiled a groundbreaking artificial intelligence system that demonstrates unprecedented comprehension abilities across multiple domains. The new model, called GPT-5, has achieved human-level performance in reading comprehension, mathematical reasoning, and creative writing tasks. Unlike previous AI systems that excel in narrow domains, this model shows remarkable versatility, able to understand context, nuance, and even humor in ways that were previously impossible for machines. The system was trained on a diverse dataset spanning scientific literature, literature, news articles, and human conversations. Early tests show the AI can engage in complex philosophical discussions, solve advanced mathematical problems, and even create original works of fiction that are indistinguishable from human-authored content. This breakthrough has significant implications for education, healthcare, and creative industries, though it also raises important questions about the future of human work and the need for AI regulation.",
       imageUrl: "https://picsum.photos/seed/tech1/400/300",
    },
    {
@@ -1214,7 +1214,7 @@ export const allNewsItems: INewsItem[] = [
       date: "Oct, 9, 2025",
       title: "Global Leaders Commit to Net-Zero Emissions by 2040",
       description:
-         "In a historic summit, world leaders from over 150 countries have pledged ambitious climate action plans. The comprehensive agreement includes massive investments in renewable energy, carbon capture technology, and sustainable infrastructure development across all continents.",
+         "In a historic summit that many are calling the most significant climate conference in history, world leaders from over 150 countries have pledged ambitious climate action plans that go far beyond previous commitments. The comprehensive agreement includes massive investments totaling $5 trillion in renewable energy infrastructure, advanced carbon capture technology, and sustainable transportation systems across all continents. The deal establishes a global carbon trading system that will allow countries to buy and sell carbon credits, creating economic incentives for emission reductions. Major provisions include the phase-out of coal-fired power plants by 2035, mandatory electric vehicle adoption targets, and the creation of a $200 billion fund to help developing nations transition to clean energy. The agreement also includes strict monitoring and enforcement mechanisms, with countries facing economic sanctions if they fail to meet their targets. Environmental groups are celebrating the unprecedented scope of the agreement, while some critics argue that the timeline may be too aggressive and could lead to economic disruption in fossil fuel-dependent regions.",
       imageUrl: "https://picsum.photos/seed/climate2/400/300",
    },
    {
@@ -1224,7 +1224,7 @@ export const allNewsItems: INewsItem[] = [
       date: "Oct, 7, 2025",
       title: "Stock Markets Hit Record Highs",
       description:
-         "Markets surge on positive economic indicators and strong corporate earnings reports.",
+         "Global stock markets have reached unprecedented heights as investors respond to a perfect storm of positive economic indicators and surprisingly strong corporate earnings reports. The Dow Jones Industrial Average closed at 45,000 for the first time in history, while the S&P 500 and NASDAQ also set new records. The surge is driven by several factors including robust job growth, declining inflation rates, and breakthrough announcements from major technology companies. Corporate earnings have exceeded expectations across most sectors, with particularly strong performance in renewable energy, biotechnology, and artificial intelligence companies. Central banks' decision to maintain accommodative monetary policies while inflation remains under control has also boosted investor confidence. However, some analysts are warning of potential market volatility ahead, citing geopolitical tensions and the possibility of interest rate adjustments. The current bull market has now lasted over 15 years, making it one of the longest in history, and many investors are wondering how much higher markets can go.",
       imageUrl: "https://picsum.photos/seed/finance3/400/300",
    },
    {
@@ -1234,7 +1234,7 @@ export const allNewsItems: INewsItem[] = [
       date: "Oct, 10, 2025",
       title: "Underdog Team Wins Championship in Stunning Upset",
       description:
-         "In what many are calling the greatest sports story of the decade, a team that was predicted to finish last in their division has won the championship title. The victory came after an intense final match that went into overtime, with the winning goal scored in the last seconds of play. Fans around the world celebrated this incredible achievement.",
+         "In what many are calling the greatest sports story of the decade, the Phoenix Rising FC, a team that was predicted to finish last in their division and had never won a playoff game in their 15-year history, has defied all odds to capture the championship title. The victory came after an intense final match that went into triple overtime, with the winning goal scored by 19-year-old rookie striker Marcus Johnson in the 127th minute of play. The team's journey to the championship was nothing short of miraculous, overcoming a 12-game losing streak early in the season and rallying from a 3-0 deficit in the semifinals. Coach Sarah Martinez, who took over the team mid-season, implemented an innovative tactical system that revolutionized the way the game is played. The victory has sparked celebrations across the city and has been credited with revitalizing the local economy, as merchandise sales have increased by 400% and season ticket sales for next year have already sold out. The team's success has also inspired a new generation of young athletes and has been featured in major sports documentaries and films.",
       imageUrl: "https://picsum.photos/seed/sports4/400/300",
    },
    {
@@ -1244,7 +1244,7 @@ export const allNewsItems: INewsItem[] = [
       date: "Oct, 6, 2025",
       title: "New Cancer Treatment Shows Promising Results in Clinical Trials",
       description:
-         "Medical researchers announce breakthrough therapy with 85% success rate in early trials.",
+         "Medical researchers at leading cancer centers worldwide have announced a breakthrough therapy that has achieved an unprecedented 85% success rate in early clinical trials, offering new hope for patients with previously untreatable forms of cancer. The innovative treatment, called CAR-T-NK therapy, combines the precision of CAR-T cell therapy with the natural killing ability of NK (natural killer) cells to create a more effective and less toxic approach to cancer treatment. The therapy works by genetically engineering a patient's immune cells to recognize and attack cancer cells while leaving healthy tissue unharmed. In trials involving 200 patients with various types of advanced cancer, including pancreatic, lung, and brain tumors, the treatment has shown remarkable results with minimal side effects. The therapy has been particularly effective against cancers that have developed resistance to traditional treatments. The research team, led by Dr. Elena Rodriguez at the National Cancer Institute, believes this could represent a paradigm shift in cancer treatment, potentially making many forms of cancer manageable chronic conditions rather than terminal diseases. The treatment is expected to receive FDA approval within the next two years and could be available to patients by 2027.",
       imageUrl: "https://picsum.photos/seed/medical5/400/300",
    },
    {
@@ -1767,7 +1767,7 @@ export const canadaStatesData = [
    { name: "Saskatchewan", code: "Saskatchewan" },
    { name: "Northwest Territories", code: "Northwest Territories" },
    { name: "Nunavut", code: "Nunavut" },
-   { name: "Yukon", code: "Yukon" }
+   { name: "Yukon", code: "Yukon" },
 ];
 
 // Define Indian states data
@@ -1792,7 +1792,7 @@ export const indiaStatesData = [
    { name: "Nagaland", code: "Nagaland" },
    { name: "Odisha", code: "Odisha" },
    { name: "Punjab", code: "Punjab" },
-   { name: "Rajasthan", code: "Rajasthan" }
+   { name: "Rajasthan", code: "Rajasthan" },
    // The following states have missing image files and have been temporarily removed:
    // { name: "Sikkim", code: "Sikkim" },
    // { name: "Tamil Nadu", code: "Tamil Nadu" },
@@ -1809,7 +1809,7 @@ export const pakistanStatesData = [
    { name: "Gilgit-Baltistan", code: "GilGit" },
    { name: "Khyber Pakhtunkhwa", code: "KPK" },
    { name: "Punjab", code: "Punjab" },
-   { name: "Sindh", code: "Sindh" }
+   { name: "Sindh", code: "Sindh" },
 ];
 
 // Find country IDs from our countries array
@@ -1822,7 +1822,9 @@ const canadaCountryId = canadaCountry ? canadaCountry.id : "7";
 const indiaCountry = countries.find((country) => country.countryCode === "IN");
 const indiaCountryId = indiaCountry ? indiaCountry.id : "11";
 
-const pakistanCountry = countries.find((country) => country.countryCode === "PK");
+const pakistanCountry = countries.find(
+   (country) => country.countryCode === "PK"
+);
 const pakistanCountryId = pakistanCountry ? pakistanCountry.id : "40";
 
 // Generate states array dynamically for all countries with states
@@ -1835,7 +1837,7 @@ export const states: IState[] = [
       id: (index + 1).toString(),
       countryId: usCountryId,
    })),
-   
+
    // Canada Provinces/Territories
    ...canadaStatesData.map((state, index) => ({
       name: state.name,
@@ -1844,22 +1846,33 @@ export const states: IState[] = [
       id: (index + usStatesData.length + 1).toString(),
       countryId: canadaCountryId,
    })),
-   
+
    // India States
    ...indiaStatesData.map((state, index) => ({
       name: state.name,
       count: getRandomCount(50, 600),
       flag: getStateFlagUrl(state.code, "IN"),
-      id: (index + usStatesData.length + canadaStatesData.length + 1).toString(),
+      id: (
+         index +
+         usStatesData.length +
+         canadaStatesData.length +
+         1
+      ).toString(),
       countryId: indiaCountryId,
    })),
-   
+
    // Pakistan Provinces
    ...pakistanStatesData.map((state, index) => ({
       name: state.name,
       count: getRandomCount(30, 250),
       flag: getStateFlagUrl(state.code, "PK"),
-      id: (index + usStatesData.length + canadaStatesData.length + indiaStatesData.length + 1).toString(),
+      id: (
+         index +
+         usStatesData.length +
+         canadaStatesData.length +
+         indiaStatesData.length +
+         1
+      ).toString(),
       countryId: pakistanCountryId,
-   }))
+   })),
 ];
