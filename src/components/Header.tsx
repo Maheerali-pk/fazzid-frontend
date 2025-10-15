@@ -5,10 +5,12 @@ import Image from 'next/image'
 import { useGlobalContext } from '@/contexts/GlobalContext'
 import { gridIcon, listIcon, toggleSidebarIcon } from '@/helpers/icons'
 import classNames from 'classnames'
+import { useTheme } from '@/contexts/ThemeContext'
 
 export default function Header() {
   const [state, dispatch] = useGlobalContext()
   const { itemsView, sidebarStatus } = state
+  const { theme } = useTheme()
 
   const handleViewChange = (view: 'grid' | 'list') => {
     dispatch({ setState: { itemsView: view } })
@@ -23,7 +25,8 @@ export default function Header() {
       {/* <h1>Header</h1> */}
       <div className="flex justify-between items-center">
         <div>
-          <Image className='w-23 h-14' src="/images/fazit_logo.png" alt="Logo" width={100} height={100} />
+          <Image className={classNames('w-23 h-14 object-cover', { 'hidden': theme !== 'glass' })} src="/images/fazit-logo-glass.png" alt="Logo" width={100} height={100} />
+          <Image className={classNames('w-23 h-14', { 'hidden': theme === 'glass' })} src="/images/fazit_logo.png" alt="Logo" width={100} height={100} />
         </div>
         <div className=''>
           <div className='flex py-4 px-9 rounded-4xl gap-x-3 bg-card-bg-color bg-glass2' >
