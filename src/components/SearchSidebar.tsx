@@ -142,11 +142,20 @@ export default function SearchSidebar() {
 	};
 	const renderCountryTabItems = () => {
 		if (selectedCountry) {
+			// Check if there are states available for the selected country
+			if (statesList.length === 0) {
+				return (
+					<div className="flex items-center justify-center w-full py-8">
+						<span className="text-foreground text-sm opacity-70">
+							No states available
+						</span>
+					</div>
+				);
+			}
+
 			return statesList.map((state) => (
-				<SwiperSlide className="!w-fit">
-					{" "}
+				<SwiperSlide className="!w-fit" key={state.id + state.name}>
 					<CountryItem
-						key={state.id + state.name}
 						country={state}
 						type="state"
 					/>
@@ -154,10 +163,8 @@ export default function SearchSidebar() {
 			));
 		}
 		return countries.map((country) => (
-			<SwiperSlide className="!w-fit">
-				{" "}
+			<SwiperSlide className="!w-fit" key={country.id + country.name}>
 				<CountryItem
-					key={country.id + country.name}
 					country={country}
 					type="country"
 				/>
@@ -332,8 +339,10 @@ export default function SearchSidebar() {
 														<div className="flex gap-2">
 															<Image
 																src={
-																	selectedCountry.flag as string
+																	getCountryIconPath(selectedCountry.name) as string
+
 																}
+																className="object-contain"
 																alt={selectedCountry.name}
 																width={24}
 																height={24}
