@@ -478,3 +478,58 @@ body {
 .swiper {
    margin: 0 !important;
 }
+
+/* Custom Swiper Navigation Buttons */
+.swiper-custom-prev,
+.swiper-custom-next {
+   width: 16px !important;
+   height: 16px !important;
+   background: var(--card-bg-color) !important;
+   border: 1px solid rgba(255, 255, 255, 0.1) !important;
+   backdrop-filter: blur(10px) !important;
+   -webkit-backdrop-filter: blur(10px) !important;
+   transition: all 0.3s ease !important;
+   color: var(--foreground) !important;
+}
+
+.swiper-custom-prev:hover,
+.swiper-custom-next:hover {
+   opacity: 0.8 !important;
+   transform: scale(1.05) !important;
+}
+
+.swiper-custom-prev:disabled,
+.swiper-custom-next:disabled {
+   opacity: 0.3 !important;
+   cursor: not-allowed !important;
+}
+
+.swiper-custom-prev:disabled:hover,
+.swiper-custom-next:disabled:hover {
+   transform: none !important;
+}
+
+/* Light theme custom navigation */
+[data-theme="light"] .swiper-custom-prev,
+[data-theme="light"] .swiper-custom-next {
+   background: var(--main-card-bg-color) !important;
+   border: 1px solid rgba(0, 0, 0, 0.1) !important;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+   color: var(--foreground) !important;
+}
+
+/* Glass theme custom navigation */
+[data-theme="glass"] .swiper-custom-prev,
+[data-theme="glass"] .swiper-custom-next {
+   background: rgba(255, 255, 255, 0.1) !important;
+   border: 1px solid rgba(255, 255, 255, 0.2) !important;
+   backdrop-filter: blur(20px) !important;
+   -webkit-backdrop-filter: blur(20px) !important;
+   color: var(--foreground) !important;
+}
+
+[data-theme="glass"] .swiper-custom-prev:hover,
+[data-theme="glass"] .swiper-custom-next:hover {
+   background: rgba(255, 255, 255, 0.2) !important;
+   border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}

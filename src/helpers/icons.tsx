@@ -104,3 +104,12 @@ export const backIcon = <svg width="20" height="20" viewBox="0 0 20 20" fill="no
 		</clipPath>
 	</defs>
 </svg>
+
+// Navigation arrows for Swiper
+export const prevArrowIcon = <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M5 1L2 4L5 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>
+
+export const nextArrowIcon = <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path d="M3 1L6 4L3 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+</svg>

@@ -346,7 +346,7 @@ export default function SearchSidebar() {
 												)}
 												<div
 													className={classNames(
-														"flex overflow-scroll no-scrollbar  ",
+														"flex no-scrollbar  ",
 														{}
 													)}
 												>
@@ -360,10 +360,10 @@ export default function SearchSidebar() {
 								</div>
 
 								{/* United States Section */}
-								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl mt-5 bg-glass3">
+								<div className="bg-card-bg-color-dark p-7.5 rounded-4xl mt-5 bg-glass3 ">
 									<div className="">
 										<div
-											className="flex justify-between items-center  rounded-md cursor-pointer"
+											className="flex justify-between items-center  rounded-md cursor-pointer mb-6"
 											onClick={() =>
 												setStatesDropdownOpen(!statesDropdownOpen)
 											}
@@ -393,10 +393,10 @@ export default function SearchSidebar() {
 										</div>
 
 										{statesDropdownOpen && (
-											<div className="pt-6">
+											<div className="">
 												<div
 													className={classNames(
-														"flex gap-7 space-between overflow-scroll space-between no-scrollbar",
+														"flex gap-7 space-between space-between no-scrollbar",
 														{
 															"flex-wrap":
 																sidebarStatus === "full",
