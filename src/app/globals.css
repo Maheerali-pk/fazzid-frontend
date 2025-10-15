@@ -168,9 +168,11 @@
    --color-card-bg-color: var(--card-bg-color);
    --color-card-bg-color-dark: var(--card-bg-color-dark);
    --color-main-card-bg-color: var(--main-card-bg-color);
+
    --font-sf: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont,
       system-ui, sans-serif;
    --text-22px: 1.375rem;
+   --text-10px: 0.625rem;
 }
 * {
    box-sizing: border-box !important;

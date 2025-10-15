@@ -458,82 +458,79 @@ export default function SearchSidebar() {
 								>
 									{[
 										{
-											name: "CNN",
-											logo: "/images/websites/cnn.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
 											name: "AlJazeera",
-											logo: "/images/websites/aljazera.svg",
+											logo: "/images/websites/aljazera.png",
 											rank: "(1)",
 											visitors: "1432",
 											articles: "2344",
 										},
 										{
 											name: "Fox",
-											logo: "/images/websites/foxnews.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "BBC",
-											logo: "/images/websites/bbc.svg",
-											rank: "(1)",
-											visitors: "1432",
-											articles: "2344",
-										},
-										{
-											name: "Geo",
-											logo: "/images/websites/geo.svg",
+											logo: "/images/websites/foxnews.png",
 											rank: "(1)",
 											visitors: "1432",
 											articles: "2344",
 										},
 										{
 											name: "CBS",
-											logo: "/images/websites/cbs.svg",
+											logo: "/images/websites/cbs.png",
 											rank: "(1)",
 											visitors: "1432",
 											articles: "2344",
 										},
+										{
+											name: "Geo",
+											logo: "/images/websites/geo.png",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+
+										{
+											name: "BBC",
+											logo: "/images/websites/bbc.png",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										},
+
+										{
+											name: "CNN",
+											logo: "/images/websites/cnn.png",
+											rank: "(1)",
+											visitors: "1432",
+											articles: "2344",
+										}
 									].map((site, index) => (
 										<div
 											key={index}
 											className={classNames(
-												"bg-card-bg-color p-4 rounded-4xl flex items-center gap-3.5 bg-glass3 ",
+												"bg-card-bg-color p-2.5 rounded-[32px] flex items-center gap-3.5 bg-glass3 ",
 												{ "!bg-black/20": theme === "glass" }
 											)}
 										>
-											<div className="w-15 h-15 flex items-center justify-center overflow-hidden">
+											<div className=" flex items-center justify-center overflow-hidden">
+
 												<Image
+													className="p-3.5 bg-inner-background rounded-3xl mb-1"
 													src={site.logo}
 													alt={site.name}
-													width={61}
-													height={61}
+													width={77}
+													height={77}
 												/>
 											</div>
-											<div className="">
-												<div className="flex items-center gap-1">
-													<span>{trippleUpArrows}</span>
-													<span className="text-foreground text-[10px]">
-														Overall Rank {site.rank}
-													</span>
-												</div>
-												<div className=" items-center text-xs text-foreground">
-													<div className="flex items-center gap-1 ">
-														<span>{bookIcon}</span>
-														<div></div>
-														<span className="text-[10px]">{site.visitors}</span>
-													</div>
-													<div className="flex items-center gap-1">
-														<span>{cameraIcon}</span>
-														<div></div>
-														<span className="text-[10px]">{site.articles}</span>
-													</div>
-												</div>
+											<div className="text-foreground text-10px grid grid-cols-[min-content_auto] gap-1.5 items-center">
+
+												<span>{trippleUpArrows}</span>
+												<span>
+													Overall Rank {site.rank}
+												</span>
+
+												<span>{bookIcon}</span>
+												<span>{site.visitors}</span>
+
+												<span>{cameraIcon}</span>
+												<span>{site.articles}</span>
 											</div>
 										</div>
 									))}
@@ -565,35 +562,26 @@ export default function SearchSidebar() {
 										>
 											<div className="flex flex-col items-center justify-center overflow-hidden">
 												<Image
-													className="p-2 bg-inner-background rounded-2xl mb-1"
+													className="p-3.5 bg-inner-background rounded-3xl mb-1"
 													src={channel.logo}
 													alt={channel.name}
-													width={49}
-													height={49}
+													width={77}
+													height={77}
 												/>
-												<span className="text-foreground font-bold text-[10px]">
-													{channel.name}
-												</span>
+
 											</div>
-											<div className="">
-												<div className="flex items-center gap-1">
-													<span>{trippleUpArrows}</span>
-													<span className="text-foreground text-xs">
-														Overall Rank {channel.rank}
-													</span>
-												</div>
-												<div className=" items-center text-xs text-foreground">
-													<div className="flex items-center gap-1 ">
-														<span>{bookIcon}</span>
-														<div></div>
-														<span>{channel.visitors}</span>
-													</div>
-													<div className="flex items-center gap-1">
-														<span>{cameraIcon}</span>
-														<div></div>
-														<span>{channel.articles}</span>
-													</div>
-												</div>
+											<div className="text-foreground text-10px grid grid-cols-[min-content_auto] gap-1.5 items-center">
+
+												<span>{trippleUpArrows}</span>
+												<span>
+													Overall Rank {channel.rank}
+												</span>
+
+												<span>{bookIcon}</span>
+												<span>{channel.visitors}</span>
+
+												<span>{cameraIcon}</span>
+												<span>{channel.articles}</span>
 											</div>
 										</div>
 									))}

@@ -1140,7 +1140,7 @@ export const allChannels: IChannel[] = [
    {
       id: "1",
       name: "CNN",
-      logo: "/images/websites/cnn.svg",
+      logo: "/images/websites/cnn.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
@@ -1148,7 +1148,7 @@ export const allChannels: IChannel[] = [
    {
       id: "2",
       name: "AlJazeera",
-      logo: "/images/websites/aljazera.svg",
+      logo: "/images/websites/aljazera.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
@@ -1156,7 +1156,7 @@ export const allChannels: IChannel[] = [
    {
       id: "3",
       name: "Fox",
-      logo: "/images/websites/foxnews.svg",
+      logo: "/images/websites/foxnews.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
@@ -1164,7 +1164,7 @@ export const allChannels: IChannel[] = [
    {
       id: "4",
       name: "BBC",
-      logo: "/images/websites/bbc.svg",
+      logo: "/images/websites/bbc.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
@@ -1172,7 +1172,7 @@ export const allChannels: IChannel[] = [
    {
       id: "5",
       name: "Geo",
-      logo: "/images/websites/geo.svg",
+      logo: "/images/websites/geo.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
@@ -1180,7 +1180,7 @@ export const allChannels: IChannel[] = [
    {
       id: "6",
       name: "CBS",
-      logo: "/images/websites/cbs.svg",
+      logo: "/images/websites/cbs.png",
       rank: "(1)",
       visitors: "1432",
       articles: "2344",
