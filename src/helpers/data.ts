@@ -1697,6 +1697,506 @@ export const allNewsItems: INewsItem[] = [
          "First commercial fusion reactor achieves sustained net energy production, delivering clean power to regional electrical grid in historic engineering milestone.",
       imageUrl: "https://picsum.photos/seed/fusion50/400/300",
    },
+   {
+      id: 51,
+      source: "www.techradar.com",
+      categories: ["technology", "ai"],
+      date: "Aug, 21, 2025",
+      title: "Edge AI Chips Bring On-Device GPT to Phones",
+      description:
+         "Chipmakers unveil edge accelerators that run large language models entirely on smartphones, enabling offline assistants, instant translation, and privacy-preserving features without cloud latency.",
+      imageUrl: "https://picsum.photos/seed/tech51/400/300",
+   },
+   {
+      id: 52,
+      source: "www.ft.com",
+      categories: ["business", "economy"],
+      date: "Aug, 20, 2025",
+      title: "Global M&A Surges as Companies Bet on AI",
+      description:
+         "Deal activity hits a decade high with firms racing to acquire AI startups and data assets; analysts say consolidation will redefine competitive moats across sectors from retail to healthcare.",
+      imageUrl: "https://picsum.photos/seed/biz52/400/300",
+   },
+   {
+      id: 53,
+      source: "www.medscape.com",
+      categories: ["health", "medicine"],
+      date: "Aug, 19, 2025",
+      title: "Universal Flu Shot Shows Strong Multi-Season Protection",
+      description:
+         "Phase 3 data indicates a single dose provides broad immunity against diverse influenza strains over multiple seasons, potentially ending annual reformulation cycles.",
+      imageUrl: "https://picsum.photos/seed/health53/400/300",
+   },
+   {
+      id: 54,
+      source: "www.bloomberg.com",
+      categories: ["finance", "markets"],
+      date: "Aug, 18, 2025",
+      title: "Commodities Rally as Green Transition Lifts Copper, Lithium",
+      description:
+         "Renewable build-outs and EV demand push metals higher, with miners announcing new investments and recycling programs to ease supply bottlenecks.",
+      imageUrl: "https://picsum.photos/seed/markets54/400/300",
+   },
+   {
+      id: 55,
+      source: "www.nba.com",
+      categories: ["sports", "basketball"],
+      date: "Aug, 17, 2025",
+      title: "Rookie Sensation Drops Triple-Double in Summer Showcase",
+      description:
+         "The top draft pick records a historic stat line, fueling preseason hype and resetting expectations for a franchise in rebuild mode.",
+      imageUrl: "https://picsum.photos/seed/sports55/400/300",
+   },
+   {
+      id: 56,
+      source: "www.seekingalpha.com",
+      categories: ["finance", "investment"],
+      date: "Aug, 16, 2025",
+      title: "Dividend Aristocrats Expand Payouts Despite Uncertainty",
+      description:
+         "Blue-chip firms extend multi-decade streaks of dividend growth, signaling confidence in cash flows even as macro headwinds persist.",
+      imageUrl: "https://picsum.photos/seed/finance56/400/300",
+   },
+   {
+      id: 57,
+      source: "www.cnet.com",
+      categories: ["technology", "gadgets"],
+      date: "Aug, 15, 2025",
+      title: "Smart Rings Gain Health Features Once Limited to Watches",
+      description:
+         "New sensors track blood pressure, glucose trends, and sleep stages, appealing to users who want minimal wearables with maximum insights.",
+      imageUrl: "https://picsum.photos/seed/gadget57/400/300",
+   },
+   {
+      id: 58,
+      source: "www.aljazeera.com",
+      categories: ["politics", "international"],
+      date: "Aug, 14, 2025",
+      title: "Cross-Border Water Treaty Averts Regional Drought Crisis",
+      description:
+         "Neighboring nations agree to shared reservoirs, data transparency, and emergency pipelines in a landmark resource-sharing pact.",
+      imageUrl: "https://picsum.photos/seed/politics58/400/300",
+   },
+   {
+      id: 59,
+      source: "www.si.com",
+      categories: ["sports", "tennis"],
+      date: "Aug, 13, 2025",
+      title: "Unseeded Veteran Wins First Grand Slam Title",
+      description:
+         "In a fairytale run, the 31-year-old defeats three top-10 players, showcasing tactical brilliance and endurance across five-set battles.",
+      imageUrl: "https://picsum.photos/seed/tennis59/400/300",
+   },
+   {
+      id: 60,
+      source: "www.axios.com",
+      categories: ["business", "startups"],
+      date: "Aug, 12, 2025",
+      title: "Climate Tech Startup Boom Spurs New VC Megafunds",
+      description:
+         "Investors raise multi-billion-dollar vehicles targeting carbon removal, grid software, and sustainable materials amid policy tailwinds.",
+      imageUrl: "https://picsum.photos/seed/startups60/400/300",
+   },
+   {
+      id: 61,
+      source: "www.pcmag.com",
+      categories: ["technology", "computing"],
+      date: "Aug, 11, 2025",
+      title: "Open-Source OS for AI PCs Hits 1.0 Release",
+      description:
+         "A community-built desktop platform integrates privacy-first AI features, local model hubs, and hardware acceleration support out of the box.",
+      imageUrl: "https://picsum.photos/seed/compute61/400/300",
+   },
+   {
+      id: 62,
+      source: "www.natureenergy.com",
+      categories: ["energy", "research"],
+      date: "Aug, 10, 2025",
+      title: "Sodium-Ion Batteries Reach EV-Ready Energy Density",
+      description:
+         "Breakthrough cathode designs and optimized electrolytes make low-cost, cobalt-free packs viable for short-range electric vehicles and grid storage.",
+      imageUrl: "https://picsum.photos/seed/energy62/400/300",
+   },
+   {
+      id: 63,
+      source: "www.runnersworld.com",
+      categories: ["health", "fitness"],
+      date: "Aug, 9, 2025",
+      title: "AI Coaching App Helps Amateurs Qualify for Major Marathons",
+      description:
+         "Personalized plans adapt to biometrics and recovery metrics, leading to widespread PRs and improved injury prevention.",
+      imageUrl: "https://picsum.photos/seed/fitness63/400/300",
+   },
+   {
+      id: 64,
+      source: "www.wsj.com",
+      categories: ["economy", "global-markets"],
+      date: "Aug, 8, 2025",
+      title: "Supply Chains Rewire Around Regional Hubs",
+      description:
+         "Manufacturers diversify away from single-country dependence, building resilient, tech-enabled networks closer to end markets.",
+      imageUrl: "https://picsum.photos/seed/econ64/400/300",
+   },
+   {
+      id: 65,
+      source: "www.spaceflightnow.com",
+      categories: ["space", "launch"],
+      date: "Aug, 7, 2025",
+      title: "Reusable Heavy-Lifter Completes 10th Mission",
+      description:
+         "Milestone flight delivers large telescopes and lunar infrastructure with rapid turnaround and record-low cost per kilogram.",
+      imageUrl: "https://picsum.photos/seed/space65/400/300",
+   },
+   {
+      id: 66,
+      source: "www.edutopia.org",
+      categories: ["education", "innovation"],
+      date: "Aug, 6, 2025",
+      title: "Project-Based Learning Scales with AI Tutors",
+      description:
+         "Districts report higher engagement and test scores as adaptive assistants guide students through real-world, cross-curricular projects.",
+      imageUrl: "https://picsum.photos/seed/edu66/400/300",
+   },
+   {
+      id: 67,
+      source: "www.apnews.com",
+      categories: ["environment", "policy"],
+      date: "Aug, 5, 2025",
+      title: "Cities Adopt Heat Resilience Standards for New Buildings",
+      description:
+         "Updated codes require cool roofs, passive ventilation, and urban canopy targets to combat rising temperatures.",
+      imageUrl: "https://picsum.photos/seed/env67/400/300",
+   },
+   {
+      id: 68,
+      source: "www.hollywoodreporter.com",
+      categories: ["entertainment", "tv"],
+      date: "Aug, 4, 2025",
+      title: "Interactive Series Lets Viewers Co-Write Episodes with AI",
+      description:
+         "A streaming platform debuts a show where audience prompts influence plotlines, blending fan fiction with professional production.",
+      imageUrl: "https://picsum.photos/seed/tv68/400/300",
+   },
+   {
+      id: 69,
+      source: "www.arstechnica.com",
+      categories: ["technology", "security"],
+      date: "Aug, 3, 2025",
+      title: "Passkey Adoption Tops 1 Billion Accounts",
+      description:
+         "Major platforms report dramatic phishing declines as passwordless authentication becomes mainstream across devices.",
+      imageUrl: "https://picsum.photos/seed/sec69/400/300",
+   },
+   {
+      id: 70,
+      source: "www.bbc.com",
+      categories: ["science", "space"],
+      date: "Aug, 2, 2025",
+      title: "Probe Finds Subsurface Ocean on Distant Icy Moon",
+      description:
+         "Gravitational and magnetic readings suggest a briny ocean beneath the crust, raising astrobiology prospects.",
+      imageUrl: "https://picsum.photos/seed/space70/400/300",
+   },
+   {
+      id: 71,
+      source: "www.theguardian.com",
+      categories: ["society", "culture"],
+      date: "Aug, 1, 2025",
+      title: "Libraries Reborn as Community Maker Hubs",
+      description:
+         "Facilities add fabrication labs, media studios, and mentorship programs, redefining access to knowledge and tools.",
+      imageUrl: "https://picsum.photos/seed/society71/400/300",
+   },
+   {
+      id: 72,
+      source: "www.sciencedaily.com",
+      categories: ["science", "biology"],
+      date: "Jul, 31, 2025",
+      title: "Microbiome Therapy Reverses Drug Resistance",
+      description:
+         "Targeted bacterial consortia restore treatment efficacy in infections and certain cancers by modulating metabolite pathways.",
+      imageUrl: "https://picsum.photos/seed/bio72/400/300",
+   },
+   {
+      id: 73,
+      source: "www.dw.com",
+      categories: ["politics", "europe"],
+      date: "Jul, 30, 2025",
+      title: "EU Unveils AI Accountability Framework",
+      description:
+         "Rules mandate traceability, dataset audits, and red-team testing for high-risk systems, with steep penalties for noncompliance.",
+      imageUrl: "https://picsum.photos/seed/eu73/400/300",
+   },
+   {
+      id: 74,
+      source: "www.digitaltrends.com",
+      categories: ["technology", "vr-ar"],
+      date: "Jul, 29, 2025",
+      title: "Lightweight AR Headsets Hit All-Day Comfort",
+      description:
+         "New optics and microLEDs reduce weight and eye strain, accelerating enterprise workflows and consumer adoption.",
+      imageUrl: "https://picsum.photos/seed/ar74/400/300",
+   },
+   {
+      id: 75,
+      source: "www.tripleseat.com",
+      categories: ["travel", "hospitality"],
+      date: "Jul, 28, 2025",
+      title: "Hotels Add AI Concierges for Hyper-Personalized Stays",
+      description:
+         "Digital concierges curate dining, wellness, and local experiences using guest preferences and real-time city data.",
+      imageUrl: "https://picsum.photos/seed/travel75/400/300",
+   },
+   {
+      id: 76,
+      source: "www.espncricinfo.com",
+      categories: ["sports", "cricket"],
+      date: "Jul, 27, 2025",
+      title: "Record Chase Stuns Fans in Final-Over Thriller",
+      description:
+         "National side overhauls a massive target with a last-ball boundary, igniting celebrations across the cricketing world.",
+      imageUrl: "https://picsum.photos/seed/cricket76/400/300",
+   },
+   {
+      id: 77,
+      source: "www.nationalgeographic.com",
+      categories: ["environment", "wildlife"],
+      date: "Jul, 26, 2025",
+      title: "Elephant Corridors Reduce Human-Wildlife Conflict",
+      description:
+         "Satellite tracking and local stewardship restore migration routes, cutting incidents and improving livelihoods.",
+      imageUrl: "https://picsum.photos/seed/wild77/400/300",
+   },
+   {
+      id: 78,
+      source: "www.zdnet.com",
+      categories: ["technology", "software"],
+      date: "Jul, 25, 2025",
+      title: "No-Code AI Tools Empower Small Businesses",
+      description:
+         "Drag-and-drop model builders let shops automate support, inventory forecasts, and marketing without data teams.",
+      imageUrl: "https://picsum.photos/seed/software78/400/300",
+   },
+   {
+      id: 79,
+      source: "www.indiewire.com",
+      categories: ["entertainment", "film"],
+      date: "Jul, 24, 2025",
+      title: "Microbudget Film Wins Top Festival Prize",
+      description:
+         "Shot on a smartphone with a skeleton crew, the intimate drama captivates juries and secures a wide theatrical release.",
+      imageUrl: "https://picsum.photos/seed/film79/400/300",
+   },
+   {
+      id: 80,
+      source: "www.vox.com",
+      categories: ["society", "labor"],
+      date: "Jul, 23, 2025",
+      title: "Four-Day School Weeks Expand in Rural Districts",
+      description:
+         "Cost savings and teacher retention drive adoption, with early studies showing stable academic outcomes and improved morale.",
+      imageUrl: "https://picsum.photos/seed/labor80/400/300",
+   },
+   {
+      id: 81,
+      source: "www.engadget.com",
+      categories: ["technology", "robotics"],
+      date: "Jul, 22, 2025",
+      title: "Household Robots Master Dexterous Tasks",
+      description:
+         "Vision-language policies enable robots to fold laundry, load dishwashers, and adapt to cluttered homes with minimal training.",
+      imageUrl: "https://picsum.photos/seed/robots81/400/300",
+   },
+   {
+      id: 82,
+      source: "www.scmp.com",
+      categories: ["business", "asia"],
+      date: "Jul, 21, 2025",
+      title: "ASEAN Digital Payments Hit Interoperability Milestone",
+      description:
+         "Cross-border QR payments expand to millions of merchants, lowering fees and boosting tourism spending.",
+      imageUrl: "https://picsum.photos/seed/asia82/400/300",
+   },
+   {
+      id: 83,
+      source: "www.skimag.com",
+      categories: ["lifestyle", "outdoors"],
+      date: "Jul, 20, 2025",
+      title: "Year-Round Indoor Slopes Bring Alpine to Cities",
+      description:
+         "Energy-efficient domes with real snow make skiing accessible in warm climates while training the next generation of athletes.",
+      imageUrl: "https://picsum.photos/seed/outdoors83/400/300",
+   },
+   {
+      id: 84,
+      source: "www.reuters.com",
+      categories: ["economics", "policy"],
+      date: "Jul, 19, 2025",
+      title: "Universal Basic Services Pilots Expand in Major Capitals",
+      description:
+         "Cities test free transit, broadband, and primary care access to reduce inequality and stimulate growth.",
+      imageUrl: "https://picsum.photos/seed/policy84/400/300",
+   },
+   {
+      id: 85,
+      source: "www.techspot.com",
+      categories: ["technology", "hardware"],
+      date: "Jul, 18, 2025",
+      title: "Photonics Accelerators Speed Up AI Training",
+      description:
+         "Optical cores demonstrate order-of-magnitude gains on transformer workloads while slashing energy consumption.",
+      imageUrl: "https://picsum.photos/seed/hw85/400/300",
+   },
+   {
+      id: 86,
+      source: "www.vice.com",
+      categories: ["culture", "internet"],
+      date: "Jul, 17, 2025",
+      title: "Long-Form Blogging Makes a Comeback",
+      description:
+         "Creators pivot from short clips to essays and newsletters, cultivating loyal communities and ad-independent revenue.",
+      imageUrl: "https://picsum.photos/seed/internet86/400/300",
+   },
+   {
+      id: 87,
+      source: "www.eba.org",
+      categories: ["automotive", "policy"],
+      date: "Jul, 16, 2025",
+      title: "Smart Road Pilot Lowers Congestion by 30%",
+      description:
+         "Dynamic lane pricing and V2X guidance smooth traffic flows, cutting commute times and emissions in a major metro.",
+      imageUrl: "https://picsum.photos/seed/auto87/400/300",
+   },
+   {
+      id: 88,
+      source: "www.today.com",
+      categories: ["lifestyle", "food"],
+      date: "Jul, 15, 2025",
+      title: "Fermented Superfoods Trend Dominates Home Kitchens",
+      description:
+         "Kits and classes popularize kimchi, kefir, and koji, with nutritionists highlighting gut health benefits.",
+      imageUrl: "https://picsum.photos/seed/food88/400/300",
+   },
+   {
+      id: 89,
+      source: "www.aaas.org",
+      categories: ["science", "climate"],
+      date: "Jul, 14, 2025",
+      title: "Direct Air Capture Costs Fall Below $100/Ton",
+      description:
+         "Process intensification and modular designs drive historic cost reductions, unlocking scalable carbon removal pathways.",
+      imageUrl: "https://picsum.photos/seed/climate89/400/300",
+   },
+   {
+      id: 90,
+      source: "www.boardgamegeek.com",
+      categories: ["gaming", "tabletop"],
+      date: "Jul, 13, 2025",
+      title: "Co-Op Strategy Game Tops Crowdfunding Charts",
+      description:
+         "Innovative asymmetric roles and legacy mechanics captivate backers, breaking records for tabletop campaigns.",
+      imageUrl: "https://picsum.photos/seed/gaming90/400/300",
+   },
+   {
+      id: 91,
+      source: "www.goodnewsnetwork.org",
+      categories: ["community", "innovation"],
+      date: "Jul, 12, 2025",
+      title: "Neighborhood Microgrids Slash Blackouts",
+      description:
+         "Community-owned solar-plus-storage systems keep lights on during grid stress, inspiring replication in other regions.",
+      imageUrl: "https://picsum.photos/seed/community91/400/300",
+   },
+   {
+      id: 92,
+      source: "www.mckinsey.com",
+      categories: ["business", "operations"],
+      date: "Jul, 11, 2025",
+      title: "Digital Twins Become Standard in Manufacturing",
+      description:
+         "Factories simulate entire production lines, cutting defects and time-to-market while enabling predictive maintenance.",
+      imageUrl: "https://picsum.photos/seed/ops92/400/300",
+   },
+   {
+      id: 93,
+      source: "www.teenvogue.com",
+      categories: ["culture", "fashion"],
+      date: "Jul, 10, 2025",
+      title: "Upcycled Streetwear Captures Gen-Z Aesthetic",
+      description:
+         "Designers remix thrifted fabrics with NFC tags for provenance, blending sustainability with collectible culture.",
+      imageUrl: "https://picsum.photos/seed/fashion93/400/300",
+   },
+   {
+      id: 94,
+      source: "www.thewirecutter.com",
+      categories: ["consumer", "home-tech"],
+      date: "Jul, 9, 2025",
+      title: "Smart Induction Ranges Go Mainstream",
+      description:
+         "Safer, faster cooking with precise temperature control and recipe-guided automation wins over home chefs.",
+      imageUrl: "https://picsum.photos/seed/home94/400/300",
+   },
+   {
+      id: 95,
+      source: "www.cio.com",
+      categories: ["technology", "it"],
+      date: "Jul, 8, 2025",
+      title: "Enterprises Embrace Retrieval-Augmented Apps",
+      description:
+         "RAG architectures become default for internal tools, improving accuracy while keeping proprietary data secure.",
+      imageUrl: "https://picsum.photos/seed/it95/400/300",
+   },
+   {
+      id: 96,
+      source: "www.washingtonpost.com",
+      categories: ["politics", "election"],
+      date: "Jul, 7, 2025",
+      title: "Youth Turnout Surges in Local Primaries",
+      description:
+         "Expanded mail-in options and social campaigns drive first-time voter participation to record levels in city races.",
+      imageUrl: "https://picsum.photos/seed/election96/400/300",
+   },
+   {
+      id: 97,
+      source: "www.scientificamerican.com",
+      categories: ["science", "physics"],
+      date: "Jul, 6, 2025",
+      title: "Room-Temperature Superconductor Claim Passes Replication",
+      description:
+         "Independent labs reproduce zero-resistance behavior under ambient pressure, paving the way for lossless grids and magnet-free MRI.",
+      imageUrl: "https://picsum.photos/seed/physics97/400/300",
+   },
+   {
+      id: 98,
+      source: "www.theatlantic.com",
+      categories: ["society", "work"],
+      date: "Jul, 5, 2025",
+      title: "Second Careers at 50 Become the Norm",
+      description:
+         "Lifelong learning programs and remote roles enable midlife reinvention, reshaping notions of retirement and vocation.",
+      imageUrl: "https://picsum.photos/seed/work98/400/300",
+   },
+   {
+      id: 99,
+      source: "www.autocar.co.uk",
+      categories: ["automotive", "electric-vehicles"],
+      date: "Jul, 4, 2025",
+      title: "$18,000 EV Launch Promises Mass Adoption",
+      description:
+         "A compact hatchback with fast charging and 300-km range hits European markets, undercutting rivals and enticing first-time buyers.",
+      imageUrl: "https://picsum.photos/seed/ev99/400/300",
+   },
+   {
+      id: 100,
+      source: "www.hbr.org",
+      categories: ["business", "leadership"],
+      date: "Jul, 3, 2025",
+      title: "Teams Outperform with Human+AI Pairing",
+      description:
+         "Studies show decision quality rises when employees are trained to critique and complement AI outputs rather than defer to them.",
+      imageUrl: "https://picsum.photos/seed/lead100/400/300",
+   },
 ];
 
 // US states data with abbreviations
