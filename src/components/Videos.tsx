@@ -68,14 +68,13 @@ export default function Videos() {
                      <div
                         key={video.id}
                         className={classNames(
-                           "overflow-hidden flex flex-col rounded-3xl transition-all duration-300 w-full bg-glass", // common classes
+                           "overflow-hidden flex flex-col bg-main-card-bg-color rounded-3xl transition-all duration-300 w-full bg-glass", // common classes
                            {
                               // Grid view responsive classes
                               "p-2.5 w-full": itemsView === 'grid',
                               "p-0 w-full mb-4 flex-col": itemsView === 'list'
                            }!
                         )}
-                        style={{ background: itemsView === 'grid' ? "var(--card-bg-color)" : "transparent" }}
                      >
                         {itemsView === 'grid' ? (
                            // GRID VIEW
@@ -114,17 +113,17 @@ export default function Videos() {
                               </a>
 
                               {/* Video Info */}
-                              <div className="flex items-start gap-2">
-                                 <div className="flex-1 flex-col h-full">
+                              <div className="flex items-start gap-2 w-full">
+                                 <div className="flex-1 flex-col h-full w-full">
                                     {/* Video Title - Clickable */}
                                     <a
                                        href={video.youtubeUrl}
                                        target="_blank"
                                        rel="noopener noreferrer"
-                                       className="block"
+                                       className="block  whitespace-nowrap overflow-ellipsis overflow-hidden w-full"
                                     >
                                        <h3
-                                          className="font-medium py-2  text-foreground text-normal hover:text-blue-500 transition-colors"
+                                          className="font-medium py-2 w-full  text-foreground text-normal hover:text-blue-500 transition-colors"
                                        >
                                           {video.title}
                                        </h3>
@@ -141,7 +140,7 @@ export default function Videos() {
                            </>
                         ) : (
                            // LIST VIEW
-                           <div className={classNames("flex w-full  rounded-xl bg-card-bg-color  p-3 mx-auto max-w-full", {
+                           <div className={classNames("flex w-full  rounded-xl bg-main-card-bg-color  p-3 mx-auto max-w-full", {
                               "bg-transparent": itemsView === "list" && theme === "glass"
                            })}>
                               {/* Left Side - Thumbnail */}
