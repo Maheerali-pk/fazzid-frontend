@@ -626,7 +626,7 @@ export default function SearchSidebar() {
 									].map((keyword, index) => (
 										<div
 											key={index}
-											className="bg-card-bg-color px-4 py-2 rounded-full text-sm text-foreground"
+											className="bg-card-bg-color bg-glass px-4 py-2 rounded-full text-sm text-foreground"
 										>
 											{keyword}
 										</div>
