@@ -138,19 +138,17 @@
    --tabs-unselected-foreground: #727676;
    --main-tabs-bg-color: #0d99ff33;
    --main-card-bg-color: white;
-
    --purple-light: #dfd2fe;
    --purple-main: #c758ffee;
    --purple-input-bg-color: white;
-
    --normal-input-bg-color: white;
 }
 
 @theme inline {
+   --color-main: red;
    --color-purple-light: var(--purple-light);
    --color-purple-main: var(--purple-main);
    --color-purple-input-bg-color: var(--purple-input-bg-color);
-
    --color-normal-input-bg-color: var(--normal-input-bg-color);
    --color-main-tabs-bg-color: var(--main-tabs-bg-color);
    --color-tabs-selected-foreground: var(--tabs-selected-foreground);
@@ -378,7 +376,13 @@ body {
 
 /* Glass theme specific styles */
 [data-theme="glass"] body {
-   background: url("/images/backgrounds/glass-bg-1.jpg") no-repeat center center;
+   background: radial-gradient(
+         53.88% 192.31% at 50% 46.12%,
+         #001ca6 0%,
+         #000728 100%
+      )
+      /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+
    background-size: cover;
 }
 

@@ -505,14 +505,14 @@ export default function SearchSidebar() {
 										<div
 											key={index}
 											className={classNames(
-												"bg-card-bg-color p-2.5 rounded-[32px] flex items-center gap-3.5 bg-glass3 ",
+												"bg-card-bg-color p-2.5 rounded-[32px] flex items-center gap-3.5 bg-glass ",
 												{ "!bg-black/20": theme === "glass" }
 											)}
 										>
 											<div className=" flex items-center justify-center overflow-hidden">
 
 												<Image
-													className="p-3.5 bg-inner-background rounded-3xl mb-1"
+													className={classNames("p-3.5 bg-glass3  bg-inner-background rounded-3xl mb-1", { "bg-glass": theme === "glass" })}
 													src={site.logo}
 													alt={site.name}
 													width={77}
@@ -562,7 +562,7 @@ export default function SearchSidebar() {
 										>
 											<div className="flex flex-col items-center justify-center overflow-hidden">
 												<Image
-													className="p-3.5 bg-inner-background rounded-3xl mb-1"
+													className={classNames("p-3.5 bg-glass3 bg-inner-background rounded-3xl mb-1", { "bg-glass3": theme === "glass" })}
 													src={channel.logo}
 													alt={channel.name}
 													width={77}
