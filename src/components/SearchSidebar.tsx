@@ -243,9 +243,10 @@ export default function SearchSidebar() {
 							type="text"
 							placeholder="enter your keyword here"
 							className={classNames(
-								"w-full text-foreground bg-normal-input-bg-color p-6  rounded-4xl placeholder:text-foreground text-lg",
+								"w-full text-foreground bg-normal-input-bg-color p-6  border t rounded-4xl placeholder:text-foreground text-lg",
 
 								{
+									"border-transparent": theme !== "glass" && state.diveType === "dive-deeper",
 									"bg-purple-input-bg-color border-purple-main border text-purple-main placeholder:text-purple-main active:border-purple-main":
 										state.diveType === "diving-deeper",
 									"border-primary border bg-primary/10 text-primary placeholder:text-primary":
